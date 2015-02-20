@@ -1,3 +1,6 @@
+@gradient2: #A2D7D8;
+@gradient1: #799FC6;
+
 /* -----------------------------------------------------------------------------
     Global
 ----------------------------------------------------------------------------- */
@@ -28,6 +31,18 @@ h2 {
 /* -----------------------------------------------------------------------------
     Background
 ----------------------------------------------------------------------------- */
+
+.bg {
+    margin-top: -20px;
+    padding: 180px 20px;
+    background: @gradient1;
+    background: -webkit-gradient(left, @gradient1, @gradient2);
+    background: -webkit-linear-gradient(left, @gradient1, @gradient2);
+    background:    -moz-linear-gradient(left, @gradient1, @gradient2);
+    background:     -ms-linear-gradient(left, @gradient1, @gradient2);
+    background:      -o-linear-gradient(left, @gradient1, @gradient2);
+    background:         linear-gradient(left, @gradient1, @gradient2);
+}
 
 
 /* -----------------------------------------------------------------------------
