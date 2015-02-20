@@ -1,3 +1,7 @@
+@main-color0: #ffffff;
+@main-color1: #ffff00;
+@aux-color0: #000000;
+
 /* -----------------------------------------------------------------------------
     Global
 ----------------------------------------------------------------------------- */
@@ -30,13 +34,12 @@ h2 {
 }
 
 .nav .row {
-    background: #000000;
-    border-bottom: 4px solid #ffff00;
+    background: @aux-color0;
+    border-bottom: 4px solid @main-color1;
 }
 
 .nav .row a {
-    color: #fff;
-    display: block;
+    color: @main-color0;
     float: left;
     font-size: 0.875em;
     font-variant: small-caps;
@@ -48,7 +51,7 @@ h2 {
 
 .nav .row a:active,
 .nav .row a:hover {
-    color: #ffff00;
+    color: @main-color1;
 }
 
 
@@ -56,19 +59,19 @@ h2 {
     Background
 ----------------------------------------------------------------------------- */
 
-@gradient2: #A2D7D8;
-@gradient1: #799FC6;
+@bgGradient2: #A2D7D8;
+@bgGradient1: #799FC6;
 
 .bg {
     margin-top: -20px;
     padding: 180px 20px;
-    background: @gradient1;
-    background: -webkit-gradient(left, @gradient1, @gradient2);
-    background: -webkit-linear-gradient(left, @gradient1, @gradient2);
-    background:    -moz-linear-gradient(left, @gradient1, @gradient2);
-    background:     -ms-linear-gradient(left, @gradient1, @gradient2);
-    background:      -o-linear-gradient(left, @gradient1, @gradient2);
-    background:         linear-gradient(left, @gradient1, @gradient2);
+    background: @bgGradient1;
+    background: -webkit-gradient(left, @bgGradient1, @bgGradient2);
+    background: -webkit-linear-gradient(left, @bgGradient1, @bgGradient2);
+    background:    -moz-linear-gradient(left, @bgGradient1, @bgGradient2);
+    background:     -ms-linear-gradient(left, @bgGradient1, @bgGradient2);
+    background:      -o-linear-gradient(left, @bgGradient1, @bgGradient2);
+    background:         linear-gradient(left, @bgGradient1, @bgGradient2);
 }
 
 
@@ -93,6 +96,14 @@ h2 {
     Footer
 ----------------------------------------------------------------------------- */
 
+.footer .row {
+    background: @aux-color0;
+    border-top: 4px solid @main-color1;
+    padding: 20px 0;
+    text-align: center;
+}
+
 .footer p {
+    color: @main-color0;
     font-size: 0.750em;
 }
