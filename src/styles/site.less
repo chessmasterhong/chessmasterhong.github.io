@@ -1,6 +1,10 @@
 @main-color0: #ffffff;
 @main-color1: #ffff00;
 @aux-color0: #000000;
+@aux-color1: #f0f0f0;
+@aux-color2: #d8d8d8;
+@bgGradient2: #A2D7D8;
+@bgGradient1: #799FC6;
 
 /* -----------------------------------------------------------------------------
     Global
@@ -16,6 +20,8 @@ h2 {
     font-size: 1.500em;
     font-variant: small-caps;
     font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -59,9 +65,6 @@ h2 {
     Background
 ----------------------------------------------------------------------------- */
 
-@bgGradient2: #A2D7D8;
-@bgGradient1: #799FC6;
-
 .bg {
     margin-top: -20px;
     padding: 180px 20px;
@@ -90,11 +93,26 @@ h2 {
 
 /* ----- Contact ----- */
 
+#contact {
+    background: @aux-color1;
+    border-top: 1px solid @aux-color2;
+    padding-bottom: 66px;
+    padding: 26px;
+}
+
+#contact p {
+    font-size: 1em;
+}
 
 
 /* -----------------------------------------------------------------------------
     Footer
 ----------------------------------------------------------------------------- */
+
+.footer {
+    margin-top: -24px;
+    background: @aux-color1;
+}
 
 .footer .row {
     background: @aux-color0;
