@@ -25,5 +25,8 @@
   "bugs": "https://github.com/chessmasterhong/chessmasterhong.github.io/issues",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-webserver": "^0.9.0"
+  }
 }
