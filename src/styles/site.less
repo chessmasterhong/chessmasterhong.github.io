@@ -1,9 +1,7 @@
-@gradient2: #A2D7D8;
-@gradient1: #799FC6;
-
 /* -----------------------------------------------------------------------------
     Global
 ----------------------------------------------------------------------------- */
+
 body {
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -27,10 +25,39 @@ h2 {
     Navigation Menu
 ----------------------------------------------------------------------------- */
 
+.nav {
+    position: relative;
+}
+
+.nav .row {
+    background: #000000;
+    border-bottom: 4px solid #ffff00;
+}
+
+.nav .row a {
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 0.875em;
+    font-variant: small-caps;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 12px 15px;
+    text-decoration: none;
+}
+
+.nav .row a:active,
+.nav .row a:hover {
+    color: #ffff00;
+}
+
 
 /* -----------------------------------------------------------------------------
     Background
 ----------------------------------------------------------------------------- */
+
+@gradient2: #A2D7D8;
+@gradient1: #799FC6;
 
 .bg {
     margin-top: -20px;
