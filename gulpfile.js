@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 gulp.task('default', function() {
     gulp.src('./src/')
         .pipe(webserver({
-            livereload: true,
-            open: true
+            host: '0.0.0.0',
+            port: 8080,
+            livereload: true
         }));
 });
