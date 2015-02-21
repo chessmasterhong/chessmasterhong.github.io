@@ -3,8 +3,9 @@
 @aux-color0: #000000;
 @aux-color1: #f0f0f0;
 @aux-color2: #d8d8d8;
-@bgGradient2: #A2D7D8;
-@bgGradient1: #799FC6;
+@bgGradientAngle: 45deg;
+@bgGradient0: #799FC6;
+@bgGradient1: #A2D7D8;
 
 /* -----------------------------------------------------------------------------
     Global
@@ -68,13 +69,13 @@ h2 {
 .bg {
     margin-top: -20px;
     padding: 180px 20px;
-    background: @bgGradient1;
-    background: -webkit-gradient(left, @bgGradient1, @bgGradient2);
-    background: -webkit-linear-gradient(left, @bgGradient1, @bgGradient2);
-    background:    -moz-linear-gradient(left, @bgGradient1, @bgGradient2);
-    background:     -ms-linear-gradient(left, @bgGradient1, @bgGradient2);
-    background:      -o-linear-gradient(left, @bgGradient1, @bgGradient2);
-    background:         linear-gradient(left, @bgGradient1, @bgGradient2);
+    background: @bgGradient0;
+    background: -webkit-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    background: -webkit-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    background:    -moz-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    background:     -ms-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    background:      -o-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    background:         linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
 }
 
 
