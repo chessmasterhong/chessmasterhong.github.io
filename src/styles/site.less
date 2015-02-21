@@ -1,11 +1,13 @@
 @main-color0: #ffffff;
 @main-color1: #ffff00;
-@aux-color0: #000000;
+@aux-color0: #222230;
 @aux-color1: #f0f0f0;
 @aux-color2: #d8d8d8;
 @bgGradientAngle: 45deg;
 @bgGradient0: #799FC6;
 @bgGradient1: #A2D7D8;
+
+@sectionPadding: 26px;
 
 /* -----------------------------------------------------------------------------
     Global
@@ -67,8 +69,6 @@ h2 {
 ----------------------------------------------------------------------------- */
 
 .bg {
-    margin-top: -20px;
-    padding: 180px 20px;
     background: @bgGradient0;
     background: -webkit-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
     background: -webkit-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
@@ -76,6 +76,8 @@ h2 {
     background:     -ms-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
     background:      -o-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
     background:         linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+    margin-top: -20px;
+    padding: 180px 20px;
 }
 
 
@@ -85,17 +87,26 @@ h2 {
 
 /* ----- About ----- */
 
+#about {
+    padding: @sectionPadding;
+}
+
 
 /* ----- Showcase ----- */
-
-
-/* ----- Portfolio ----- */
 
 #showcase {
     background: @aux-color1;
     border-bottom: 1px solid @aux-color2;
     border-top: 1px solid @aux-color2;
-    padding: 26px 0;
+    padding: @sectionPadding 0;
+
+}
+
+
+/* ----- Portfolio ----- */
+
+#portfolio {
+    padding: @sectionPadding 0;
 }
 
 
@@ -104,8 +115,7 @@ h2 {
 #contact {
     background: @aux-color1;
     border-top: 1px solid @aux-color2;
-    padding-bottom: 66px;
-    padding: 26px;
+    padding: @sectionPadding 0 66px;
 }
 
 #contact p {
