@@ -1,6 +1,7 @@
-@main-color0: #FFFFFF;
-@main-color1: #FC645F;
-@main-color2: #FED136;
+@main-color0: #000000;
+@main-color1: #E8E8E8;
+@main-color2: #FC645F;
+@main-color3: #FED136;
 @aux-color0: #222230;
 @aux-color1: #F0F0F0;
 @aux-color2: #D8D8D8;
@@ -45,11 +46,11 @@ h2 {
 
 .nav .row {
     background: @aux-color0;
-    border-bottom: 4px solid @main-color2;
+    border-bottom: 4px solid @main-color3;
 }
 
 .nav .row a {
-    color: @main-color0;
+    color: @main-color1;
     float: left;
     font-size: 0.875em;
     font-variant: small-caps;
@@ -61,7 +62,7 @@ h2 {
 
 .nav .row a:active,
 .nav .row a:hover {
-    color: @main-color2;
+    color: @main-color3;
 }
 
 
@@ -110,16 +111,40 @@ h2 {
     padding: @sectionPadding 0;
 }
 
-#portfolio ul.portfolio-items li a {
+#portfolio ul.portfolio-items li .portfolio-item {
     background: @aux-color1;
     border: 1px solid @aux-color2;
     display: block;
     padding: 10px;
-    text-align: center;
+    position: relative;
     text-decoration: none;
 }
 
+#portfolio ul.portfolio-items li .portfolio-item .item-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border: 10px solid @aux-color1;
+    display: none;
+    height: 100%;
+    left: 0;
+    padding: 20px 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 
+#portfolio ul.portfolio-items li .portfolio-item .item-caption h4 {
+    border-bottom: 1px dotted @main-color1;
+    color: @main-color1;
+    font-size: 1.250em;
+    margin-bottom: 10px;
+    padding: 0 10px 10px;
+    text-align: center;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption p {
+    color: @main-color1;
+    margin: 0 4px;
+}
 
 
 /* ---------- Contact ---------- */
@@ -144,9 +169,9 @@ h2 {
 }
 
 #contact ul.social-links li a {
-    background-color: @main-color1;
+    background-color: @main-color2;
     border-radius: 100%;
-    color: @main-color0;
+    color: @main-color1;
     display: block;
     font-size: 2.000em;
     height: 1.500em;
@@ -161,7 +186,7 @@ h2 {
 #contact ul.social-links li a:hover,
 #contact ul.social-links li a:focus,
 #contact ul.social-links li a:active {
-    background-color: @main-color2;
+    background-color: @main-color3;
 }
 
 
@@ -176,12 +201,12 @@ footer {
 
 footer .row {
     background: @aux-color0;
-    border-top: 4px solid @main-color2;
+    border-top: 4px solid @main-color3;
     padding: 20px 0;
     text-align: center;
 }
 
 footer p {
-    color: @main-color0;
+    color: @main-color1;
     font-size: 0.750em;
 }
