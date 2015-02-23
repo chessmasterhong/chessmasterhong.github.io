@@ -1,8 +1,9 @@
-@main-color0: #ffffff;
-@main-color1: #ffff00;
+@main-color0: #FFFFFF;
+@main-color1: #FC645F;
+@main-color2: #FED136;
 @aux-color0: #222230;
-@aux-color1: #f0f0f0;
-@aux-color2: #d8d8d8;
+@aux-color1: #F0F0F0;
+@aux-color2: #D8D8D8;
 @bgGradientAngle: 45deg;
 @bgGradient0: #799FC6;
 @bgGradient1: #A2D7D8;
@@ -44,7 +45,7 @@ h2 {
 
 .nav .row {
     background: @aux-color0;
-    border-bottom: 4px solid @main-color1;
+    border-bottom: 4px solid @main-color2;
 }
 
 .nav .row a {
@@ -60,7 +61,7 @@ h2 {
 
 .nav .row a:active,
 .nav .row a:hover {
-    color: @main-color1;
+    color: @main-color2;
 }
 
 
@@ -85,14 +86,14 @@ h2 {
     Main Content
 ----------------------------------------------------------------------------- */
 
-/* ----- About ----- */
+/* ---------- About ---------- */
 
 #about {
     padding: @sectionPadding;
 }
 
 
-/* ----- Showcase ----- */
+/* ---------- Showcase ---------- */
 
 #showcase {
     background: @aux-color1;
@@ -103,19 +104,53 @@ h2 {
 }
 
 
-/* ----- Portfolio ----- */
+/* ---------- Portfolio ---------- */
 
 #portfolio {
     padding: @sectionPadding 0;
 }
 
 
-/* ----- Contact ----- */
+/* ---------- Contact ---------- */
 
 #contact {
     background: @aux-color1;
     border-top: 1px solid @aux-color2;
     padding: @sectionPadding 0 66px;
+    text-align: center;
+}
+
+/* Social Links */
+
+#contact ul.social-links {
+    list-style: none;
+    margin: 0;
+}
+
+#contact ul.social-links li {
+    display: inline-block;
+    padding: 4px;
+}
+
+#contact ul.social-links li a {
+    background-color: @main-color1;
+    border-radius: 100%;
+    color: @main-color0;
+    display: block;
+    font-size: 2.000em;
+    height: 1.500em;
+    line-height: 1.500em;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+    width: 1.500em;
+    text-align: center;
+}
+
+#contact ul.social-links li a:hover,
+#contact ul.social-links li a:focus,
+#contact ul.social-links li a:active {
+    background-color: @main-color2;
 }
 
 
@@ -123,19 +158,19 @@ h2 {
     Footer
 ----------------------------------------------------------------------------- */
 
-.footer {
+footer {
     margin-top: -24px;
     background: @aux-color1;
 }
 
-.footer .row {
+footer .row {
     background: @aux-color0;
-    border-top: 4px solid @main-color1;
+    border-top: 4px solid @main-color2;
     padding: 20px 0;
     text-align: center;
 }
 
-.footer p {
+footer p {
     color: @main-color0;
     font-size: 0.750em;
 }
