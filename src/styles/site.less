@@ -5,9 +5,9 @@
 @aux-color0: #222230;
 @aux-color1: #F2F2F2;
 @aux-color2: #D8D8D8;
-@bgGradientAngle: 45deg;
-@bgGradient0: #799FC6;
-@bgGradient1: #A2D7D8;
+@bannerGradientAngle: 45deg;
+@bannerGradient0: #799FC6;
+@bannerGradient1: #A2D7D8;
 
 @sectionPadding: 26px;
 
@@ -73,10 +73,10 @@ h2 {
     Background
 ----------------------------------------------------------------------------- */
 
-.bg {
-    background: @bgGradient0;
-    background: -webkit-linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
-    background:         linear-gradient(@bgGradientAngle, @bgGradient0, @bgGradient1);
+.banner {
+    background: @bannerGradient0;
+    background: -webkit-linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
+    background:         linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
     margin-top: -20px;
     padding: 180px 20px;
 }
@@ -225,7 +225,7 @@ footer p {
         display: none;
     }
 
-    .bg {
+    .banner {
         margin-top: 0;
         padding: 50px 20px;
     }
