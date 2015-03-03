@@ -127,27 +127,29 @@
         <script type="text/javascript" src="scripts/captions.js"></script>
 
         <script type="text/javascript">
-            'use strict';
+            (function() {
+                'use strict';
 
-            var Project = Backbone.Model.extend({
-                defaults: function() {
-                    return {
-                        title: '',
-                        description: '',
-                        demoUrl: '',
-                        srcUrl: ''
-                    };
-                }
-            });
+                var Project = Backbone.Model.extend({
+                    defaults: function() {
+                        return {
+                            title: '',
+                            description: '',
+                            demoUrl: '',
+                            srcUrl: ''
+                        };
+                    }
+                });
 
-            var Projects = Backbone.Collection.extend({
-                model: Project
-            });
+                var Projects = Backbone.Collection.extend({
+                    model: Project
+                });
 
-            var proj1 = new Project({ title: 'Hello', description: 'World' });
-            var proj2 = new Project({ title: 'Foo', description: 'Bar' });
-            var ProjectList = new Projects([proj1, proj2]);
-            console.log(ProjectList);
+                var proj1 = new Project({ title: 'Hello', description: 'World' });
+                var proj2 = new Project({ title: 'Foo', description: 'Bar' });
+                var ProjectList = new Projects([proj1, proj2]);
+                console.log(ProjectList.toJSON());
+            })();
         </script>
     </body>
 </html>
