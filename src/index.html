@@ -78,17 +78,6 @@
 
                         <ul class="large-block-grid-3 medium-block-grid-2 portfolio-items">
                             <li>
-                                <div class="panel portfolio-item">
-                                    <div class="item-caption">
-                                        <h4>Title</h4>
-                                        <p>Caption</p>
-
-                                        <a href="#" class="button tiny radius">Read more</a>
-                                        <a href="#" class="button tiny radius">Live Demo</a>
-                                        <a href="#" class="button tiny radius">Source Code</a>
-                                    </div>
-                                    <img src="//placehold.it/400x400">
-                                </div>
                             </li>
                         </ul>
                     </div>
@@ -134,7 +123,7 @@
                     defaults: function() {
                         return {
                             title: '',
-                            description: '',
+                            caption: '',
                             demoUrl: '',
                             srcUrl: ''
                         };
@@ -145,11 +134,25 @@
                     model: Project
                 });
 
-                var proj1 = new Project({ title: 'Hello', description: 'World' });
-                var proj2 = new Project({ title: 'Foo', description: 'Bar' });
+                var proj1 = new Project({ title: 'Hello', caption: 'World' });
+                var proj2 = new Project({ title: 'Foo', caption: 'Bar' });
                 var ProjectList = new Projects([proj1, proj2]);
                 console.log(ProjectList.toJSON());
             })();
+        </script>
+
+        <script type="text/template" id="project-item-template">
+            <div class="panel portfolio-item">
+                <div class="item-caption">
+                    <h4><%= title %></h4>
+                    <p><%= caption %></p>
+
+                    <a href="#" class="button tiny radius">Read more</a>
+                    <a href="#" class="button tiny radius">Live Demo</a>
+                    <a href="#" class="button tiny radius">Source Code</a>
+                </div>
+                <img src="//placehold.it/400x400">
+            </div>
         </script>
     </body>
 </html>
