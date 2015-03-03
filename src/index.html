@@ -110,7 +110,6 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-        <script type="text/javascript" src="scripts/captions.js"></script>
 
         <script type="text/javascript">
             (function($) {
@@ -164,15 +163,12 @@
                 $(document).ready(function() {
                     ProjectList.add(new Project({ title: 'Hello', caption: 'World' }));
                     ProjectList.add(new Project({ title: 'Foo', caption: 'Bar' }));
-
-                    console.log(ProjectList.toJSON());
-
                     var Portfolio = new PortfolioView();
-
-                    console.log(Portfolio);
                 });
             })(jQuery);
         </script>
+
+        <script type="text/javascript" src="scripts/captions.js"></script>
 
         <script type="text/template" id="project-item-template">
             <div class="panel portfolio-item">
