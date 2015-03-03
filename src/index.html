@@ -120,8 +120,9 @@
                         return {
                             title: '',
                             caption: '',
-                            demoUrl: '',
-                            srcUrl: ''
+                            thumbnailUrl: '//placehold.it/400x400',
+                            demoUrl: '#',
+                            srcUrl: '#'
                         };
                     }
                 });
@@ -153,7 +154,7 @@
                     render: function() {
                         var self = this;
                         self.$el.html('');
-                        _.each(this.model.toArray(), function(project, p) {
+                        _.each(this.model.toArray(), function(project) {
                             self.$el.append(new ProjectView({ model: project }).render().$el);
                         });
                         return this;
@@ -175,12 +176,11 @@
                 <div class="item-caption">
                     <h4><%= title %></h4>
                     <p><%= caption %></p>
-
                     <a href="#" class="button tiny radius">Read more</a>
-                    <a href="#" class="button tiny radius">Live Demo</a>
-                    <a href="#" class="button tiny radius">Source Code</a>
+                    <a href="<%= demoUrl %>" class="button tiny radius">Live Demo</a>
+                    <a href="<%= srcUrl %>" class="button tiny radius">Source Code</a>
                 </div>
-                <img src="//placehold.it/400x400">
+                <img src="<%= thumbnailUrl %>">
             </div>
         </script>
     </body>
