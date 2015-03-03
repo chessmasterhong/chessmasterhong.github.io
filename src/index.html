@@ -147,11 +147,14 @@
 
                 var PortfolioView = Backbone.View.extend({
                     model: ProjectList,
-                    el: $('#project-items'),
+                    el: $('#portfolio-items'),
+                    initialize: function() {
+                        this.render();
+                    },
                     render: function() {
                         var self = this;
                         self.$el.html('');
-                        _.each(this.model.toArray(), function(project, i) {
+                        _.each(this.model.toArray(), function(project, p) {
                             self.$el.append(new ProjectView({ model: project }).render().$el);
                         });
                         return this;
