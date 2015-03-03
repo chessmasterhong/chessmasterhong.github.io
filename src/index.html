@@ -131,6 +131,8 @@
                     model: Project
                 });
 
+                var ProjectList = new Projects();
+
                 var ProjectView = Backbone.View.extend({
                     model: new Project(),
                     tagName: 'li',
@@ -144,23 +146,23 @@
                 });
 
                 var PortfolioView = Backbone.View.extend({
-                    model: Projects,
+                    model: ProjectList,
                     el: $('#project-items'),
                     render: function() {
                         var self = this;
+                        self.$el.html('');
                         _.each(this.model.toArray(), function(project, i) {
-                            self.$el.append(new Project({ model: project }).render().$el);
+                            self.$el.append(new ProjectView({ model: project }).render().$el);
                         });
                         return this;
                     }
                 });
 
                 $(document).ready(function() {
-                    var proj1 = new Project({ title: 'Hello', caption: 'World' });
-                    var proj2 = new Project({ title: 'Foo', caption: 'Bar' });
-                    var ProjectList = new Projects([proj1, proj2]);
+                    ProjectList.add(new Project({ title: 'Hello', caption: 'World' }));
+                    ProjectList.add(new Project({ title: 'Foo', caption: 'Bar' }));
 
-                    console.log(ProjectList);
+                    console.log(ProjectList.toJSON());
 
                     var Portfolio = new PortfolioView();
 
