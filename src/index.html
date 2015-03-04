@@ -107,69 +107,7 @@
             </div>
         </footer>
 
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-
-        <script type="text/javascript">
-            (function($) {
-                'use strict';
-
-                var Project = Backbone.Model.extend({
-                    defaults: function() {
-                        return {
-                            title: '',
-                            caption: '',
-                            thumbnailUrl: '//placehold.it/400x400',
-                            demoUrl: '#',
-                            srcUrl: '#'
-                        };
-                    }
-                });
-
-                var Projects = Backbone.Collection.extend({
-                    model: Project
-                });
-
-                var ProjectList = new Projects();
-
-                var ProjectView = Backbone.View.extend({
-                    model: new Project(),
-                    tagName: 'li',
-                    initialize: function() {
-                        this.template = _.template($('#project-item-template').html());
-                    },
-                    render: function() {
-                        this.$el.html(this.template(this.model.toJSON()));
-                        return this;
-                    }
-                });
-
-                var PortfolioView = Backbone.View.extend({
-                    model: ProjectList,
-                    el: $('#portfolio-items'),
-                    initialize: function() {
-                        this.render();
-                    },
-                    render: function() {
-                        var self = this;
-                        self.$el.html('');
-                        _.each(this.model.toArray(), function(project) {
-                            self.$el.append(new ProjectView({ model: project }).render().$el);
-                        });
-                        return this;
-                    }
-                });
-
-                $(document).ready(function() {
-                    ProjectList.add(new Project({ title: 'Hello', caption: 'World' }));
-                    ProjectList.add(new Project({ title: 'Foo', caption: 'Bar' }));
-                    var Portfolio = new PortfolioView();
-                });
-            })(jQuery);
-        </script>
-
-        <script type="text/javascript" src="scripts/captions.js"></script>
+        <script type="text/javascript" src="vendor/requirejs/require.js" data-main="scripts/main.js"></script>
 
         <script type="text/template" id="project-item-template">
             <div class="panel portfolio-item">
