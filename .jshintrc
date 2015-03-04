@@ -5,11 +5,13 @@
     "node": true,
 
     // ENFORCING OPTIONS
+    "bitwise": true,
     "camelcase": true,
+    "curly": true,
     "eqeqeq": true,
     "indent": 4,
     "latedef": true,
-    //"maxlen": 80,
+    "maxlen": 80,
     "newcap": true,
     "quotmark": "single",
     "strict": true,
@@ -22,5 +24,10 @@
     "laxcomma": true,
 
     // CUSTOM GLOBALS
-    "globals": {}
+    "globals": {
+      "_": true,
+      "Backbone": true,
+      "define": true,
+      "require": true
+    }
 }
