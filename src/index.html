@@ -20,74 +20,75 @@
     <body>
         <!-- Header -->
         <header class="header">
-            <div class="row">
-                <div class="large-12 column title">
-                    Kevin Chan
+            <!-- Header: Logo -->
+            <section class="logo">
+                <div class="row">
+                    <div class="large-12 column title">
+                        Kevin Chan
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Header: Navigation -->
+            <nav class="row nav">
+                <div class="row">
+                    <div class="large-14 column">
+                        <a href="#about">About</a>
+                        <a href="#showcase">Showcase</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header: Banner -->
+            <section class="banner">
+                <div class="row">
+                    <div class="large-12 column">
+                        <h1>Blah blah blah</h1>
+                    </div>
+                </div>
+            </section>
         </header>
-
-        <!-- Navigation Bar -->
-        <nav class="row nav">
-            <div class="row">
-                <div class="large-14 column">
-                    <a href="#about">About</a>
-                    <a href="#showcase">Showcase</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Banner -->
-        <section class="banner">
-            <div class="row">
-                <div class="large-12 column">
-                    <h1>Blah blah blah</h1>
-                </div>
-            </div>
-        </section>
 
         <!-- Main Content -->
         <main class="main">
             <!-- Main Content: About Me -->
-            <div id="about">
+            <section id="about">
                 <div class="row">
                     <div class="large-12 medium-12 column">
                         <h2 class="section-title">About Me</h2>
                         <p>Hello World!</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Main Content: Showcase -->
-            <div id="showcase">
+            <section id="showcase">
                 <div class="row">
                     <div class="large-12 medium-12 column">
                         <h2 class="section-title">Showcase</h2>
                         <p>Showcase</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Main Content: Portfolio -->
-            <div id="portfolio">
+            <section id="portfolio">
                 <div class="row">
                     <div class="large-12 medium-12 column">
                         <h2 class="section-title">Portfolio</h2>
-
                         <ul id="portfolio-items" class="large-block-grid-3 medium-block-grid-2 portfolio-items"></ul>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Main Content: Contact -->
-            <div id="contact">
+            <section id="contact">
                 <div class="row">
                     <div class="large-12 medium-12 column">
                         <h2 class="section-title">Contact</h2>
-                        <p>Contact</p>
-
+                        <p id="hi"></p>
                         <ul class="social-links">
                             <li><a href="//github.com/chessmasterhong"><i class="fa fa-github"></i></a></li>
                             <li><a href="//bitbucket.org/chessmasterhong"><i class="fa fa-bitbucket"></i></a></li>
@@ -95,7 +96,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
 
         <!-- Footer -->
@@ -109,6 +110,7 @@
 
         <script type="text/javascript" src="vendor/requirejs/require.js" data-main="scripts/main.js"></script>
 
+        <!-- Template snippets -->
         <script type="text/template" id="project-item-template">
             <div class="panel portfolio-item">
                 <div class="item-caption">

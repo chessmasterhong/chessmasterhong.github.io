@@ -36,21 +36,21 @@ h2 {
     Header
 ----------------------------------------------------------------------------- */
 
+/* ---------- Logo ---------- */
 
-/* -----------------------------------------------------------------------------
-    Navigation Menu
------------------------------------------------------------------------------ */
 
-.nav {
+/* ---------- Navigation ---------- */
+
+.header .nav {
     position: relative;
 }
 
-.nav .row {
+.header .nav .row {
     background: @aux-color0;
     border-bottom: 4px solid @main-color3;
 }
 
-.nav .row a {
+.header .nav .row a {
     color: @main-color1;
     float: left;
     font-size: 0.875rem;
@@ -61,19 +61,17 @@ h2 {
     text-decoration: none;
 }
 
-.nav .row a:active,
-.nav .row a:hover {
+.header .nav .row a:active,
+.header .nav .row a:hover {
     border-bottom: 4px solid @main-color2;
     color: @main-color3;
     margin-bottom: -4px;
 }
 
 
-/* -----------------------------------------------------------------------------
-    Background
------------------------------------------------------------------------------ */
+/* ---------- Banner ---------- */
 
-.banner {
+.header .banner {
     background: @bannerGradient0;
     background: -webkit-linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
     background:         linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
@@ -89,7 +87,7 @@ h2 {
 /* ---------- About ---------- */
 
 #about {
-    padding: @sectionPadding;
+    padding: @sectionPadding 0;
 }
 
 
@@ -198,19 +196,19 @@ h2 {
     Footer
 ----------------------------------------------------------------------------- */
 
-footer {
+.footer {
     margin-top: -24px;
     background: @aux-color1;
 }
 
-footer .row {
+.footer .row {
     background: @aux-color0;
     border-top: 4px solid @main-color3;
     padding: 20px 0;
     text-align: center;
 }
 
-footer p {
+.footer p {
     color: @main-color1;
     font-size: 0.750rem;
 }
@@ -221,11 +219,12 @@ footer p {
 ----------------------------------------------------------------------------- */
 
 @media(max-width: 64em) {
-    .nav {
+    header .logo,
+    header .nav {
         display: none;
     }
 
-    .banner {
+    header .banner {
         margin-top: 0;
         padding: 50px 20px;
     }
