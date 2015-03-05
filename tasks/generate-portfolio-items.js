@@ -8,24 +8,24 @@ var srcRoot = '../src/';
 var charset = 'utf8';
 
 
-var matchTag = function(identifier) {
-    return new RegExp(
-        '\\{\\{\\s*' +
-        identifier.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&') +
-        '\\s*\\}\\}',
-        'g'
-    );
+var matchTag = function(tag) {
+    tag = tag.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+    return new RegExp('\\{\\{\\s*' + tag + '\\s*\\}\\}', 'g');
 };
 
 fs.readFile(srcRoot + 'templates/portfolio-item.html', charset,
     function(err, html) {
         if(!err) {
+            var i;
+
             var projectData = JSON.parse(
                 fs.readFileSync(srcRoot + 'data/projects.json')
             );
 
-            for(var i = 0; i < projectData.length; i++) {
-                var projectItem = html.replace(
+            var projectItem = html;
+
+            for(i = 0; i < projectData.length; i++) {
+                projectItem = html.replace(
                     matchTag('title'),
                     projectData[i].title || ''
                 )
