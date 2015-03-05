@@ -8,10 +8,12 @@ var srcRoot = '../src/';
 var charset = 'utf8';
 
 fs.readFile(srcRoot + 'templates/portfolio-item.html', charset,
-    function(err, dataRaw) {
+    function(err, html) {
         if(!err) {
-            var data = dataRaw;
-            console.log(data);
+            var projectData = JSON.parse(
+                fs.readFileSync(srcRoot + 'data/projects.json')
+            );
+            console.log(projectData);
         } else {
             console.log(err);
         }
