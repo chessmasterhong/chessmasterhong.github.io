@@ -78,7 +78,20 @@
                 <div class="row">
                     <div class="large-12 medium-12 column">
                         <h2 class="section-title">Portfolio</h2>
-                        <ul id="portfolio-items" class="large-block-grid-3 medium-block-grid-2 portfolio-items"></ul>
+                        <ul class="large-block-grid-3 medium-block-grid-2 portfolio-items">
+                            <li>
+                                <div class="panel portfolio-item">
+                                    <div class="item-caption">
+                                        <h4><%= title %></h4>
+                                        <p><%= caption %></p>
+                                        <a href="#" class="button tiny radius">Read more</a>
+                                        <a href="#" class="button tiny radius">Live Demo</a>
+                                        <a href="#" class="button tiny radius">Source Code</a>
+                                    </div>
+                                    <img src="//placehold.it/400x400">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -108,20 +121,8 @@
             </div>
         </footer>
 
-        <script type="text/javascript" src="vendor/requirejs/require.js" data-main="scripts/main.js"></script>
+        <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
 
-        <!-- Template snippets -->
-        <script type="text/template" id="project-item-template">
-            <div class="panel portfolio-item">
-                <div class="item-caption">
-                    <h4><%= title %></h4>
-                    <p><%= caption %></p>
-                    <a href="#" class="button tiny radius">Read more</a>
-                    <a href="<%= demoUrl %>" class="button tiny radius">Live Demo</a>
-                    <a href="<%= srcUrl %>" class="button tiny radius">Source Code</a>
-                </div>
-                <img src="<%= thumbnailUrl %>">
-            </div>
-        </script>
+        <script type="text/javascript" src="scripts/captions.js"></script>
     </body>
 </html>
