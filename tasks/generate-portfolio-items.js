@@ -24,14 +24,34 @@ fs.readFile(srcRoot + 'templates/portfolio-item.html', charset,
                 fs.readFileSync(srcRoot + 'data/projects.json')
             );
 
-            var projectItem = html.replace(
-                matchTag('title'),
-                projectData[0].title
-            );
+            for(var i = 0; i < projectData.length; i++) {
+                var projectItem = html.replace(
+                    matchTag('title'),
+                    projectData[i].title || ''
+                )
+                .replace(
+                    matchTag('caption'),
+                    projectData[i].caption || ''
+                )
+                //.replace(
+                //    matchTag('readMoreUrl'),
+                //    projectData[i].readMoreUrl || '#'
+                //)
+                .replace(
+                    matchTag('demoUrl'),
+                    projectData[i].demoUrl || '#'
+                )
+                .replace(
+                    matchTag('srcUrl'),
+                    projectData[i].srcUrl || '#'
+                )
+                .replace(
+                    matchTag('thumbnailUrl'),
+                    projectData[i].thumbnailUrl || '//placehold.it/400x400'
+                );
 
-
-
-            console.log(projectItem);
+                console.log(projectItem);
+            }
         } else {
             console.log(err);
         }
