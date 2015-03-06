@@ -9,51 +9,95 @@ var gulp = require('gulp'),
     shell = require('gulp-shell'),
     webserver = require('gulp-webserver');
 
-gulp.task('lint', function() {
+
+/**
+ * Validation
+ */
+gulp.task('scripts-lint', function() {
     return gulp.src('./src/scripts/**/*.js')
         .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter(require('jshint-stylish')));
+        .pipe(jshint.reporter(require('jshint-stylish')))
+        .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('build:styles', function() {
+
+/**
+ * Clean
+ */
+gulp.task('build:clean', function() {
+    return del.sync(['dist']);
+});
+
+
+/**
+ * Copy
+ */
+gulp.task('build:scripts-copy', function() {
+    return gulp.src('./src/scripts/**/*.js')
+        .pipe(gulp.dest('./dist/scripts/'));
+});
+
+gulp.task('build:vendor-copy', function() {
+    return gulp.src('./src/vendor/**/*')
+        .pipe(gulp.dest('./dist/vendor/'));
+});
+
+
+/**
+ * Generate
+ */
+gulp.task('build:html-generate', shell.task([
+    'node ./tasks/generate-portfolio.js'
+]));
+
+gulp.task('build:styles-less', function() {
     return gulp.src('./src/styles/**/*.less')
         .pipe(less())
         .pipe(gulp.dest('./dist/styles/'));
 });
 
-gulp.task('build:html-generate', shell.task('node ./tasks/generate-portfolio.js'));
 
+/**
+ * Process
+ */
 gulp.task('build:html-process', function() {
     return gulp.src('./dist/index.html')
         .pipe(preprocess())
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('build:copy', function() {
-    return gulp.src('./src/{scripts,styles,vendor}/**/*')
-        .pipe(gulp.dest('./dist/'));
-});
 
-gulp.task('build:clean', function() {
-    return del.sync(['dist']);
-});
-
+/**
+ * Build
+ */
 gulp.task('build', function(cb) {
     runSequence(
+        'scripts-lint',
         'build:clean',
-        'lint',
-        'build:copy',
-        ['build:html-generate', 'build:styles'],
+        ['build:scripts-copy', 'build:vendor-copy'],
+        ['build:html-generate', 'build:styles-less'],
         'build:html-process',
         cb
     );
 });
 
-gulp.task('default', function() {
+
+/**
+ * Webserver
+ */
+gulp.task('server-dev', function() {
+    gulp.src('./src/')
+        .pipe(webserver({
+            host: '0.0.0.0',
+            port: 8080,
+            livereload: true
+        }));
+});
+
+gulp.task('server', function() {
     gulp.src('./dist/')
         .pipe(webserver({
             host: '0.0.0.0',
             port: 8080
-            //livereload: true
         }));
 });
