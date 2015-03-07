@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     data = require('gulp-data'),
     del = require('del'),
+    fs = require('fs'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
@@ -47,20 +48,19 @@ gulp.task('build:vendor-copy', function() {
 
 
 /**
- * Generate
+ * Compile
  */
-gulp.task('build:html-generate', shell.task([
-    'node ./tasks/generate-portfolio.js'
-]));
-
 gulp.task('build:html-jade', function() {
     return gulp.src('./src/index.jade')
         .pipe(data(function(file) {
-            return JSON.parse(require('fs').readFileSync('./src/data/' + path.basename(file.path, '.jade') + '.json'));
+            return require(
+                './src/data/' + path.basename(file.path, '.jade') + '.json'
+            );
         }))
         .pipe(jade({
             pretty: true
         }))
+        .pipe(preprocess())
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -72,16 +72,6 @@ gulp.task('build:styles-less', function() {
 
 
 /**
- * Process
- */
-gulp.task('build:html-process', function() {
-    return gulp.src('./dist/index.html')
-        .pipe(preprocess())
-        .pipe(gulp.dest('./dist/'));
-});
-
-
-/**
  * Build
  */
 gulp.task('build', function(cb) {
@@ -89,8 +79,7 @@ gulp.task('build', function(cb) {
         'scripts-lint',
         'build:clean',
         ['build:scripts-copy', 'build:vendor-copy'],
-        //['build:html-generate', 'build:styles-less'],
-        //'build:html-process',
+        ['build:html-jade', 'build:styles-less'],
         cb
     );
 });
@@ -99,15 +88,6 @@ gulp.task('build', function(cb) {
 /**
  * Webserver
  */
-gulp.task('server-dev', function() {
-    gulp.src('./src/')
-        .pipe(webserver({
-            host: '0.0.0.0',
-            port: 8080,
-            livereload: true
-        }));
-});
-
 gulp.task('server', function() {
     gulp.src('./dist/')
         .pipe(webserver({
