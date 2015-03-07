@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     del = require('del'),
+    jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
     preprocess = require('gulp-preprocess'),
@@ -50,6 +51,14 @@ gulp.task('build:html-generate', shell.task([
     'node ./tasks/generate-portfolio.js'
 ]));
 
+gulp.task('build:html-jade', function() {
+    return gulp.src('./src/index.jade')
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('build:styles-less', function() {
     return gulp.src('./src/styles/**/*.less')
         .pipe(less())
@@ -75,8 +84,8 @@ gulp.task('build', function(cb) {
         'scripts-lint',
         'build:clean',
         ['build:scripts-copy', 'build:vendor-copy'],
-        ['build:html-generate', 'build:styles-less'],
-        'build:html-process',
+        //['build:html-generate', 'build:styles-less'],
+        //'build:html-process',
         cb
     );
 });
