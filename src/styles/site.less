@@ -120,13 +120,18 @@ h2 {
 #portfolio ul.portfolio-items li .portfolio-item .item-caption {
     background: rgba(0, 0, 0, 0.7);
     border: 10px solid @aux-color1;
-    display: none;
     height: 100%;
     left: 0;
+    opacity: 0;
     padding: 20px 10px;
     position: absolute;
     top: 0;
+    transition: opacity .25s ease-in-out;
     width: 100%;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption:hover {
+    opacity: 1;
 }
 
 #portfolio ul.portfolio-items li .portfolio-item .item-caption h4 {
