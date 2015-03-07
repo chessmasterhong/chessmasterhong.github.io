@@ -1,0 +1,15 @@
+section#portfolio
+    div.row
+        div.large-12.medium-12.column
+            h2.section-title Portfolio
+            ul#portfolio-items.large-block-grid-3.medium-block.grid-2.portfolio-items
+                - each project in projects
+                    li
+                        div.panel.portfolio-item
+                            div.item-caption
+                                h4 #{project.title}
+                                p #{project.caption}
+                                //a.button.tiny.radius(href="#") Read more
+                                //a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
+                                //a.button.tiny.radius(href="#{project.srcUrl}") Source Code
+                            //img(src="#{project.thumbnailUrl}")
