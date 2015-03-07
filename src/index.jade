@@ -26,15 +26,15 @@ html(lang="en-US")
         // @echo '<link rel="stylesheet" type="text/css" href="styles/site.css">'
 
     body
-        // Header
+        //- Header
         header.header
-            // Header: Logo
+            //- Header: Logo
             section.logo
                 div.row
                     div.large-12.column.title
                         Kevin Chan
 
-            // Header: Navigation
+            //- Header: Navigation
             nav.nav
                 div.row
                     div.large-12.column
@@ -43,36 +43,37 @@ html(lang="en-US")
                         a(href="#portfolio") portfolio
                         a(href="#contact") contact
 
-            // Header: Banner
+            //- Header: Banner
             section.banner
                 div.row
                     div.large-12.column
                         h1 Blah blah blah
 
-        // Main Content
+        //- Main Content
         main.main
-            // Main Content: About
+            //- Main Content: About
             section#about
                 div.row
                     div.large-12.medium-12.column
                         h2.section-title About Me
                         p Hello World!
 
-            // Main Content: Showcase
+            //- Main Content: Showcase
             section#showcase
                 div.row
                     div.large-12.medium-12.column
                         h2.section-title Showcase
                         p Showcase
 
-            // Main Content: Portfolio
+            //- Main Content: Portfolio
             section#portfolio
                 div.row
                     div.large-12.medium-12.column
                         h2.section-title Portfolio
                         ul#portfolio-items.large-block-grid-3.medium-block.grid-2.portfolio-items
+                            include ./templates/portfolio-item.jade
 
-            // Main Content: Contact
+            //- Main Content: Contact
             section#contact
                 div.row
                     div.large-12.medium-12.column
@@ -88,7 +89,7 @@ html(lang="en-US")
                                 a(href="//www.linkedin.com/in/kchan12")
                                     i.fa.fa-linkedin
 
-        // Footer
+        //- Footer
         footer.footer
             div.row
                 div.large-12.column
