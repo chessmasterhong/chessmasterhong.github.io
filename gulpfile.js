@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     lessPluginAutoPrefix = require('less-plugin-autoprefix'),
     path = require('path'),
-    preprocess = require('gulp-preprocess'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -59,7 +58,6 @@ gulp.task('build:html', function() {
         .pipe(jade({
             pretty: true
         }))
-        .pipe(preprocess())
         .pipe(gulp.dest('./dist/'));
 });
 
