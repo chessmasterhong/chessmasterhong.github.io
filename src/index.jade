@@ -71,7 +71,8 @@ html(lang="en-US")
                     div.large-12.medium-12.column
                         h2.section-title Portfolio
                         ul#portfolio-items.large-block-grid-3.medium-block.grid-2.portfolio-items
-                            include ./templates/portfolio-item.jade
+                            - each project in projects
+                                include "./templates/portfolio-item.jade"
 
             //- Main Content: Contact
             section#contact

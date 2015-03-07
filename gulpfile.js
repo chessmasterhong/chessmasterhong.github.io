@@ -1,10 +1,12 @@
 'use strict';
 
 var gulp = require('gulp'),
+    data = require('gulp-data'),
     del = require('del'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
+    path = require('path'),
     preprocess = require('gulp-preprocess'),
     runSequence = require('run-sequence'),
     shell = require('gulp-shell'),
@@ -53,6 +55,9 @@ gulp.task('build:html-generate', shell.task([
 
 gulp.task('build:html-jade', function() {
     return gulp.src('./src/index.jade')
+        .pipe(data(function(file) {
+            return JSON.parse(require('fs').readFileSync('./src/data/' + path.basename(file.path, '.jade') + '.json'));
+        }))
         .pipe(jade({
             pretty: true
         }))

@@ -12,7 +12,9 @@
   },
   "bugs": "https://github.com/chessmasterhong/chessmasterhong.github.io/issues",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "gulp-data": "^1.2.0"
+  },
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.11",
