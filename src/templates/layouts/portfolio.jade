@@ -4,6 +4,6 @@ section#portfolio
     div.row
         div.large-12.medium-12.column
             h2.section-title Portfolio
-            ul.large-block-grid-3.medium-block.grid-2.portfolio-items
+            ul.portfolio-items.large-block-grid-3.medium-block.grid-2
                 - each project in projects
                     +portfolio-item(project)
