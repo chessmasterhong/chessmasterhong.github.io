@@ -3,21 +3,19 @@
 var gulp = require('gulp'),
     data = require('gulp-data'),
     del = require('del'),
-    fs = require('fs'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
     path = require('path'),
     preprocess = require('gulp-preprocess'),
     runSequence = require('run-sequence'),
-    shell = require('gulp-shell'),
     webserver = require('gulp-webserver');
 
 
 /**
  * Validation
  */
-gulp.task('scripts-lint', function() {
+gulp.task('lint-scripts', function() {
     return gulp.src('./src/scripts/**/*.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter(require('jshint-stylish')))
@@ -36,12 +34,12 @@ gulp.task('build:clean', function() {
 /**
  * Copy
  */
-gulp.task('build:scripts-copy', function() {
+gulp.task('build:copy-scripts', function() {
     return gulp.src('./src/scripts/**/*.js')
         .pipe(gulp.dest('./dist/scripts/'));
 });
 
-gulp.task('build:vendor-copy', function() {
+gulp.task('build:copy-vendors', function() {
     return gulp.src('./src/vendor/**/*')
         .pipe(gulp.dest('./dist/vendor/'));
 });
@@ -50,7 +48,7 @@ gulp.task('build:vendor-copy', function() {
 /**
  * Compile
  */
-gulp.task('build:html-jade', function() {
+gulp.task('build:html', function() {
     return gulp.src('./src/index.jade')
         .pipe(data(function(file) {
             return require(
@@ -64,7 +62,7 @@ gulp.task('build:html-jade', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('build:styles-less', function() {
+gulp.task('build:styles', function() {
     return gulp.src('./src/styles/**/*.less')
         .pipe(less())
         .pipe(gulp.dest('./dist/styles/'));
@@ -76,10 +74,10 @@ gulp.task('build:styles-less', function() {
  */
 gulp.task('build', function(cb) {
     runSequence(
-        'scripts-lint',
+        'lint-scripts',
         'build:clean',
-        ['build:scripts-copy', 'build:vendor-copy'],
-        ['build:html-jade', 'build:styles-less'],
+        ['build:copy-scripts', 'build:copy-vendors'],
+        ['build:html', 'build:styles'],
         cb
     );
 });
@@ -92,6 +90,24 @@ gulp.task('server', function() {
     gulp.src('./dist/')
         .pipe(webserver({
             host: '0.0.0.0',
-            port: 8080
+            port: 8080,
+            livereload: true
         }));
+});
+
+
+/**
+ * Watch
+ */
+gulp.task('watch', function() {
+    gulp.watch('./src/**/*.jade', ['build:html']);
+    gulp.watch('./src/**/*.less', ['build:styles']);
+});
+
+
+/**
+ * Default
+ */
+gulp.task('default', function() {
+    runSequence('build', 'server', 'watch');
 });
