@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
+    lessPluginAutoPrefix = require('less-plugin-autoprefix'),
     path = require('path'),
     preprocess = require('gulp-preprocess'),
     runSequence = require('run-sequence'),
@@ -63,8 +64,12 @@ gulp.task('build:html', function() {
 });
 
 gulp.task('build:styles', function() {
+    var autoprefix = new lessPluginAutoPrefix();
+
     return gulp.src('./src/styles/**/*.less')
-        .pipe(less())
+        .pipe(less({
+            plugins: [autoprefix]
+        }))
         .pipe(gulp.dest('./dist/styles/'));
 });
 
@@ -102,6 +107,7 @@ gulp.task('server', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/**/*.jade', ['build:html']);
     gulp.watch('./src/**/*.less', ['build:styles']);
+    gulp.watch('./src/**/*.js', ['lint-scripts', 'build:copy-scripts']);
 });
 
 
