@@ -7,7 +7,8 @@ mixin portfolio-item(project)
 
     li
         div.portfolio-item.panel
-            img(src="#{project.thumbnail}")
+            div.item-img-wrapper
+                img(src="#{project.thumbnail}")
             div.item-caption
                 h4 #{project.title}
                 p #{project.caption}
