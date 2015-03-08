@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     data = require('gulp-data'),
     del = require('del'),
+    fs = require('fs'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
@@ -51,8 +52,10 @@ gulp.task('build:copy-vendors', function() {
 gulp.task('build:html', function() {
     return gulp.src('./src/index.jade')
         .pipe(data(function(file) {
-            return require(
-                './src/data/' + path.basename(file.path, '.jade') + '.json'
+            return JSON.parse(
+                fs.readFileSync(
+                    './src/data/' + path.basename(file.path, '.jade') + '.json'
+                )
             );
         }))
         .pipe(jade({
