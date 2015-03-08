@@ -11,8 +11,14 @@ mixin portfolio-item(project)
             div.item-caption
                 h4 #{project.title}
                 p #{project.caption}
-                a.button.tiny.radius(href="#") Read more
+                a.button.tiny.radius(href="#")
+                    i.fa.fa-search
+                    span.text Read more
                 | &nbsp;
-                a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
+                a.button.tiny.radius(href="#{project.demoUrl}")
+                    i.fa.fa-cogs
+                    span.text Live Demo
                 | &nbsp;
-                a.button.tiny.radius(href="#{project.srcUrl}") Source Code
+                a.button.tiny.radius(href="#{project.srcUrl}")
+                    i.fa.fa-code
+                    span.text Source Code
