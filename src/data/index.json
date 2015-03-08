@@ -6,7 +6,7 @@
             "detailsUrl": "/projects/6/6.partial.html",
             "demoUrl": "//chessmasterhong.bitbucket.org/projects/impact-atmosphere/",
             "srcUrl": "//github.com/chessmasterhong/impact-atmosphere",
-            "caption": "A plugin for the Impact game engine that simulates an atmospheric weather system, day/night cycles and seasonal cycles based on real-world date, time, and geographical coordinates."
+            "caption": "Impact game engine plugin that simulates an atmospheric weather system, day/night cycles and seasonal cycles based on real-world date, time, and geographical coordinates."
         },
         {
             "title": "Fire Emblem: Chronicles of the Abyss",
@@ -14,7 +14,7 @@
             "detailsUrl": "/projects/5/5.partial.html",
             "demoUrl": "",
             "srcUrl": "//github.com/chessmasterhong/WaterEmblem",
-            "caption": "A web-based remake of Fire Emblem: Blazing Sword, a turn-based strategy role playing game for the Game Boy Advance, but with a different main character and plot twist."
+            "caption": "Browser-playable remake of Fire Emblem: Blazing Sword, a turn-based strategy role playing game for the Game Boy Advance, but with a different main character and plot twist."
         },
         {
             "title": "Super Mario World: Koopa Krisis",
@@ -22,7 +22,7 @@
             "detailsUrl": "/projects/4/4.partial.html",
             "demoUrl": "//drksephy.bitbucket.org",
             "srcUrl": "//bitbucket.org/DrkSephy/smw-koopa-krisis",
-            "caption": "A web-based remake of Super Mario World platformer for the Super Nintendo Entertainment System. Built using JavaScript on top of the ImpactJS game engine."
+            "caption": "Browser-playable remake of the original Super Mario World platformer for the Super Nintendo Entertainment System."
         },
         {
             "title": "MathFlash",
@@ -30,7 +30,7 @@
             "detailsUrl": "/projects/3/3.partial.html",
             "demoUrl": "",
             "srcUrl": "",
-            "caption": "A web-based system designed to address existing problems regarding how mathematical content is displayed on the Internet."
+            "caption": "Web-based system designed to address existing problems regarding how mathematical content is displayed on the Internet using research topics in adaptive response time-based sequencing and perceptual learning."
         },
         {
             "title": "ImpactJS Enemy Editor",
@@ -38,7 +38,7 @@
             "detailsUrl": "/projects/2/2.partial.html",
             "demoUrl": "",
             "srcUrl": "//bitbucket.org/chessmasterhong/smw-koopa-krisis_enemy-editor",
-            "caption": "A tool for ImpactJS developers to easily view and edit enemy files (either in bulk or as an individual file), quickly create new enemies, and to provide consistent code layout throughout files."
+            "caption": "Tool for Impact developers to easily view and edit enemy files, quickly create new enemies, and to provide consistent code layout throughout files."
         },
         {
             "title": "ParallelText",
@@ -46,7 +46,7 @@
             "detailsUrl": "/projects/1/1.partial.html",
             "demoUrl": "//parallel-text.herokuapp.com",
             "srcUrl": "",
-            "caption": "Enables users to read a text in two different languages in parallel."
+            "caption": "Web application that enables users to read a text in two different languages in parallel."
         },
         {
             "title": "DocShare",
@@ -54,7 +54,7 @@
             "detailsUrl": "/projects/0/0.partial.html",
             "demoUrl": "",
             "srcUrl": "",
-            "caption": "Allow users to create, modify, search, and share text documents. Think of text editing with a revision control system built in."
+            "caption": "Web-based text editing system with a revision control system built in. Enables users to create, modify, search, and share text documents."
         }
     ]
 }
