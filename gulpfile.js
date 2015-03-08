@@ -103,7 +103,7 @@ gulp.task('server', function() {
  * Watch
  */
 gulp.task('watch', function() {
-    gulp.watch('./src/**/*.jade', ['build:html']);
+    gulp.watch(['./src/**/*.jade', './src/data/**/*.json'], ['build:html']);
     gulp.watch('./src/**/*.less', ['build:styles']);
     gulp.watch('./src/**/*.js', ['lint-scripts', 'build:copy-scripts']);
 });
