@@ -107,6 +107,10 @@ h2 {
     padding: @sectionPadding 0;
 }
 
+#portfolio ul.portfolio-items li {
+    padding: 0 10px;
+}
+
 #portfolio ul.portfolio-items li .portfolio-item {
     background: @aux-color1;
     border: 1px solid @aux-color2;
@@ -246,11 +250,27 @@ h2 {
         padding: 50px 20px;
     }
 
+    #portfolio ul.portfolio-items li .portfolio-item .item-caption h4 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+        padding: 0 4px 8px;
+    }
+
+    #portfolio ul.portfolio-items li .portfolio-item .item-caption p {
+        font-size: 0.800rem;
+        margin: 0 4px 8px;
+    }
+
     #portfolio ul.portfolio-items li .portfolio-item .item-caption .button i {
         display: inline;
     }
 
     #portfolio ul.portfolio-items li .portfolio-item .item-caption .button .text {
         display: none;
+    }
+
+    #portfolio ul.portfolio-items li .portfolio-item img {
+        height: 100%;
+        width: auto;
     }
 }
