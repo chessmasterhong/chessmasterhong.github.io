@@ -117,10 +117,6 @@ h2 {
     text-align: center;
 }
 
-#portfolio ul.portfolio-items li .portfolio-item img {
-    width: 100%;
-}
-
 #portfolio ul.portfolio-items li .portfolio-item .item-caption {
     background: rgba(0, 0, 0, 0.7);
     border: 10px solid @aux-color1;
@@ -134,8 +130,12 @@ h2 {
     width: 100%;
 }
 
-#portfolio ul.portfolio-items li .portfolio-item .item-caption:hover {
+#portfolio ul.portfolio-items li .portfolio-item:hover .item-caption {
     opacity: 1;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item:hover img {
+    filter: blur(5px);
 }
 
 #portfolio ul.portfolio-items li .portfolio-item .item-caption h4 {
@@ -157,6 +157,12 @@ h2 {
 #portfolio ul.portfolio-items li .portfolio-item .item-caption .button {
     padding: 8px 10px;
 }
+
+#portfolio ul.portfolio-items li .portfolio-item img {
+    transition: filter 0.25s ease-in-out;
+    width: 100%;
+}
+
 
 /* ---------- Contact ---------- */
 

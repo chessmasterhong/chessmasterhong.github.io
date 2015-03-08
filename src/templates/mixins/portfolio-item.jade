@@ -7,6 +7,7 @@ mixin portfolio-item(project)
 
     li
         div.portfolio-item.panel
+            img(src="#{project.thumbnail}")
             div.item-caption
                 h4 #{project.title}
                 p #{project.caption}
@@ -15,4 +16,3 @@ mixin portfolio-item(project)
                 a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
                 | &nbsp;
                 a.button.tiny.radius(href="#{project.srcUrl}") Source Code
-            img(src="#{project.thumbnail}")
