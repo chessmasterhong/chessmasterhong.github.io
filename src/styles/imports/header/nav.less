@@ -3,15 +3,19 @@
 
 #nav {
     position: relative;
+
+    @media(max-width: @mediaBreak1) {
+        display: none;
+    }
 }
 
 #nav .row {
-    background: @aux-color0;
-    border-bottom: 4px solid @main-color3;
+    background: @auxColor0;
+    border-bottom: 4px solid @mainColor3;
 }
 
 #nav .row a {
-    color: @main-color1;
+    color: @mainColor1;
     float: left;
     font-size: 0.875rem;
     font-variant: small-caps;
@@ -23,7 +27,7 @@
 
 #nav .row a:active,
 #nav .row a:hover {
-    border-bottom: 4px solid @main-color2;
-    color: @main-color3;
+    border-bottom: 4px solid @mainColor2;
+    color: @mainColor3;
     margin-bottom: -4px;
 }
