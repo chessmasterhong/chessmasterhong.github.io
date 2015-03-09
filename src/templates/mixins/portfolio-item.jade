@@ -1,8 +1,6 @@
 mixin portfolio-item(project)
     - project.title = project.title || ""
     - project.caption = project.caption || ""
-    - project.demoUrl = project.demoUrl || "#"
-    - project.srcUrl = project.srcUrl || "#"
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
     li
@@ -14,18 +12,24 @@ mixin portfolio-item(project)
                 p #{project.caption}
 
                 div.buttons-text
-                    a.button.tiny.radius(href="#") Read more
-                    | &nbsp;
-                    a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
-                    | &nbsp;
-                    a.button.tiny.radius(href="#{project.srcUrl}") Source Code
+                    if project.detailsUrl && project.detailsUrl !== ""
+                        a.button.tiny.radius(href="#{project.detailsUrl}") Read more
+                        | &nbsp;
+                    if project.demoUrl && project.demoUrl !== ""
+                        a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
+                        | &nbsp;
+                    if project.srcUrl && project.srcUrl !== ""
+                        a.button.tiny.radius(href="#{project.srcUrl}") Source Code
 
                 div.buttons-icon
-                    a.button.tiny.radius(href="#", title="Read more")
-                        i.fa.fa-search
-                    | &nbsp;
-                    a.button.tiny.radius(href="#{project.demoUrl}", title="Live Demo")
-                        i.fa.fa-cogs
-                    | &nbsp;
-                    a.button.tiny.radius(href="#{project.srcUrl}", title="Source Code")
-                        i.fa.fa-code
+                    if project.detailsUrl && project.detailsUrl !== ""
+                        a.button.tiny.radius(href="#", title="Read more")
+                            i.fa.fa-search
+                        | &nbsp;
+                    if project.demoUrl && project.demoUrl !== ""
+                        a.button.tiny.radius(href="#{project.demoUrl}", title="Live Demo")
+                            i.fa.fa-cogs
+                        | &nbsp;
+                    if project.srcUrl && project.srcUrl !== ""
+                        a.button.tiny.radius(href="#{project.srcUrl}", title="Source Code")
+                            i.fa.fa-code
