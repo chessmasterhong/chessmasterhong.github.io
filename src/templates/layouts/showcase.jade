@@ -8,9 +8,4 @@ section#showcase
             h2.section-title Showcase
             - each project in projects
                 - if(project.showcase === true)
-                    - if(index % 2 === 0)
-                        +showcase-item-even(project)
-                        - index++
-                    - else
-                        +showcase-item-odd(project)
-                        - index++
+                    +showcase-item(project, index++ % 2)
