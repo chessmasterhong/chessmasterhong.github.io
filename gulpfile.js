@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    combineMediaQueries = require('gulp-combine-media-queries'),
     data = require('gulp-data'),
     del = require('del'),
     fs = require('fs'),
@@ -71,6 +72,7 @@ gulp.task('build:styles', function() {
         .pipe(less({
             plugins: [autoprefix]
         }))
+        .pipe(combineMediaQueries())
         .pipe(gulp.dest('./dist/styles/'));
 });
 
