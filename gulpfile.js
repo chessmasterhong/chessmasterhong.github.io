@@ -67,7 +67,7 @@ gulp.task('build:html', function() {
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
 
-    return gulp.src('./src/styles/**/*.less')
+    return gulp.src('./src/styles/*.less') // only process root styles directory
         .pipe(less({
             plugins: [autoprefix]
         }))

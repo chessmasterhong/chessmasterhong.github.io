@@ -1,0 +1,88 @@
+@import "_variables.less";
+
+#portfolio {
+    padding: @sectionPadding 0;
+}
+
+#portfolio ul.portfolio-items li {
+    padding: 0 10px;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item {
+    background: @aux-color1;
+    border: 1px solid @aux-color2;
+    display: block;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item:hover .item-img-wrapper img {
+    filter: blur(5px);
+    margin: -5px 0px -10px 0px;
+    padding: 5px 0px 10px 0px;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item:hover .item-caption {
+    opacity: 1;
+    visibility: visible;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-img-wrapper {
+    //display: inline-block;
+    overflow: hidden;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-img-wrapper img {
+    margin: -5px 0px -10px 0px;
+    padding: 5px 0px 10px 0px;
+    max-width: 100%;
+    transition: filter 0.1s ease-in-out;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border: 10px solid @aux-color1;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 12px 8px;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.25s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption h4 {
+    border-bottom: 1px dotted @main-color1;
+    color: @main-color1;
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    padding: 0 8px 12px;
+    text-align: center;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption p {
+    color: @main-color1;
+    font-size: 0.875rem;
+    margin: 0 8px 12px;
+    text-align: left;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption .buttons-text {
+    display: inline;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption .buttons-icon {
+    display: none;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption .button {
+    padding: 8px 10px;
+}
+
+#portfolio ul.portfolio-items li .portfolio-item .item-caption i {
+    font-size: 1rem;
+}

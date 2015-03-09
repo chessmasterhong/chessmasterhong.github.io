@@ -1,0 +1,43 @@
+@import "_variables.less";
+
+/* ---------- Logo ---------- */
+
+
+/* ---------- Navigation ---------- */
+
+#nav {
+    position: relative;
+}
+
+#nav .row {
+    background: @aux-color0;
+    border-bottom: 4px solid @main-color3;
+}
+
+#nav .row a {
+    color: @main-color1;
+    float: left;
+    font-size: 0.875rem;
+    font-variant: small-caps;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 12px 15px;
+    text-decoration: none;
+}
+
+#nav .row a:active,
+#nav .row a:hover {
+    border-bottom: 4px solid @main-color2;
+    color: @main-color3;
+    margin-bottom: -4px;
+}
+
+
+/* ---------- Banner ---------- */
+
+#banner {
+    background: @bannerGradient0;
+    background: linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
+    margin-top: -20px;
+    padding: 180px 20px;
+}
