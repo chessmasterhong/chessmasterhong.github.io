@@ -1,0 +1,66 @@
+mixin showcase-item-even(project)
+    - project.title = project.title || ""
+    - project.caption = project.caption || ""
+    - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
+
+    div.views-row.views-row-even
+        a(href="#{project.detailsUrl}")
+            img.img-container.img-view-detail(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+
+        div.proj-text
+            div.proj-title
+                h3
+                    a(href="#{project.detailsUrl}") #{project.title}
+
+                div.proj-desc
+                    p #{project.caption}
+
+                    p
+                        if project.detailsUrl !== ""
+                            a.button.tiny.radius(href="#{project.detailsUrl}")
+                                i.fa.fa-search
+                                Read more
+                            | &nbsp;
+                        if project.demoUrl !== ""
+                            a.button.tiny.radius(href="#{project.demoUrl}")
+                                i.fa.fa-cogs
+                                Live Demo
+                            | &nbsp;
+                        if project.srcUrl !== ""
+                            a.button.tiny.radius(href="#{project.srcUrl}")
+                                i.fa.fa-code
+                                Source Code
+
+
+mixin showcase-item-odd(project)
+    - project.title = project.title || ""
+    - project.caption = project.caption || ""
+    - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
+
+    div.views-row.views-row-odd
+        a(href="#{project.detailsUrl}")
+            img.img-container.img-view-detail(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+
+        div.proj-text
+            div.proj-title
+                h3
+                    a(href="#{project.detailsUrl}") #{project.title}
+
+                div.proj-desc
+                    p #{project.caption}
+
+                    p
+                        if project.detailsUrl !== ""
+                            a.button.tiny.radius(href="#{project.detailsUrl}")
+                                i.fa.fa-search
+                                Read more
+                            | &nbsp;
+                        if project.demoUrl !== ""
+                            a.button.tiny.radius(href="#{project.demoUrl}")
+                                i.fa.fa-cogs
+                                Live Demo
+                            | &nbsp;
+                        if project.srcUrl !== ""
+                            a.button.tiny.radius(href="#{project.srcUrl}")
+                                i.fa.fa-code
+                                Source Code

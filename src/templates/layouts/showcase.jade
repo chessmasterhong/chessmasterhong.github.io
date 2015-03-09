@@ -1,5 +1,16 @@
+include ../mixins/showcase-item.jade
+
+- var index = 0
+
 section#showcase
     div.row
         div.large-12.medium-12.column
             h2.section-title Showcase
-            p Showcase
+            - each project in projects
+                - if(project.showcase === true)
+                    - if(index % 2 === 0)
+                        +showcase-item-even(project)
+                        - index++
+                    - else
+                        +showcase-item-odd(project)
+                        - index++
