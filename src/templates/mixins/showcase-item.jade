@@ -3,31 +3,29 @@ mixin showcase-item(project, position)
     - project.caption = project.caption || ""
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
-    div.row
-        div.medium-4(class = position === 0 ? "medium-push-8" : undefined).column
-            a(href="#{project.detailsUrl}")
-                img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+    div.row(class = position === 0 ? "row-even" : "row-odd")
+        div.showcase-thumbnail.medium-4(class = position === 0 ? "medium-push-8" : undefined).column
+            img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
         div.medium-8(class = position === 0 ? "medium-pull-4" : undefined).column
             div.showcase-title
-                h3
-                    a(href="#{project.detailsUrl}") #{project.title}
+                h3 #{project.title}
 
             div.showcase-text
                 p #{project.caption}
 
                 p
                     - if(project.detailsUrl !== "")
-                        a.button.tiny.radius(href="#{project.detailsUrl}")
+                        a.button.small.radius(href="#{project.detailsUrl}")
                             i.fa.fa-search
                             Read more
                         | &nbsp;
                     - if(project.demoUrl !== "")
-                        a.button.tiny.radius(href="#{project.demoUrl}")
+                        a.button.small.radius(href="#{project.demoUrl}")
                             i.fa.fa-cogs
                             Live Demo
                         | &nbsp;
                     - if(project.srcUrl !== "")
-                        a.button.tiny.radius(href="#{project.srcUrl}")
+                        a.button.small.radius(href="#{project.srcUrl}")
                             i.fa.fa-code
                             Source Code
