@@ -3,13 +3,13 @@ mixin portfolio-item(project)
     - project.caption = project.caption || ""
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
-    li
+    li.text-center
         div.portfolio-item.panel.text-center
             div.item-img-wrapper
                 img(src="#{project.thumbnail}")
 
             div.item-caption
-                h4.text-center #{project.title}
+                h4 #{project.title}
                 p #{project.caption}
 
                 div.buttons-text.show-for-medium-up.hide-for-small-only
