@@ -14,7 +14,7 @@ mixin showcase-item(project, position)
             div.showcase-text.small-only-text-center
                 p.text-justify.small-only-text-center #{project.caption}
 
-                div.buttons-text
+                div.buttons-text.show-for-medium-up.hide-for-small-only
                     - if(project.detailsUrl !== "")
                         a.button.small.radius(href="#{project.detailsUrl}") Read more
                         | &nbsp;
@@ -24,7 +24,7 @@ mixin showcase-item(project, position)
                     - if(project.srcUrl !== "")
                         a.button.small.radius(href="#{project.srcUrl}") Source Code
 
-                div.buttons-icon
+                div.buttons-icon.show-for-small-only.hide-for-medium-up
                     - if(project.detailsUrl !== "")
                         a.button.small.radius(href="#", title="Read more")
                             i.fa.fa-search
