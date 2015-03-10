@@ -20,20 +20,43 @@
 }
 
 #contact ul.social-links li a {
-    background-color: @mainColor2;
+    background-color: @mainColor4;
     border-radius: 100%;
+    border-style: solid;
+    border-color: @mainColor4;
     color: @mainColor1;
     display: block;
     font-size: 2.000rem;
     height: 3.000rem;
-    line-height: 3.000rem;
+    line-height: 2.500rem;
     text-align: center;
-    transition: background-color 0.25s linear;
+    transition: background-color 0.25s linear, border-color 0.25s linear, color 0.25s linear;
     width: 3.000rem;
 }
 
-#contact ul.social-links li a:hover,
-#contact ul.social-links li a:focus,
-#contact ul.social-links li a:active {
-    background-color: @mainColor3;
+// https://github.com/logos
+#contact ul.social-links li.github a:hover,
+#contact ul.social-links li.github a:focus,
+#contact ul.social-links li.github a:active {
+    background-color: @auxColor1;
+    border-color: #333333;
+    color: #333333;
+}
+
+// https://design.atlassian.com/2.0/product/foundations/colors/
+#contact ul.social-links li.bitbucket a:hover,
+#contact ul.social-links li.bitbucket a:focus,
+#contact ul.social-links li.bitbucket a:active {
+    background-color: @auxColor1;
+    border-color: #205081;
+    color: #205081;
+}
+
+// https://brand.linkedin.com/visual-identity/color-palettes
+#contact ul.social-links li.linkedin a:hover,
+#contact ul.social-links li.linkedin a:focus,
+#contact ul.social-links li.linkedin a:active {
+    background-color: @auxColor1;
+    border-color: #0077B5;
+    color: #0077B5;
 }
