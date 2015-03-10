@@ -13,24 +13,24 @@ mixin portfolio-item(project)
                 p #{project.caption}
 
                 div.buttons-text
-                    if project.detailsUrl !== ""
+                    - if(project.detailsUrl !== "")
                         a.button.tiny.radius(href="#{project.detailsUrl}") Read more
                         | &nbsp;
-                    if project.demoUrl !== ""
+                    - if(project.demoUrl !== "")
                         a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
                         | &nbsp;
-                    if project.srcUrl !== ""
+                    - if(project.srcUrl !== "")
                         a.button.tiny.radius(href="#{project.srcUrl}") Source Code
 
                 div.buttons-icon
-                    if project.detailsUrl !== ""
+                    - if(project.detailsUrl !== "")
                         a.button.tiny.radius(href="#", title="Read more")
                             i.fa.fa-search
                         | &nbsp;
-                    if project.demoUrl !== ""
+                    - if(project.demoUrl !== "")
                         a.button.tiny.radius(href="#{project.demoUrl}", title="Live Demo")
                             i.fa.fa-cogs
                         | &nbsp;
-                    if project.srcUrl !== ""
+                    - if(project.srcUrl !== "")
                         a.button.tiny.radius(href="#{project.srcUrl}", title="Source Code")
                             i.fa.fa-code

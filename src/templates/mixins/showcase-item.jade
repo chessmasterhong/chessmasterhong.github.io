@@ -3,31 +3,42 @@ mixin showcase-item(project, position)
     - project.caption = project.caption || ""
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
-    div.row(class = position === 0 ? "row-even" : "row-odd")
-        div.large-12.column
-            a(href="#{project.detailsUrl}")
-                img.img-container.img-view-detail(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+    div.row
+        - if(position === 0)
+            +showcase-item-description(project)
+            +showcase-item-thumbnail(project)
+        - else
+            +showcase-item-thumbnail(project)
+            +showcase-item-description(project)
 
-            div.proj-text
-                div.proj-title
-                    h3
-                        a(href="#{project.detailsUrl}") #{project.title}
 
-                    div.proj-desc
-                        p #{project.caption}
+mixin showcase-item-thumbnail(project)
+    div.large-4.column
+        a(href="#{project.detailsUrl}")
+            img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
-                        p
-                            if project.detailsUrl !== ""
-                                a.button.tiny.radius(href="#{project.detailsUrl}")
-                                    i.fa.fa-search
-                                    Read more
-                                | &nbsp;
-                            if project.demoUrl !== ""
-                                a.button.tiny.radius(href="#{project.demoUrl}")
-                                    i.fa.fa-cogs
-                                    Live Demo
-                                | &nbsp;
-                            if project.srcUrl !== ""
-                                a.button.tiny.radius(href="#{project.srcUrl}")
-                                    i.fa.fa-code
-                                    Source Code
+
+mixin showcase-item-description(project)
+    div.large-8.column
+        div.showcase-title
+            h3
+                a(href="#{project.detailsUrl}") #{project.title}
+
+        div.showcase-text
+            p #{project.caption}
+
+            p
+                - if(project.detailsUrl !== "")
+                    a.button.tiny.radius(href="#{project.detailsUrl}")
+                        i.fa.fa-search
+                        Read more
+                    | &nbsp;
+                - if(project.demoUrl !== "")
+                    a.button.tiny.radius(href="#{project.demoUrl}")
+                        i.fa.fa-cogs
+                        Live Demo
+                    | &nbsp;
+                - if(project.srcUrl !== "")
+                    a.button.tiny.radius(href="#{project.srcUrl}")
+                        i.fa.fa-code
+                        Source Code
