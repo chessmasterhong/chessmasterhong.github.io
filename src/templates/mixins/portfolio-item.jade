@@ -4,15 +4,15 @@ mixin portfolio-item(project)
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
     li
-        div.portfolio-item.panel
+        div.portfolio-item.panel.text-center
             div.item-img-wrapper
                 img(src="#{project.thumbnail}")
 
             div.item-caption
-                h4 #{project.title}
+                h4.text-center #{project.title}
                 p #{project.caption}
 
-                div.buttons-text
+                div.buttons-text.show-for-medium-up.hide-for-small-only
                     - if(project.detailsUrl !== "")
                         a.button.tiny.radius(href="#{project.detailsUrl}") Read more
                         | &nbsp;
@@ -22,7 +22,7 @@ mixin portfolio-item(project)
                     - if(project.srcUrl !== "")
                         a.button.tiny.radius(href="#{project.srcUrl}") Source Code
 
-                div.buttons-icon
+                div.buttons-icon.show-for-small-only.hide-for-medium-up
                     - if(project.detailsUrl !== "")
                         a.button.tiny.radius(href="#", title="Read more")
                             i.fa.fa-search
