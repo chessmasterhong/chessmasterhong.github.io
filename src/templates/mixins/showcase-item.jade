@@ -4,7 +4,7 @@ mixin showcase-item(project, position)
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
     div.row(class = position === 0 ? "row-even" : "row-odd")
-        div.showcase-thumbnail.medium-4(class = position === 0 ? "medium-push-8" : undefined).column(class = position === 0 ? "text-right" : "text-left").small-only-text-center
+        div.showcase-thumbnail.medium-4(class = position === 0 ? "medium-push-8 text-right" : "text-left").column.small-only-text-center
             img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
         div.medium-8(class = position === 0 ? "medium-pull-4" : undefined).column
