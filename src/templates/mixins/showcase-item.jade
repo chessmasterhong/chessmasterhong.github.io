@@ -14,18 +14,25 @@ mixin showcase-item(project, position)
             div.showcase-text
                 p #{project.caption}
 
-                p
+                div.buttons-text
                     - if(project.detailsUrl !== "")
-                        a.button.small.radius(href="#{project.detailsUrl}")
-                            i.fa.fa-search
-                            Read more
+                        a.button.small.radius(href="#{project.detailsUrl}") Read more
                         | &nbsp;
                     - if(project.demoUrl !== "")
-                        a.button.small.radius(href="#{project.demoUrl}")
-                            i.fa.fa-cogs
-                            Live Demo
+                        a.button.small.radius(href="#{project.demoUrl}") Live Demo
                         | &nbsp;
                     - if(project.srcUrl !== "")
-                        a.button.small.radius(href="#{project.srcUrl}")
+                        a.button.small.radius(href="#{project.srcUrl}") Source Code
+
+                div.buttons-icon
+                    - if(project.detailsUrl !== "")
+                        a.button.small.radius(href="#", title="Read more")
+                            i.fa.fa-search
+                        | &nbsp;
+                    - if(project.demoUrl !== "")
+                        a.button.small.radius(href="#{project.demoUrl}", title="Live Demo")
+                            i.fa.fa-cogs
+                        | &nbsp;
+                    - if(project.srcUrl !== "")
+                        a.button.small.radius(href="#{project.srcUrl}", title="Source Code")
                             i.fa.fa-code
-                            Source Code

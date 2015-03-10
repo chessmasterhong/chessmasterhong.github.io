@@ -6,12 +6,11 @@
     border-bottom: 1px solid @auxColor2;
     border-top: 1px solid @auxColor2;
     padding: @sectionPadding 0;
-
 }
 
 #showcase .row-even,
 #showcase .row-odd {
-    padding: 20px 0;
+    padding: 40px 0;
 
     @media(max-width: @mediaBreak0) {
         padding: 10px 0;
@@ -51,4 +50,30 @@
     @media(max-width: @mediaBreak0) {
         text-align: center;
     }
+}
+
+#showcase .showcase-text .buttons-text {
+    display: inline;
+    text-align: left;
+
+    @media(max-width: @mediaBreak0) {
+        display: none;
+    }
+}
+
+#showcase .showcase-text .buttons-icon {
+    display: none;
+    text-align: center;
+
+    @media(max-width: @mediaBreak0) {
+        display: inline;
+    }
+}
+
+#showcase .showcase-text .buttons-icon .button {
+    padding: 12px 16px;
+}
+
+#showcase .showcase-text .buttons-icon .button i {
+    font-size: 1.25rem;
 }
