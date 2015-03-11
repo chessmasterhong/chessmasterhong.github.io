@@ -16,13 +16,22 @@ mixin showcase-item(project, position)
 
                 div.buttons-text.show-for-medium-up.hide-for-small-only
                     - if(project.detailsUrl !== "")
-                        a.button.small.radius(href="#{project.detailsUrl}") Read more
+                        a.button.small.radius(href="#{project.detailsUrl}")
+                            i.fa.fa-search
+                            | &nbsp;
+                            span Read more
                         | &nbsp;
                     - if(project.demoUrl !== "")
-                        a.button.small.radius(href="#{project.demoUrl}") Live Demo
+                        a.button.small.radius(href="#{project.demoUrl}")
+                            i.fa.fa-cogs
+                            | &nbsp;
+                            span Live Demo
                         | &nbsp;
                     - if(project.srcUrl !== "")
-                        a.button.small.radius(href="#{project.srcUrl}") Source Code
+                        a.button.small.radius(href="#{project.srcUrl}")
+                            i.fa.fa-code
+                            | &nbsp;
+                            span Source Code
 
                 div.buttons-icon.show-for-small-only.hide-for-medium-up
                     - if(project.detailsUrl !== "")

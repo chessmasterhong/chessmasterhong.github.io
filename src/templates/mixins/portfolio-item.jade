@@ -12,17 +12,7 @@ mixin portfolio-item(project)
                 h4 #{project.title}
                 p #{project.caption}
 
-                div.buttons-text.show-for-medium-up.hide-for-small-only
-                    - if(project.detailsUrl !== "")
-                        a.button.tiny.radius(href="#{project.detailsUrl}") Read more
-                        | &nbsp;
-                    - if(project.demoUrl !== "")
-                        a.button.tiny.radius(href="#{project.demoUrl}") Live Demo
-                        | &nbsp;
-                    - if(project.srcUrl !== "")
-                        a.button.tiny.radius(href="#{project.srcUrl}") Source Code
-
-                div.buttons-icon.show-for-small-only.hide-for-medium-up
+                div
                     - if(project.detailsUrl !== "")
                         a.button.tiny.radius(href="#", title="Read more")
                             i.fa.fa-search
