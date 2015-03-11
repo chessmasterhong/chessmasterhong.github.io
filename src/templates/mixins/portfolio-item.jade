@@ -1,9 +1,12 @@
 mixin portfolio-item(project)
     - project.title = project.title || ""
     - project.caption = project.caption || ""
+    - project.categories = project.categories || []
     - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
 
-    li.text-center
+    - var categories = project.categories.join(" ")
+
+    li.text-center.mix(class = categories)
         div.portfolio-item.panel.text-center
             div.item-img-wrapper
                 img(src="#{project.thumbnail}")

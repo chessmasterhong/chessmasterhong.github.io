@@ -1,8 +1,23 @@
 include ../mixins/portfolio-item.jade
 
+- var filters = [];
+- each project in projects
+    - var categories = project.categories || []
+    - each category in categories
+        - if(filters.indexOf(category) === -1)
+            - filters.push(category)
+
+
 section#portfolio
     div.row
-        div.large-12.medium-12.column
+        div.large-12.column
+            ul.portfolio-filters
+                li.filter.active(data-filter="all") All
+                - each filter in filters
+                    li.filter(data-filter="." + filter) #{filter}
+
+    div.row
+        div.large-12.column
             h2.section-title Portfolio
             ul.portfolio-items.large-block-grid-3.medium-block-grid-2.small-block-grid-1
                 - each project in projects
