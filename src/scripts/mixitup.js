@@ -5,7 +5,7 @@ $(document).ready(function() {
         selectors: {
             filter: '.portfolio-filter',
             sort: '',
-            target: '.mix'
+            target: '.portfolio-item'
         }
     });
 });

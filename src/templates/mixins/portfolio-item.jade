@@ -6,8 +6,8 @@ mixin portfolio-item(project)
 
     - var categories = project.categories.join(" ")
 
-    li.text-center.mix(class = categories)
-        div.portfolio-item.panel.text-center
+    li.portfolio-item.mix(class = categories).text-center
+        div.panel.text-center
             div.item-img-wrapper
                 img(src="#{project.thumbnail}")
 
