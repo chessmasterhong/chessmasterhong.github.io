@@ -11,14 +11,13 @@ include ../mixins/portfolio-item.jade
 section#portfolio
     div.row
         div.large-12.column
+            h2.section-title Portfolio
+
             ul.portfolio-filters
                 li.portfolio-filter.active(data-filter="all") All
                 - each filter in filters
                     li.portfolio-filter(data-filter="." + filter) #{filter}
 
-    div.row
-        div.large-12.column
-            h2.section-title Portfolio
             ul.portfolio-items.large-block-grid-3.medium-block-grid-2.small-block-grid-1
                 - each project in projects
                     +portfolio-item(project)
