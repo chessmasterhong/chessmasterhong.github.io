@@ -12,9 +12,9 @@ section#portfolio
     div.row
         div.large-12.column
             ul.portfolio-filters
-                li.filter.active(data-filter="all") All
+                li.portfolio-filter.active(data-filter="all") All
                 - each filter in filters
-                    li.filter(data-filter="." + filter) #{filter}
+                    li.portfolio-filter(data-filter="." + filter) #{filter}
 
     div.row
         div.large-12.column
