@@ -3,6 +3,7 @@
         {
             "title": "Impact Atmospheric System Plugin",
             "showcase": false,
+            "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgdGhDT20yRmVWbzQ",
             "detailsUrl": "",
             "demoUrl": "//chessmasterhong.bitbucket.org/projects/impact-atmosphere/",
@@ -12,6 +13,7 @@
         {
             "title": "Fire Emblem: Chronicles of the Abyss",
             "showcase": true,
+            "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgd1hLaDg2MHNJVVk",
             "detailsUrl": "",
             "demoUrl": "//chessmasterhong.bitbucket.org/projects/WaterEmblem/",
@@ -21,6 +23,7 @@
         {
             "title": "Super Mario World: Koopa Krisis",
             "showcase": true,
+            "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNWJFNnYtTk1pMjA",
             "detailsUrl": "",
             "demoUrl": "//drksephy.bitbucket.org",
@@ -30,6 +33,7 @@
         {
             "title": "MathFlash",
             "showcase": true,
+            "categories": ["web"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgR0Q1TFdPdnBqWHc",
             "detailsUrl": "",
             "demoUrl": "",
@@ -39,6 +43,7 @@
         {
             "title": "ImpactJS Enemy Editor",
             "showcase": false,
+            "categories": ["games", "utilities"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgQ1YyVHhrYU93dkk",
             "detailsUrl": "",
             "demoUrl": "",
@@ -48,6 +53,7 @@
         {
             "title": "ParallelText",
             "showcase": false,
+            "categories": ["web"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgLWs3a2pabG9yWms",
             "detailsUrl": "",
             "demoUrl": "//parallel-text.herokuapp.com",
@@ -57,6 +63,7 @@
         {
             "title": "DocShare",
             "showcase": false,
+            "categories": ["web"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgTTJHZGl2Y3F3Rjg",
             "detailsUrl": "",
             "demoUrl": "",
