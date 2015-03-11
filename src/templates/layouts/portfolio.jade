@@ -4,8 +4,9 @@ include ../mixins/portfolio-item.jade
 - each project in projects
     - var categories = project.categories || []
     - each category in categories
-        - if(filters.indexOf(category) === -1)
-            - filters.push(category)
+        - var cat = category.toLowerCase()
+        - if(filters.indexOf(cat) === -1)
+            - filters.push(cat)
 
 
 section#portfolio
@@ -13,10 +14,11 @@ section#portfolio
         div.large-12.column
             h2.section-title Portfolio
 
-            ul.portfolio-filters
-                li.portfolio-filter.active(data-filter="all") All
+            ul.portfolio-filters.text-center
+                li.portfolio-filter(data-filter="all") All
                 - each filter in filters
-                    li.portfolio-filter(data-filter="." + filter) #{filter}
+                    - var fltr = filter.charAt(0).toUpperCase() + filter.substring(1)
+                    li.portfolio-filter(data-filter="." + filter) #{fltr}
 
             ul.portfolio-items.large-block-grid-3.medium-block-grid-2.small-block-grid-1
                 - each project in projects

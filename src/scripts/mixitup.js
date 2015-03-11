@@ -6,9 +6,6 @@ $(document).ready(function() {
             effects: 'fade',
             easing: 'ease'
         },
-        controls: {
-            active: 'active'
-        },
         load: {
             filter: 'all'
         },
