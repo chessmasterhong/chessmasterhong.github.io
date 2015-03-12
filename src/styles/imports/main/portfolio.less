@@ -10,8 +10,13 @@
 #portfolio ul.portfolio-filters li.portfolio-filter {
     display: inline-block;
     list-style-type: none;
+    margin-left: -10px;
     padding: 0 20px;
     text-decoration: none;
+
+    @media(max-width: @mediaBreak0) {
+        padding: 0 10px;
+    }
 }
 
 
