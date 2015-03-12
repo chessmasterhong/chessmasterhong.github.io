@@ -14,12 +14,16 @@ section#portfolio
         div.large-12.column
             h2.section-title Portfolio
 
+    div.row
+        div.large-12.column
             ul.portfolio-filters.text-center
                 li.portfolio-filter(data-filter="all") All
                 - each filter in filters
                     - var fltr = filter.charAt(0).toUpperCase() + filter.substring(1)
                     li.portfolio-filter(data-filter="." + filter) #{fltr}
 
+    div.row
+        div.large-12.column
             ul.portfolio-items.large-block-grid-3.medium-block-grid-2.small-block-grid-1
                 - each project in projects
                     +portfolio-item(project)

@@ -6,6 +6,9 @@ section#showcase
     div.row
         div.large-12.column
             h2.section-title Showcase
+
+    div.row
+        div.large-12.column
             - each project in projects
                 - if(project.showcase === true)
                     +showcase-item(project, index++ % 2)
