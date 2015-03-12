@@ -3,20 +3,24 @@
 
 // ---------- Portfolio Filters ----------
 
-#portfolio ul.portfolio-filters {
+#portfolio .portfolio-filters {
     font-size: 1.125rem;
+    text-align: center;
 }
 
-#portfolio ul.portfolio-filters li.portfolio-filter {
+#portfolio .portfolio-filters .portfolio-filter {
     display: inline-block;
-    list-style-type: none;
-    margin-left: -10px;
-    padding: 0 20px;
-    text-decoration: none;
+    padding: 0 15px 35px;
+    cursor: pointer;
 
     @media(max-width: @mediaBreak0) {
-        padding: 0 10px;
+        padding: 0 10px 30px;
     }
+}
+
+#portfolio .portfolio-filters .portfolio-filter:active,
+#portfolio .portfolio-filters .portfolio-filter:hover {
+    color: @mainColor2;
 }
 
 
