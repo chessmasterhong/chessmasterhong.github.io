@@ -17,7 +17,8 @@ section#portfolio
     div.row
         div.large-12.column
             div.portfolio-filters.text-center
-                div.portfolio-filter(data-filter="all") All
+                div.portfolio-filter(data-filter="all")
+                    span All
                 - each filter in filters
                     - var fltr = filter.charAt(0).toUpperCase() + filter.substring(1)
                     div.portfolio-filter(data-filter="." + filter)
