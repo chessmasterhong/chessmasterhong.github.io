@@ -21,8 +21,30 @@
 }
 
 #showcase .showcase-title h3 {
+    @media(max-width: @mediaBreak1) {
+        font-size: 1.450rem;
+    }
+
     @media(max-width: @mediaBreak0) {
+        font-size: 1.250rem;
+        letter-spacing: -0.020rem;
         padding-top: 12px;
+    }
+}
+
+#showcase .showcase-text p {
+    font-size: 1.000rem;
+    line-height: 1.500rem;
+
+    @media(max-width: @mediaBreak1) {
+        font-size: 0.950rem;
+        line-height: 1.250rem;
+    }
+
+    @media(max-width: @mediaBreak0) {
+        font-size: 0.900rem;
+        letter-spacing: -0.010rem;
+        line-height: 1.000rem;
     }
 }
 
