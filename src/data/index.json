@@ -1,6 +1,26 @@
 {
     "projects": [
         {
+            "title": "Pascal.js",
+            "showcase": false,
+            "categories": ["utilities"],
+            "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNmUzU3BJcWxiRUk",
+            "detailsUrl": "",
+            "demoUrl": "",
+            "srcUrl": "//github.com/chessmasterhong/pascal.js",
+            "caption": "Pascal compiler written in JavaScript."
+        },
+        {
+            "title": "Phaser + RequireJS Boilerplate",
+            "showcase": false,
+            "categories": ["utilities"],
+            "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgSU5XcFFnQzNQWjA",
+            "detailsUrl": "",
+            "demoUrl": "",
+            "srcUrl": "//github.com/chessmasterhong/phaser-requirejs-boilerplate",
+            "caption": "Boilerplate and build system for the Phaser game engine using RequireJS for module loading and dependency management, and Gulp.js for task automation."
+        },
+        {
             "title": "Impact Atmospheric System Plugin",
             "showcase": false,
             "categories": ["games"],
@@ -21,16 +41,6 @@
             "caption": "Browser-playable remake of Fire Emblem: Blazing Sword, a turn-based strategy role playing game for the Game Boy Advance, but with a different main character and plot twist."
         },
         {
-            "title": "Super Mario World: Koopa Krisis",
-            "showcase": true,
-            "categories": ["games"],
-            "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNWJFNnYtTk1pMjA",
-            "detailsUrl": "",
-            "demoUrl": "//drksephy.bitbucket.org",
-            "srcUrl": "//bitbucket.org/DrkSephy/smw-koopa-krisis",
-            "caption": "Browser-playable remake of the original Super Mario World platformer for the Super Nintendo Entertainment System."
-        },
-        {
             "title": "MathFlash",
             "showcase": true,
             "categories": ["web"],
@@ -43,12 +53,22 @@
         {
             "title": "ImpactJS Enemy Editor",
             "showcase": false,
-            "categories": ["games", "utilities"],
+            "categories": ["utilities"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgQ1YyVHhrYU93dkk",
             "detailsUrl": "",
             "demoUrl": "",
             "srcUrl": "//bitbucket.org/chessmasterhong/smw-koopa-krisis_enemy-editor",
             "caption": "Tool for Impact developers to easily view and edit enemy files, quickly create new enemies, and to provide consistent code layout throughout files."
+        },
+        {
+            "title": "Super Mario World: Koopa Krisis",
+            "showcase": true,
+            "categories": ["games"],
+            "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNWJFNnYtTk1pMjA",
+            "detailsUrl": "",
+            "demoUrl": "//drksephy.bitbucket.org",
+            "srcUrl": "//bitbucket.org/DrkSephy/smw-koopa-krisis",
+            "caption": "Browser-playable remake of the original Super Mario World platformer for the Super Nintendo Entertainment System."
         },
         {
             "title": "ParallelText",
