@@ -8,7 +8,7 @@
             "detailsUrl": "",
             "demoUrl": "",
             "srcUrl": "//github.com/chessmasterhong/pascal.js",
-            "caption": "Pascal compiler written in JavaScript."
+            "caption": "Pascal compiler written in JavaScript with the purpose to provide a web-based solution to compiling Pascal code."
         },
         {
             "title": "Phaser + RequireJS Boilerplate",
@@ -93,9 +93,12 @@
     ],
 
     "contacts": {
-        "email": "",
+        "email": {
+            "local": "",
+            "domain": ""
+        },
         "social": {
-            "BitBucket": "//bitbucket.org/chessmasterhong",
+            "Bitbucket": "//bitbucket.org/chessmasterhong",
             "GitHub": "//github.com/chessmasterhong",
             "LinkedIn": "//www.linkedin.com/in/kchan12"
         }

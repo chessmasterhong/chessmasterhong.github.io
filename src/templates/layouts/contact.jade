@@ -5,6 +5,10 @@ section#contact
 
     div.row
         div.large-12.column
+            p #{contacts.email.local}@#{contacts.email.domain}
+
+    div.row
+        div.large-12.column
             ul.social-links
                 - each url, site in contacts.social
                     - var siteLC = site.toLowerCase()
