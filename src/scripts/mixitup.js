@@ -1,6 +1,9 @@
 $(document).ready(function() {
     'use strict';
 
+    $('#portfolio .portfolio-filter').css('display', 'inline-block');
+    $('#portfolio .portfolio-item').addClass('mix');
+
     $('.portfolio-items').mixItUp({
         animation: {
             effects: 'fade',
