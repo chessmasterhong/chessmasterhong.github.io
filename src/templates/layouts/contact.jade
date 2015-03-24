@@ -38,5 +38,5 @@ section#contact
                 - each url, site in contacts.social
                     - var siteLC = site.toLowerCase()
                     li(class = siteLC)
-                        a(href="#{contacts.social[url]}" title="#{site}")
+                        a(href="#{contacts.social[site]}" title="#{site}")
                             i.fa(class = "fa-" + siteLC)
