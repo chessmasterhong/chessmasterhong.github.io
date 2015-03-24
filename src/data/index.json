@@ -62,7 +62,7 @@
         },
         {
             "title": "Super Mario World: Koopa Krisis",
-            "showcase": true,
+            "showcase": false,
             "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNWJFNnYtTk1pMjA",
             "detailsUrl": "",
