@@ -1,13 +1,13 @@
 mixin showcase-item(project, position)
     - project.title = project.title || ""
     - project.caption = project.caption || ""
-    - project.thumbnail = project.thumbnail || "//placehold.it/400x400"
+    - project.thumbnail = project.thumbnail || "//placehold.it/240&text=No Image Available"
 
     div.row(class = position === 0 ? "row-even" : "row-odd")
-        div.showcase-thumbnail.medium-4(class = position === 0 ? "medium-push-8 text-right" : "text-left").column.small-only-text-center
+        div.showcase-thumbnail.large-3.medium-4(class = position === 0 ? "large-push-9 medium-push-8 text-right" : "text-left").column.small-only-text-center
             img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
-        div.medium-8(class = position === 0 ? "medium-pull-4" : undefined).column
+        div.large-9.medium-8(class = position === 0 ? "large-pull-3 medium-pull-4" : undefined).column
             div.showcase-title
                 h3.small-only-text-center #{project.title}
 
