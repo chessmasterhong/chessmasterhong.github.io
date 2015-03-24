@@ -98,8 +98,8 @@ gulp.task('server', function() {
     gulp.src('./dist/')
         .pipe(webserver({
             host: '0.0.0.0',
-            port: 8080,
-            livereload: true
+            port: 8080
+            //livereload: true
         }));
 });
 
@@ -108,9 +108,19 @@ gulp.task('server', function() {
  * Watch
  */
 gulp.task('watch', function() {
-    gulp.watch(['./src/**/*.jade', './src/data/**/*.json'], ['build:html']);
-    gulp.watch('./src/**/*.less', ['build:styles']);
-    gulp.watch('./src/**/*.js', ['lint-scripts', 'build:copy-scripts']);
+    gulp.watch([
+        './src/**/*.jade',
+        './src/**/*.css',
+        './src/data/**/*.json'
+    ], ['build:html']);
+
+    gulp.watch([
+        './src/**/*.less'
+    ], ['build:styles']);
+
+    gulp.watch([
+        './src/**/*.js'
+    ], ['lint-scripts', 'build:copy-scripts']);
 });
 
 
