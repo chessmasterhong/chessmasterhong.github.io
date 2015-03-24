@@ -6,12 +6,8 @@ section#contact
     div.row
         div.large-12.column
             ul.social-links
-                li.github
-                    a(href="//github.com/chessmasterhong" title="GitHub")
-                        i.fa.fa-github
-                li.bitbucket
-                    a(href="//bitbucket.org/chessmasterhong" title="Bitbucket")
-                        i.fa.fa-bitbucket
-                li.linkedin
-                    a(href="//www.linkedin.com/in/kchan12" title="LinkedIn")
-                        i.fa.fa-linkedin
+                - each url, site in contacts.social
+                    - var siteLC = site.toLowerCase()
+                    li(class = siteLC)
+                        a(href="#{contacts[url]}" title="#{site}")
+                            i.fa(class = "fa-" + siteLC)

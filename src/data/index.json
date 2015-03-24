@@ -90,5 +90,14 @@
             "srcUrl": "",
             "caption": "Web-based text editing system with a revision control system built in. Enables users to create, modify, search, and share text documents."
         }
-    ]
+    ],
+
+    "contacts": {
+        "email": "",
+        "social": {
+            "BitBucket": "//bitbucket.org/chessmasterhong",
+            "GitHub": "//github.com/chessmasterhong",
+            "LinkedIn": "//www.linkedin.com/in/kchan12"
+        }
+    }
 }
