@@ -7,7 +7,7 @@ include ../mixins/portfolio-item.jade
         - var cat = category.toLowerCase()
         - if(filters.indexOf(cat) === -1)
             - filters.push(cat)
-
+- filters.sort()
 
 section#portfolio
     div.row
