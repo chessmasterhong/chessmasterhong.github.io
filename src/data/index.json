@@ -94,8 +94,8 @@
 
     "contacts": {
         "email": {
-            "local": "",
-            "domain": ""
+            "domain": "",
+            "local": ""
         },
         "social": {
             "Bitbucket": "//bitbucket.org/chessmasterhong",

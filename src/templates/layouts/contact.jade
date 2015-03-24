@@ -1,3 +1,28 @@
+- var local = "kevchan1012".split("")
+- for(var l = 0; l < local.length; l++)
+    - local[l] = "&#" + local[l].charCodeAt(0) + ";"
+    - var r = Math.floor(Math.random() * 123 - 97) + 97
+    - var s = ["@", "&#64;", ".", "&#46;", " ", "&#32;", "&nbsp;", "<i class='fa fa-at'></i>"]
+    - var t = Math.random() > Math.random() ? r : s;
+    - var u = ["<span style='display:none'>" + t + ";</span>", "<!--&#" + t + ";-->"]
+    - if(Math.random() > Math.random())
+        - local.splice(l++, 0, u[Math.floor(Math.random() * u.length)])
+- local.reverse()
+
+- var domain = "gmail.com".split("")
+- for(var d = 0; d < domain.length; d++)
+    - domain[d] = "&#" + domain[d].charCodeAt(0) + ";"
+    - var r = "&#" + (Math.floor(Math.random() * 123 - 97) + 97) + ";"
+    - var s = ["@", "&#64;", ".", "&#46;", " ", "&#32;", "&nbsp;", "<i class='fa fa-at'></i>"]
+    - var t = Math.random() > Math.random() ? r : s;
+    - var u = ["<span style='display:none'>" + t + ";</span>", "<!--&#" + t + ";-->"]
+    - if(Math.random() < Math.random())
+        - domain.splice(d++, 0, u[Math.floor(Math.random() * u.length)])
+- domain.reverse()
+
+- var e = domain.join(" ") + " <span>&#64;</span> " + local.join(" ")
+
+
 section#contact
     div.row
         div.large-12.column
@@ -5,7 +30,7 @@ section#contact
 
     div.row
         div.large-12.column
-            p #{contacts.email.local}@#{contacts.email.domain}
+            div.hola!= e
 
     div.row
         div.large-12.column
@@ -13,5 +38,5 @@ section#contact
                 - each url, site in contacts.social
                     - var siteLC = site.toLowerCase()
                     li(class = siteLC)
-                        a(href="#{contacts[url]}" title="#{site}")
+                        a(href="#{contacts.social[url]}" title="#{site}")
                             i.fa(class = "fa-" + siteLC)

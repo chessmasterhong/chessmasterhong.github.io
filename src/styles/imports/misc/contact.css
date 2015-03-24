@@ -1,0 +1,20 @@
+.hola {
+    cursor: default;
+    direction: rtl;
+    letter-spacing: -2.125px;
+    unicode-bidi: bidi-override;
+
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+@media(max-width: 40em) {
+    .hola {
+        font-size: 0.75;
+        letter-spacing: -1.75px;
+    }
+}
