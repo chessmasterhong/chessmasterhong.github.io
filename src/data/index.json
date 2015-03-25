@@ -102,15 +102,5 @@
             "GitHub": "//github.com/chessmasterhong",
             "LinkedIn": "//www.linkedin.com/in/kchan12"
         }
-    },
-
-    "about": {
-        "me": [
-            "Hello World! My name is Kevin Chan.",
-            "Code is to me as paint is to a painter. I see programming not as a series of computer instructions, but rather a medium to express my ideas and knowledge for others to use and enjoy. At times, my code may be just a small piece of the equation and other times, it may be the foundation that sets the project in motion. Nevertheless, it is still that piece of code that helps to complete the grand picture.",
-            "Having been self taught my first programming language, I am still constantly learning everyday. Many of my open-source projects were either a completely new learning experience for me or something I wanted to contribute back to the community to show my appreciation. Since then, I have worked on several projects across the various spectra of project development, including but is not limited to: front-end, back-end, database design, testing, documentation, algorithmic optimization, and task automation.",
-            "Lately, I have been deeply invested in JavaScript and web technologies. I have dabbled in a number of JavaScript frameworks during that time, like AngularJS, Node.js, Express, RequireJS, three.js, Impact, and Phaser. I have also incorporated other technologies into my development workflow, such as JSHint, Gulp.js, Bower, Foundation, Jade, and Less.",
-            "In my spare time, I enjoy coding side projects, or experimenting with new programming languages and frameworks. Once in a while, I can be found playing video games, but nowadays I would rather make them. On rare occasions, I would work on some random arts and crafts."
-        ]
     }
 }
