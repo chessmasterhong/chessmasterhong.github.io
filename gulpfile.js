@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     lessPluginAutoPrefix = require('less-plugin-autoprefix'),
     path = require('path'),
+    plumber = require('gulp-plumber'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -52,6 +53,7 @@ gulp.task('build:copy-vendors', function() {
  */
 gulp.task('build:html', function() {
     return gulp.src('./src/index.jade')
+        .pipe(plumber())
         .pipe(data(function(file) {
             return JSON.parse(
                 fs.readFileSync(
