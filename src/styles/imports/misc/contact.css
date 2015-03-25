@@ -1,7 +1,7 @@
-.hola {
+#contact .hola span {
     cursor: default;
     direction: rtl;
-    letter-spacing: -2.125px;
+    letter-spacing: -2px;
     unicode-bidi: bidi-override;
 
     -webkit-touch-callout: none;
@@ -10,11 +10,4 @@
          -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
-}
-
-@media(max-width: 40em) {
-    .hola {
-        font-size: 0.75;
-        letter-spacing: -1.75px;
-    }
 }
