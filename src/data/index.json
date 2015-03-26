@@ -109,26 +109,52 @@
         "specs": {
             "experience": [
                 {
-                    "organization": "",
-                    "position": "",
-                    "date": "",
+                    "organization": "Hope for Future Inc.",
+                    "title": "Web Developer",
+                    "date": "Nov. 2014 - Present",
                     "desc": ""
                 },
                 {
-                    "organization": "",
-                    "position": "",
-                    "date": "",
+                    "organization": "City College of New York",
+                    "title": "Peer Mentor for Introduction to Computing",
+                    "date": "Feb. 2014 - May 2014",
                     "desc": ""
                 },
                 {
-                    "organization": "",
-                    "position": "",
-                    "date": "",
+                    "organization": "Community Healthcare Network",
+                    "title": "Intern",
+                    "date": "Jul. 2007 - Aug. 2007",
                     "desc": ""
                 }
             ],
-            "volunteer": [],
-            "organizations": []
+            "volunteer": [
+                {
+                    "organization": "FIRST Robotics Competition",
+                    "title": "Team 1635 Mentor",
+                    "date": "Jan. 2013 - Feb. 2013",
+                    "desc": ""
+                }
+            ],
+            "activities": [
+                {
+                    "organization": "Association for Computing Machinery",
+                    "title": "Member",
+                    "date": "Jan. 2013 - May 2014",
+                    "desc": ""
+                },
+                {
+                    "organization": "Graphics Learning and Smart Sensors Lab",
+                    "title": "Research Assistant",
+                    "date": "Jan. 2014 - May 2014",
+                    "desc": ""
+                },
+                {
+                    "organization": "FIRST Robotics Competition",
+                    "title": "Team 1635 Assistant Programmer",
+                    "date": "Jan. 2008 - Feb. 2008",
+                    "desc": ""
+                }
+            ]
         }
     }
 }

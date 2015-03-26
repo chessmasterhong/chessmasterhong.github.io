@@ -27,7 +27,7 @@ section#about
                             div.date #{item.date}
                             div.details
                                 span.organization #{item.organization}
-                                span.position : #{item.position}
+                                span.title : #{item.title}
                                 div.desc
                                     p #{item.desc}
 
@@ -40,19 +40,19 @@ section#about
                             div.date #{item.date}
                             div.details
                                 span.organization #{item.organization}
-                                span.position : #{item.position}
+                                span.title : #{item.title}
                                 div.desc
                                     p #{item.desc}
 
-            - if(about.specs.organizations.length > 0)
+            - if(about.specs.activities.length > 0)
                 div.panel
-                    h4 Organizations
+                    h4 Activities
 
-                    - each item in about.specs.organizations
+                    - each item in about.specs.activities
                         div.item
                             div.date #{item.date}
                             div.details
                                 span.organization #{item.organization}
-                                span.position : #{item.position}
+                                span.title : #{item.title}
                                 div.desc
                                     p #{item.desc}
