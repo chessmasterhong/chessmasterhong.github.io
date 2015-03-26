@@ -57,3 +57,20 @@ section#about
                                 span.title : #{item.title}
                                 div.desc
                                     p #{item.desc}
+
+        //- Specifications: Sub
+        aside.specs-sub.large-4.medium-4.column
+            div.panel
+                h4 Skills
+
+                - for(var category in about.specs.skills)
+                    div.category
+                        - var cat = category.charAt(0).toUpperCase() + category.substring(1).replace(/_(.)/g, function(a, b) { return " " + b.toUpperCase() })
+
+                        h5 #{cat}
+                        p
+                            - each item, index in about.specs.skills[category]
+                                span #{item}
+
+                                - if(index !== about.specs.skills[category].length - 1)
+                                    | , <!---->
