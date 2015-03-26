@@ -1,4 +1,4 @@
-(function() {
+require(['jquery'], function($) {
     'use strict';
 
     var panels = $('#portfolio .portfolio-item .panel')
@@ -27,4 +27,4 @@
     $(window).scroll(function() {
         fadeIn();
     });
-})();
+});

@@ -67,12 +67,4 @@ html(lang="en-US")
         a(href="#", class="scrollToTop")
             i.fa.fa-caret-up
 
-        script(type="text/javascript", src="vendor/jquery/dist/jquery.min.js")
-        script(type="text/javascript", src="vendor/mixitup2/build/jquery.mixitup.min.js")
-
-        script(type="text/javascript", src="scripts/top-bar.js")
-        script(type="text/javascript", src="scripts/smooth-scroll.js")
-        script(type="text/javascript", src="scripts/scroll-to-top.js")
-        script(type="text/javascript", src="scripts/scroll-fade-in.js")
-        script(type="text/javascript", src="scripts/scroll-drop-in.js")
-        script(type="text/javascript", src="scripts/mixitup.js")
+        script(type="text/javascript", src="vendor/requirejs/require.js", data-main="scripts/site")

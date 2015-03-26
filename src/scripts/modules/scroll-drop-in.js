@@ -1,4 +1,4 @@
-(function() {
+require(['jquery'], function($) {
     'use strict';
 
     var imgsLeft = $('#showcase .row-odd .showcase-thumbnail img')
@@ -39,4 +39,4 @@
     $(window).scroll(function() {
         dropIn();
     });
-})();
+});
