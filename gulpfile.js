@@ -31,7 +31,12 @@ gulp.task('lint-scripts', function() {
  * Clean
  */
 gulp.task('build:clean', function() {
-    return del.sync(['dist/**/*']);
+    return del.sync([
+        './index.html',
+        './scripts/',
+        './styles/',
+        './vendor/'
+    ]);
 });
 
 
@@ -40,13 +45,13 @@ gulp.task('build:clean', function() {
  */
 gulp.task('build:copy-vendors', function() {
     gulp.src('./src/vendor/foundation/css/foundation.css')
-        .pipe(gulp.dest('./dist/vendor/foundation/css/'));
+        .pipe(gulp.dest('./vendor/foundation/css/'));
 
     gulp.src('./src/vendor/font-awesome/css/font-awesome.min.css')
-        .pipe(gulp.dest('./dist/vendor/font-awesome/css/'));
+        .pipe(gulp.dest('./vendor/font-awesome/css/'));
 
     gulp.src('./src/vendor/font-awesome/fonts/**/*')
-        .pipe(gulp.dest('./dist/vendor/font-awesome/fonts/'));
+        .pipe(gulp.dest('./vendor/font-awesome/fonts/'));
 });
 
 
@@ -56,7 +61,7 @@ gulp.task('build:copy-vendors', function() {
 gulp.task('build:scripts', ['lint-scripts'], function() {
     requirejs.optimize({
         baseUrl: './src/',
-        out: './dist/scripts/site.js',
+        out: './scripts/site.js',
         mainConfigFile: './src/scripts/site.js',
         include: [
             './vendor/requirejs/require.js',
@@ -86,7 +91,7 @@ gulp.task('build:html', function() {
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('build:styles', function() {
@@ -97,7 +102,7 @@ gulp.task('build:styles', function() {
             plugins: [autoprefix]
         }))
         .pipe(combineMediaQueries())
-        .pipe(gulp.dest('./dist/styles/'));
+        .pipe(gulp.dest('./styles/'));
 });
 
 
@@ -118,7 +123,7 @@ gulp.task('build', function(cb) {
  * Webserver
  */
 gulp.task('server', function() {
-    gulp.src('./dist/')
+    gulp.src('./')
         .pipe(webserver({
             host: '0.0.0.0',
             port: 8080
