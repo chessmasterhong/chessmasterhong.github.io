@@ -186,7 +186,8 @@
                 ],
                 "platforms": [
                     "Windows",
-                    "Linux"
+                    "Linux",
+                    "Web"
                 ],
                 "other": [
                     "MVC architecture",
@@ -194,7 +195,17 @@
                     "Responsive web design",
                     "Adaptive web design"
                 ]
-            }
+            },
+            "education": [
+                "The City College of the City University of New York"
+            ],
+            "certifications": [
+                "Microsoft Office Word 2003 Certified Specialist",
+                "Microsoft Office PowerPoint 2003 Certified Specialist"
+            ],
+            "awards": [
+                "The 2014 Computer Science Outstanding Project Implementation Award"
+            ]
         }
     }
 }

@@ -74,3 +74,25 @@ section#about
 
                                 - if(index !== about.specs.skills[category].length - 1)
                                     | , <!---->
+
+            - if(about.specs.certifications.length > 0)
+                div.panel
+                    h4 Education
+
+                    - each ed in about.specs.education
+                        div.item #{ed}
+
+            - if(about.specs.certifications.length > 0)
+                div.panel
+                    h4 Certifications
+
+                    - each cert in about.specs.certifications
+                        div.item #{cert}
+
+            - if(about.specs.awards.length > 0)
+                div.panel
+                    h4 Awards
+
+                    - each award in about.specs.awards
+                        div.item #{award}
+
