@@ -1,6 +1,7 @@
 @import "../variables.less";
 
 
+// ---------- Introduction ----------
 #about p {
     font-size: 1.000rem;
     font-weight: 400;
@@ -19,4 +20,38 @@
         line-height: 1.000rem;
         margin-bottom: 0.825rem;
     }
+}
+
+
+// ---------- Specifications ----------
+#about .specs-main .panel .item {
+    overflow: hidden;
+}
+
+#about .specs-main .panel .item .time {
+    color: @mainColor4;
+    float: left;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding-right: 12px;
+    width: 30%;
+}
+
+#about .specs-main .panel .item .details {
+    color: @mainColor0;
+    float: left;
+    width: 70%;
+}
+
+#about .specs-main .panel .item .details .organization {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+#about .specs-main .panel .item .details .position {
+    font-size: 1.05rem;
+}
+
+#about .specs-main .panel .item .details .desc p {
+    font-size: 0.8rem;
 }
