@@ -18,38 +18,41 @@ section#about
 
     div.row
         div.specs-main.large-8.meduim-8.column
-            div.panel
-                h4 Experience
+            - if(about.specs.experience.length > 0)
+                div.panel
+                    h4 Experience
 
-                - each item in about.specs.experience
-                    div.item
-                        div.date #{item.date}
-                        div.details
-                            span.organization #{item.organization}
-                            span.position : #{item.position}
-                            div.desc
-                                p #{item.desc}
+                    - each item in about.specs.experience
+                        div.item
+                            div.date #{item.date}
+                            div.details
+                                span.organization #{item.organization}
+                                span.position : #{item.position}
+                                div.desc
+                                    p #{item.desc}
 
-            div.panel
-                h4 Volunteer
+            - if(about.specs.volunteer.length > 0)
+                div.panel
+                    h4 Volunteer
 
-                - each item in about.specs.volunteer
-                    div.item
-                        div.date #{item.date}
-                        div.details
-                            span.organization #{item.organization}
-                            span.position : #{item.position}
-                            div.desc
-                                p #{item.desc}
+                    - each item in about.specs.volunteer
+                        div.item
+                            div.date #{item.date}
+                            div.details
+                                span.organization #{item.organization}
+                                span.position : #{item.position}
+                                div.desc
+                                    p #{item.desc}
 
-            div.panel
-                h4 Organizations
+            - if(about.specs.organizations.length > 0)
+                div.panel
+                    h4 Organizations
 
-                - each item in about.specs.organizations
-                    div.item
-                        div.date #{item.date}
-                        div.details
-                            span.organization #{item.organization}
-                            span.position : #{item.position}
-                            div.desc
-                                p #{item.desc}
+                    - each item in about.specs.organizations
+                        div.item
+                            div.date #{item.date}
+                            div.details
+                                span.organization #{item.organization}
+                                span.position : #{item.position}
+                                div.desc
+                                    p #{item.desc}
