@@ -7,7 +7,7 @@ require(['jquery'], function($) {
         });
 
         $('#nav .row .links').click(function() {
-            if($('.nav-collapse:visible')) {
+            if($('.nav-collapse').is(':visible')) {
                 $(this).toggle();
             }
         });
