@@ -68,7 +68,7 @@ section#about
                         - var cat = category.charAt(0).toUpperCase() + category.substring(1).replace(/_(.)/g, function(a, b) { return " " + b.toUpperCase() })
 
                         div.category #{cat}
-                        div.items
+                        div.item
                             - each item, index in about.specs.skills[category]
                                 span #{item}
 
