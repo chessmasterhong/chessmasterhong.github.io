@@ -1,4 +1,11 @@
 {
+    "__LICENSE__": {
+        "COPYRIGHT": "Copyright (c) 2014-2015 Kevin Chan",
+        "AUTHOR"   : "Kevin Chan (chessmasterhong)",
+        "LINK"     : "http://chessmasterhong.github.io",
+        "SEE"      : "https://github.com/chessmasterhong/chessmasterhong.github.io for additional details"
+    },
+
     "projects": [
         {
             "title": "Pascal.js",

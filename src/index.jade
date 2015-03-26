@@ -56,11 +56,14 @@ html(lang="en-US")
         footer#footer
             div.row
                 div.large-12.column
+                    - var copyright = __LICENSE__.COPYRIGHT.replace("\(c\)", "&copy;")
+                    - var gh_pages = __LICENSE__.SEE.replace(/(https:)|(\s.*)/, "")
+
                     p
-                        | Copyright &copy; 2014-2015 #{about.name}
+                        | !{copyright}
                         br
                         | Hosted on&nbsp;
-                        a(href="#{contacts.social.GitHub}/chessmasterhong.github.io") GitHub Pages
+                        a(href="#{gh_pages}") GitHub Pages
                         |  &mdash; Theme by&nbsp;
                         a(href="#{contacts.social.GitHub}") chessmasterhong
 

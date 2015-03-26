@@ -19,5 +19,7 @@ The **fonts and font icons** are licensed under the [SIL Open Font License 1.1](
 
 The **source code** is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
+However, the **content of the file** `./src/data/index.json` in this repository is copyright to [Kevin Chan](http://github.com/chessmasterhong). You may not reuse any materials therein without my permission.
+
 
 Copyright (c) 2014-2015 Kevin Chan. Rights reserved as indicated above.
