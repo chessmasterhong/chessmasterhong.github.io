@@ -1,9 +1,6 @@
 $(document).ready(function() {
     'use strict';
 
-    $('#portfolio .portfolio-filter').css('display', 'inline-block');
-    $('#portfolio .portfolio-item').addClass('mix');
-
     $('.portfolio-items').mixItUp({
         animation: {
             effects: 'fade',
@@ -16,6 +13,12 @@ $(document).ready(function() {
             filter: '.portfolio-filter',
             sort: '',
             target: '.portfolio-item'
+        },
+        callbacks: {
+            onMixLoad: function() {
+                $('#portfolio .portfolio-filter').css('display', 'inline-block');
+                $('#portfolio .portfolio-item').addClass('mix');
+            }
         }
     });
 });
