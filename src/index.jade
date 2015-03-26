@@ -4,9 +4,9 @@ html(lang="en-US")
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
 
-        title Kevin Chan | chessmasterhong
+        title #{about.name} | #{about.alias}
 
-        meta(name="description", content="Kevin Chan. Programmer, computer scientist, technology enthusiast.")
+        //-meta(name="description", content="#{about.slogan}")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
         link(rel="stylesheet", type="text/css", href="vendor/foundation/css/foundation.css")
@@ -24,13 +24,13 @@ html(lang="en-US")
             section#logo
                 div.row
                     div.large-12.column
-                        h1 Kevin Chan
+                        h1 #{about.name}
 
             //- Header: Navigation
             nav#nav
                 div.row
                     div.large-12.column
-                        span.title Kevin Chan
+                        span.title #{about.name}
                         a.nav-collapse
                             i.fa.fa-bars
 
@@ -57,7 +57,7 @@ html(lang="en-US")
             div.row
                 div.large-12.column
                     p
-                        | Copyright &copy; 2014-2015 Kevin Chan
+                        | Copyright &copy; 2014-2015 #{about.name}
                         br
                         | Hosted on&nbsp;
                         a(href="#{contacts.social.GitHub}/chessmasterhong.github.io") GitHub Pages
