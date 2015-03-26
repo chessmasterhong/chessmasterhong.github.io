@@ -16,8 +16,11 @@ $(document).ready(function() {
         },
         callbacks: {
             onMixLoad: function() {
-                $('#portfolio .portfolio-filter').css('display', 'inline-block');
-                $('#portfolio .portfolio-item').addClass('mix');
+                $('#portfolio .portfolio-filter')
+                    .css('display', 'inline-block');
+
+                $('#portfolio .portfolio-item')
+                    .addClass('mix');
             }
         }
     });
