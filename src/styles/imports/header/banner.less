@@ -2,15 +2,18 @@
 
 
 #banner {
-    display: none;
-
     background: @bannerGradient0;
     background: linear-gradient(@bannerGradientAngle, @bannerGradient0, @bannerGradient1);
     margin-top: -20px;
-    padding: 180px 20px;
+    //padding: 180px 20px;
+    padding: 60px 20px;
 
     @media(max-width: @mediaBreak1) {
         margin-top: 0;
         padding: 50px 20px;
+    }
+
+    @media(max-width: @mediaBreak0) {
+        padding: 80px 10px 40px;
     }
 }

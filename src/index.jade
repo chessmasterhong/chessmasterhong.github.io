@@ -30,16 +30,20 @@ html(lang="en-US")
             nav#nav
                 div.row
                     div.large-12.column
+                        span.title Kevin Chan
+                        a.nav-collapse
+                            i.fa.fa-bars
+
+                    span.links
                         a(href="#about") About
-                        a(href="#showcase") showcase
-                        a(href="#portfolio") portfolio
-                        a(href="#contact") contact
+                        a(href="#showcase") Showcase
+                        a(href="#portfolio") Portfolio
+                        a(href="#contact") Contact
 
             //- Header: Banner
             section#banner
                 div.row
                     div.large-12.column
-                        h1 Blah blah blah
 
         //- Main Content
         main#main
@@ -66,6 +70,7 @@ html(lang="en-US")
         script(type="text/javascript", src="vendor/jquery/dist/jquery.min.js")
         script(type="text/javascript", src="vendor/mixitup2/build/jquery.mixitup.min.js")
 
+        script(type="text/javascript", src="scripts/top-bar.js")
         script(type="text/javascript", src="scripts/smooth-scroll.js")
         script(type="text/javascript", src="scripts/scroll-to-top.js")
         script(type="text/javascript", src="scripts/scroll-fade-in.js")

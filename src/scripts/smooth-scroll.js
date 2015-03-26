@@ -1,7 +1,7 @@
 $(document).ready(function() {
     'use strict';
 
-    $('a[href^="#"]').on('click', function(event) {
+    $('a[href^="#"]').click(function(event) {
         event.preventDefault();
 
         if($(this.hash).offset()) {
