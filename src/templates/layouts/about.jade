@@ -64,11 +64,11 @@ section#about
                 h4 Skills
 
                 - for(var category in about.specs.skills)
-                    div.category
+                    div.sub-section
                         - var cat = category.charAt(0).toUpperCase() + category.substring(1).replace(/_(.)/g, function(a, b) { return " " + b.toUpperCase() })
 
-                        h5 #{cat}
-                        p
+                        div.category #{cat}
+                        div.items
                             - each item, index in about.specs.skills[category]
                                 span #{item}
 
