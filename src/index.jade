@@ -57,7 +57,7 @@ html(lang="en-US")
             div.row
                 div.large-12.column
                     - var copyright = __LICENSE__.COPYRIGHT.replace("\(c\)", "&copy;")
-                    - var gh_pages = __LICENSE__.SEE.replace(/(https:)|(\s.*)/, "")
+                    - var gh_pages = __LICENSE__.SEE.replace(/http(.*):/, "").replace(/\s.*/, "")
 
                     p
                         | !{copyright}
