@@ -21,36 +21,35 @@ section#about
             div.panel
                 h4 Experience
 
-                div.item
-                    div.time Time
-                    div.details
-                        span.organization Organization
-                        | :&nbsp;
-                        span.position Position
-                        div.desc
-                            p Description
+                - each item in about.specs.experience
+                    div.item
+                        div.date #{item.date}
+                        div.details
+                            span.organization #{item.organization}
+                            span.position : #{item.position}
+                            div.desc
+                                p #{item.desc}
 
             div.panel
                 h4 Volunteer
 
-                div.item
-                    div.time Time
-                    div.details
-                        span.organization Organization
-                        | :&nbsp;
-                        span.position Position
-                        div.desc
-                            p Description
+                - each item in about.specs.volunteer
+                    div.item
+                        div.date #{item.date}
+                        div.details
+                            span.organization #{item.organization}
+                            span.position : #{item.position}
+                            div.desc
+                                p #{item.desc}
 
             div.panel
                 h4 Organizations
 
-                div.item
-                    div.time Time
-                    div.details
-                        span.organization Organization
-                        | :&nbsp;
-                        span.position Position
-                        div.desc
-                            p Description
-
+                - each item in about.specs.organizations
+                    div.item
+                        div.date #{item.date}
+                        div.details
+                            span.organization #{item.organization}
+                            span.position : #{item.position}
+                            div.desc
+                                p #{item.desc}

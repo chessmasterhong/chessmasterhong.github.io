@@ -102,5 +102,33 @@
             "Bitbucket": "//bitbucket.org/chessmasterhong",
             "LinkedIn": "//www.linkedin.com/in/kchan12"
         }
+    },
+
+    "about": {
+        "intro": "",
+        "specs": {
+            "experience": [
+                {
+                    "organization": "",
+                    "position": "",
+                    "date": "",
+                    "desc": ""
+                },
+                {
+                    "organization": "",
+                    "position": "",
+                    "date": "",
+                    "desc": ""
+                },
+                {
+                    "organization": "",
+                    "position": "",
+                    "date": "",
+                    "desc": ""
+                }
+            ],
+            "volunteer": [],
+            "organizations": []
+        }
     }
 }
