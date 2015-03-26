@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     combineMediaQueries = require('gulp-combine-media-queries'),
+    concatCSS = require('gulp-concat-css'),
     data = require('gulp-data'),
     del = require('del'),
     fs = require('fs'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
     lessPluginAutoPrefix = require('less-plugin-autoprefix'),
     path = require('path'),
     plumber = require('gulp-plumber'),
+    replace = require('gulp-replace'),
     requirejs = require('requirejs'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
@@ -44,12 +46,6 @@ gulp.task('build:clean', function() {
  * Copy
  */
 gulp.task('build:copy-vendors', function() {
-    gulp.src('./src/vendor/foundation/css/foundation.css')
-        .pipe(gulp.dest('./vendor/foundation/css/'));
-
-    gulp.src('./src/vendor/font-awesome/css/font-awesome.min.css')
-        .pipe(gulp.dest('./vendor/font-awesome/css/'));
-
     gulp.src('./src/vendor/font-awesome/fonts/**/*')
         .pipe(gulp.dest('./vendor/font-awesome/fonts/'));
 });
@@ -97,11 +93,17 @@ gulp.task('build:html', function() {
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
 
-    return gulp.src('./src/styles/*.less') // only process root styles directory
+    return gulp.src([
+            './src/vendor/foundation/css/foundation.css',
+            './src/vendor/font-awesome/css/font-awesome.css',
+            './src/styles/*.less' // only process root styles directory
+        ])
         .pipe(less({
             plugins: [autoprefix]
         }))
+        .pipe(concatCSS('site.css'))
         .pipe(combineMediaQueries())
+        .pipe(replace(/(\/font-awesome\/)/g, '/vendor$1'))
         .pipe(gulp.dest('./styles/'));
 });
 
