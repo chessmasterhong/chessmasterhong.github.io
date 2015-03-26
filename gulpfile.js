@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     lessPluginAutoPrefix = require('less-plugin-autoprefix'),
     path = require('path'),
     plumber = require('gulp-plumber'),
+    requirejs = require('requirejs'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -30,27 +31,48 @@ gulp.task('lint-scripts', function() {
  * Clean
  */
 gulp.task('build:clean', function() {
-    return del.sync(['dist']);
+    return del.sync(['dist/**/*']);
 });
 
 
 /**
  * Copy
  */
-gulp.task('build:copy-scripts', function() {
-    return gulp.src('./src/scripts/**/*.js')
-        .pipe(gulp.dest('./dist/scripts/'));
-});
-
 gulp.task('build:copy-vendors', function() {
-    return gulp.src('./src/vendor/**/*')
-        .pipe(gulp.dest('./dist/vendor/'));
+    gulp.src('./src/vendor/foundation/css/foundation.css')
+        .pipe(gulp.dest('./dist/vendor/foundation/css/'));
+
+    gulp.src('./src/vendor/font-awesome/css/font-awesome.min.css')
+        .pipe(gulp.dest('./dist/vendor/font-awesome/css/'));
+
+    gulp.src('./src/vendor/font-awesome/fonts/**/*')
+        .pipe(gulp.dest('./dist/vendor/font-awesome/fonts/'));
 });
 
 
 /**
  * Compile
  */
+gulp.task('build:scripts', ['lint-scripts'], function() {
+    requirejs.optimize({
+        baseUrl: './src/',
+        out: './dist/scripts/site.js',
+        mainConfigFile: './src/scripts/site.js',
+        include: [
+            './vendor/requirejs/require.js',
+            'scripts/site.js'
+        ],
+        insertRequire: ['scripts/site.js'],
+        wrap: true,
+        optimize: 'uglify2'
+    }, function() {
+        return 0;
+    }, function(err) {
+        console.log(err);
+        return 1;
+    });
+});
+
 gulp.task('build:html', function() {
     return gulp.src('./src/index.jade')
         .pipe(plumber())
@@ -84,9 +106,8 @@ gulp.task('build:styles', function() {
  */
 gulp.task('build', function(cb) {
     runSequence(
-        'lint-scripts',
         'build:clean',
-        ['build:copy-scripts', 'build:copy-vendors'],
+        ['build:scripts', 'build:copy-vendors'],
         ['build:html', 'build:styles'],
         cb
     );
@@ -122,7 +143,7 @@ gulp.task('watch', function() {
 
     gulp.watch([
         './src/**/*.js'
-    ], ['lint-scripts', 'build:copy-scripts']);
+    ], ['build:scripts']);
 });
 
 
