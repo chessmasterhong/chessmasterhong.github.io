@@ -1,0 +1,546 @@
+/*!
+ *  http://chessmasterhong.github.io
+ *
+ *  @copyright Copyright (c) 2015 Kevin Chan
+ *  @author    Kevin Chan (chessmasterhong)
+ *  @link      http://chessmasterhong.github.io
+ *
+ *  @license   Creative Commons Attribution-ShareAlike 4.0 International License
+ *             https://creativecommons.org/licenses/by-sa/4.0/
+ *
+ *  @see       https://github.com/chessmasterhong/chessmasterhong.github.io for additional details
+ */
+
+body {
+	color: #000000;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 1.500rem;
+	font-variant: small-caps;
+	font-weight: 700;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+ul[class*="block-grid"] > li {
+	clear: none !important;
+}
+
+.scrollToTop {
+	bottom: 10px;
+	font-size: 2.5em;
+	color: #999999;
+	display: none;
+	padding: 0 20px;
+	position: fixed;
+	right: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#logo h1 {
+	font-size: 3rem;
+	font-variant: small-caps;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+	position: relative;
+}
+
+#nav .row {
+	background: #222230;
+	border-bottom: 4px solid #fed136;
+}
+
+#nav .row .title,
+#nav .row .nav-collapse {
+	color: #e8e8e8;
+	display: none;
+	font-variant: small-caps;
+	font-weight: 700;
+}
+
+#nav .row .title {
+	font-size: 1.125rem;
+	padding: 8px 0;
+}
+
+#nav .row .nav-collapse {
+	float: right;
+	font-size: 1.5rem;
+	padding: 2px 0;
+}
+
+#nav .row .links {
+	display: block;
+	padding-left: 15px;
+}
+
+#nav .row .links a {
+	color: #e8e8e8;
+	float: left;
+	font-size: 0.875rem;
+	font-variant: small-caps;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 12px 15px;
+}
+
+#nav .row .links a:active,
+#nav .row .links a:hover {
+	border-bottom: 4px solid #fc645f;
+	color: #fed136;
+	margin-bottom: -4px;
+}
+
+#banner {
+	background: #799fc6;
+	background: -webkit-linear-gradient(45deg, #799fc6, #a2d7d8);
+	background: linear-gradient(45deg, #799fc6, #a2d7d8);
+	margin-top: -20px;
+	padding: 60px 20px;
+}
+
+#main section {
+	padding: 26px 0;
+}
+
+#about .specs-main .panel,
+#about .specs-sub .panel {
+	padding-bottom: 4px;
+}
+
+#about .specs-main .panel h4,
+#about .specs-sub .panel h4 {
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin-bottom: 20px;
+}
+
+#about .intro {
+	margin-bottom: 20px;
+}
+
+#about .intro p {
+	font-size: 1.000rem;
+	font-weight: 400;
+	line-height: 1.500rem;
+}
+
+#about .specs-main .panel .item {
+	overflow: hidden;
+}
+
+#about .specs-main .panel .item .date {
+	color: #999999;
+	float: left;
+	font-size: 0.875rem;
+	font-weight: 400;
+	padding-right: 12px;
+	width: 30%;
+}
+
+#about .specs-main .panel .item .details {
+	color: #000000;
+	float: left;
+	width: 70%;
+}
+
+#about .specs-main .panel .item .details .organization {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+#about .specs-main .panel .item .details .title {
+	font-size: 1rem;
+}
+
+#about .specs-main .panel .item .details .desc p {
+	font-size: 0.8rem;
+}
+
+#about .specs-sub .panel .category {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+#about .specs-sub .panel .item {
+	font-size: 0.9rem;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+#showcase {
+	background: #f2f2f2;
+	border-bottom: 1px solid #d8d8d8;
+	border-top: 1px solid #d8d8d8;
+}
+
+#showcase .row-even,
+#showcase .row-odd {
+	padding: 40px 0;
+}
+
+#showcase .showcase-thumbnail img {
+	box-shadow: 2px 2px 4px 2px #999999;
+	position: relative;
+}
+
+#showcase .showcase-title h3 {
+	font-weight: 400;
+}
+
+#showcase .showcase-text p {
+	font-size: 1.000rem;
+	font-weight: 400;
+	line-height: 1.500rem;
+}
+
+#showcase .showcase-text .buttons-text .button {
+	padding: 14px 24px;
+	font-weight: 300;
+}
+
+#showcase .showcase-text .buttons-icon .button {
+	padding: 12px 16px;
+}
+
+#showcase .showcase-text .buttons-icon .button i {
+	font-size: 1.25rem;
+}
+
+#portfolio .portfolio-filters {
+	font-size: 1.125rem;
+	text-align: center;
+}
+
+#portfolio .portfolio-filters .portfolio-filter {
+	display: none;
+	margin: 0 15px 35px;
+	cursor: pointer;
+}
+
+#portfolio .portfolio-filters .portfolio-filter:active,
+#portfolio .portfolio-filters .portfolio-filter:hover {
+	color: #fc645f;
+}
+
+#portfolio .portfolio-filters .portfolio-filter span {
+	position: relative;
+}
+
+#portfolio .portfolio-filters .portfolio-filter span:before {
+	background-color: #fc645f;
+	bottom: -2px;
+	content: "";
+	height: 2px;
+	left: 0;
+	position: absolute;
+	-webkit-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: -webkit-transform 0.1s linear 0s;
+	transition: transform 0.1s linear 0s;
+	visibility: hidden;
+	width: 100%;
+}
+
+#portfolio .portfolio-filters .portfolio-filter span:active:before,
+#portfolio .portfolio-filters .portfolio-filter span:hover:before {
+	-webkit-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	transform: scaleX(1);
+	visibility: visible;
+}
+
+#portfolio .mix {
+	display: none;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item {
+	padding: 0 10px;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel {
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel:hover .item-img-wrapper img {
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	margin: -5px 0 -10px 0;
+	padding: 5px 0 10px 0;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel:hover .item-caption {
+	opacity: 1;
+	visibility: visible;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-img-wrapper {
+	overflow: hidden;
+	width: 240px;
+	height: 240px;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-img-wrapper img {
+	margin: -5px 0 -10px 0;
+	padding: 5px 0 10px 0;
+	-webkit-transition: -webkit-filter 0.1s ease-in-out, filter 0.1s ease-in-out;
+	transition: filter 0.1s ease-in-out;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-caption {
+	background: rgba(0, 0, 0, 0.7);
+	border: 10px solid #f2f2f2;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	padding: 8px;
+	position: absolute;
+	top: 0;
+	-webkit-transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
+	visibility: hidden;
+	width: 100%;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-caption h4 {
+	border-bottom: 1px dotted #e8e8e8;
+	color: #e8e8e8;
+	font-size: 1.075rem;
+	font-weight: 400;
+	line-height: 1.25rem;
+	margin-bottom: 4px;
+	padding: 0 4px 8px;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-caption p {
+	color: #e8e8e8;
+	font-size: 0.875rem;
+	font-weight: 300;
+	line-height: 1.25rem;
+	margin: 0 4px 12px;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-caption .button {
+	padding: 8px 10px;
+	font-weight: 300;
+}
+
+#portfolio ul.portfolio-items li.portfolio-item .panel .item-caption .button i {
+	font-size: 1rem;
+}
+
+#contact {
+	background: #f2f2f2;
+	border-top: 1px solid #d8d8d8;
+	text-align: center;
+}
+
+#contact h4 {
+	margin: 30px 0 15px;
+	font-variant: small-caps;
+}
+
+#contact .hola {
+	padding-bottom: 20px;
+}
+
+#contact .hola i {
+	color: #999999;
+	cursor: default;
+	font-size: 1.05rem;
+	padding-right: 8px;
+}
+
+#contact ul.social-links {
+	list-style: none;
+	margin: 0 0 10px;
+}
+
+#contact ul.social-links li {
+	display: inline-block;
+	padding: 4px;
+}
+
+#contact ul.social-links li a {
+	background-color: #999999;
+	border-radius: 100%;
+	border-style: solid;
+	border-color: #999999;
+	color: #e8e8e8;
+	display: block;
+	font-size: 2.000rem;
+	height: 3.000rem;
+	line-height: 2.500rem;
+	text-align: center;
+	-webkit-transition: background-color 0.25s linear, border-color 0.25s linear, color 0.25s linear;
+	transition: background-color 0.25s linear, border-color 0.25s linear, color 0.25s linear;
+	width: 3.000rem;
+}
+
+#contact ul.social-links li.github a:hover,
+#contact ul.social-links li.github a:focus,
+#contact ul.social-links li.github a:active {
+	background-color: #f2f2f2;
+	border-color: #333333;
+	color: #333333;
+}
+
+#contact ul.social-links li.bitbucket a:hover,
+#contact ul.social-links li.bitbucket a:focus,
+#contact ul.social-links li.bitbucket a:active {
+	background-color: #f2f2f2;
+	border-color: #205081;
+	color: #205081;
+}
+
+#contact ul.social-links li.linkedin a:hover,
+#contact ul.social-links li.linkedin a:focus,
+#contact ul.social-links li.linkedin a:active {
+	background-color: #f2f2f2;
+	border-color: #0077B5;
+	color: #0077B5;
+}
+
+#footer {
+	background: #f2f2f2;
+}
+
+#footer .row {
+	background: #222230;
+	border-top: 4px solid #fed136;
+	padding: 20px 0;
+	text-align: center;
+}
+
+#footer p {
+	color: #e8e8e8;
+	font-size: 0.750rem;
+	font-weight: 300;
+}
+
+#footer a {
+	color: #a2d7d8;
+}
+
+@media (max-width: 64em) {
+
+#banner {
+	margin-top: 0;
+	padding: 50px 20px;
+}
+
+#about .intro p {
+	font-size: 0.950rem;
+	line-height: 1.250rem;
+	margin-bottom: 18px;
+}
+
+#showcase .showcase-title h3 {
+	font-size: 1.450rem;
+}
+
+#showcase .showcase-text p {
+	font-size: 0.950rem;
+	line-height: 1.250rem;
+}
+
+}
+
+@media (max-width: 40em) {
+
+#logo {
+	display: none;
+}
+
+#nav .row {
+	position: fixed;
+	z-index: 1;
+}
+
+#nav .row .title,
+#nav .row .nav-collapse {
+	display: inline-block;
+}
+
+#nav .row .links {
+	display: none;
+}
+
+#nav .row .links a {
+	clear: left;
+	margin-left: 10px;
+	padding: 10px;
+}
+
+#nav .row .links a:active,
+#nav .row .links a:hover {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+#banner {
+	padding: 80px 10px 40px;
+}
+
+#about .intro p {
+	font-size: 0.900rem;
+	font-weight: 300;
+	letter-spacing: -0.01rem;
+	line-height: 1.000rem;
+	margin-bottom: 14px;
+}
+
+#about .specs-main .panel .item .date {
+	font-size: 0.7rem;
+}
+
+#about .specs-main .panel .item .details .organization {
+	font-size: 0.9rem;
+}
+
+#about .specs-main .panel .item .details .title {
+	font-size: 0.9rem;
+}
+
+#about .specs-main .panel .item .details .desc p {
+	font-size: 0.7rem;
+}
+
+#showcase .row-even,
+#showcase .row-odd {
+	padding: 20px 0;
+}
+
+#showcase .showcase-title h3 {
+	font-size: 1.250rem;
+	letter-spacing: -0.02rem;
+	padding-top: 12px;
+}
+
+#showcase .showcase-text p {
+	font-size: 0.900rem;
+	font-weight: 300;
+	letter-spacing: -0.01rem;
+	line-height: 1.000rem;
+}
+
+#portfolio .portfolio-filters .portfolio-filter {
+	margin: 0 10px 30px;
+}
+
+}
+
