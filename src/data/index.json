@@ -154,7 +154,47 @@
                     "date": "Jan. 2008 - Feb. 2008",
                     "desc": ""
                 }
-            ]
+            ],
+            "skills": {
+                "program_languages": [
+                    "JavaScript",
+                    "PHP",
+                    "C++"
+                ],
+                "other_computer_languages": [
+                    "HTML",
+                    "CSS",
+                    "SQL",
+                    "JSON"
+                ],
+                "frameworks_and_libraries": [
+                    "Node.js",
+                    "AngularJS",
+                    "RequireJS",
+                    "jQuery",
+                    "Foundation"
+                ],
+                "technologies": [
+                    "HTML5",
+                    "CSS3",
+                    "Jade",
+                    "Less"
+                ],
+                "databases": [
+                    "MySQL",
+                    "SQLite"
+                ],
+                "platforms": [
+                    "Windows",
+                    "Linux"
+                ],
+                "other": [
+                    "MVC architecture",
+                    "API",
+                    "Responsive web design",
+                    "Adaptive web design"
+                ]
+            }
         }
     }
 }
