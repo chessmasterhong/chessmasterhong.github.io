@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     less = require('gulp-less'),
     lessPluginAutoPrefix = require('less-plugin-autoprefix'),
+    minifyCSS = require('gulp-minify-css'),
     path = require('path'),
     plumber = require('gulp-plumber'),
     replace = require('gulp-replace'),
@@ -35,9 +36,9 @@ gulp.task('lint-scripts', function() {
 gulp.task('build:clean', function() {
     return del.sync([
         './index.html',
-        './scripts/',
-        './styles/',
-        './vendor/'
+        './_scripts/',
+        './_styles/',
+        './_vendor/'
     ]);
 });
 
@@ -47,7 +48,7 @@ gulp.task('build:clean', function() {
  */
 gulp.task('build:copy-vendors', function() {
     gulp.src('./src/vendor/font-awesome/fonts/**/*')
-        .pipe(gulp.dest('./vendor/font-awesome/fonts/'));
+        .pipe(gulp.dest('./_vendor/font-awesome/fonts/'));
 });
 
 
@@ -57,7 +58,7 @@ gulp.task('build:copy-vendors', function() {
 gulp.task('build:scripts', ['lint-scripts'], function() {
     requirejs.optimize({
         baseUrl: './src/',
-        out: './scripts/site.js',
+        out: './_scripts/site.js',
         mainConfigFile: './src/scripts/site.js',
         include: [
             './vendor/requirejs/require.js',
@@ -103,8 +104,11 @@ gulp.task('build:styles', function() {
         }))
         .pipe(concatCSS('site.css'))
         .pipe(combineMediaQueries())
-        .pipe(replace(/(\/font-awesome\/)/g, '/vendor$1'))
-        .pipe(gulp.dest('./styles/'));
+        .pipe(replace(/(\/font-awesome\/)/g, '/_vendor$1'))
+        .pipe(minifyCSS())
+        .pipe(replace(/(.)(\/\*.*)/g, '$1\n\n$2'))
+        .pipe(replace(/(\*\/)(.)/g, '$1\n$2'))
+        .pipe(gulp.dest('./_styles/'));
 });
 
 
