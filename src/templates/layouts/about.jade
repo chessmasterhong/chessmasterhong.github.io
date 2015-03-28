@@ -5,16 +5,9 @@ section#about
 
     div.row
         div.intro.large-12.column.text-justify
-            :markdown
-                Hello World! My name is Kevin Chan.
-
-                Code is to me as paint is to a painter. I see programming not as a series of computer instructions, but rather a medium to express my ideas and knowledge for others to use and enjoy. At times, my code may be just a small piece of the equation and other times, it may be the foundation that sets the project in motion. Nevertheless, it is still that piece of code that helps to complete the grand picture.
-
-                Having been self taught my first programming language, I am still constantly learning everyday. Many of my open-source projects were either a completely [new learning experience](//github.com/chessmasterhong/sandbox-mean) for me or [something](//github.com/chessmasterhong/phaser-requirejs-boilerplate) I wanted to contribute back to the community to show my appreciation. Since then, I have worked on several projects across the various spectra of project development, including but not limited to: [front-end](//bitbucket.org/chessmasterhong/ccny-acm-webdev-fall2013-website/src), [back-end](//github.com/DrkSephy/git-technetium/pull/85), [testing](//github.com/chessmasterhong/mishmash-of-rpgs-prototype/tree/master/test/spec), [documentation](//github.com/chessmasterhong/impact-atmosphere/tree/master/docs), [algorithmic optimization](//github.com/chessmasterhong/Project-Euler/commit/1b9e76ee8c5af84b902399b606df5afbb8d3cb01), and [task automation](//github.com/chessmasterhong/chessmasterhong.github.io/blob/master/build-html-fallback.js).
-
-                Lately, I have been deeply invested web technologies. I have dabbled in a number of JavaScript frameworks during that time, like AngularJS, Node.js, Express, RequireJS, three.js, Impact, and Phaser. I have also incorporated other technologies into my development workflow, such as JSHint, Gulp.js, Bower, Foundation, Jade, and Less. This is apparent in many of my recent projects.
-
-                In my spare time, I enjoy coding [side projects](//github.com/chessmasterhong/pascal.js), or experimenting with new [programming languages](//github.com/chessmasterhong/sandbox-go) and [frameworks](//github.com/chessmasterhong/sandbox-beego-angular). Once in a while, I can be found playing video games, but nowadays I would rather [make](//bitbucket.org/DrkSephy/smw-koopa-krisis/commits/all?search=chessmasterhong) [them](//github.com/chessmasterhong/WaterEmblem/commits?author=chessmasterhong). On rare occasions, I would work on some random arts and crafts.
+            - each p in about.intro
+                - p = p.replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2'>$1</a>")
+                p !{p}
 
     div.row
         //- Specifications: Main
