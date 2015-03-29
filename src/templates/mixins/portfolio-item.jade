@@ -6,8 +6,8 @@ mixin portfolio-item(project)
 
     - var categories = project.categories.join(" ")
 
-    li.portfolio-item(class = categories).text-center
-        div.panel.text-center
+    li.portfolio-item(class = categories)
+        div.panel
             div.item-img-wrapper
                 img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 

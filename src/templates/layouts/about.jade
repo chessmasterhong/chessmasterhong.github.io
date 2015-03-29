@@ -4,7 +4,7 @@ section#about
             h2.section-title About Me
 
     div.row
-        div.intro.large-12.column.text-justify
+        div.intro.large-12.column
             - each p in about.intro
                 - p = p.replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2'>$1</a>")
                 p !{p}

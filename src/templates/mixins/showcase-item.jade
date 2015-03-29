@@ -4,17 +4,17 @@ mixin showcase-item(project, position)
     - project.thumbnail = project.thumbnail || "//placehold.it/240&text=No+Image+Available"
 
     div.row(class = position === 0 ? "row-even" : "row-odd")
-        div.showcase-thumbnail.large-3.medium-4(class = position === 0 ? "large-push-9 medium-push-8 text-right" : "text-left").column.small-only-text-center
+        div.showcase-thumbnail.large-3.medium-4(class = position === 0 ? "large-push-9 medium-push-8 text-right" : "text-left").column
             img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
         div.large-9.medium-8(class = position === 0 ? "large-pull-3 medium-pull-4" : undefined).column
             div.showcase-title
-                h3.small-only-text-center #{project.title}
+                h3 #{project.title}
 
-            div.showcase-text.small-only-text-center
-                p.text-justify.small-only-text-center #{project.caption}
+            div.showcase-text
+                p #{project.caption}
 
-                div.buttons-text.show-for-medium-up.hide-for-small-only
+                div.buttons-text
                     - if(project.detailsUrl !== "")
                         a.button.small.radius(href="#{project.detailsUrl}")
                             i.fa.fa-search
@@ -33,7 +33,7 @@ mixin showcase-item(project, position)
                             | &nbsp;
                             span Source Code
 
-                div.buttons-icon.show-for-small-only.hide-for-medium-up
+                div.buttons-icon
                     - if(project.detailsUrl !== "")
                         a.button.small.radius(href="#", title="Read more")
                             i.fa.fa-search
