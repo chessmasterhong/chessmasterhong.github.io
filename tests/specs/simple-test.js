@@ -1,5 +1,3 @@
-/* global describe, it, expect */
-
 (function() {
     'use strict';
 

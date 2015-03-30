@@ -24,10 +24,5 @@
     "laxcomma": true,
 
     // CUSTOM GLOBALS
-    "globals": {
-      "_": true,
-      "Backbone": true,
-      "define": true,
-      "require": true
-    }
+    "globals": {}
 }
