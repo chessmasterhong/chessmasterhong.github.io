@@ -6,8 +6,11 @@ require(['jquery'], function($) {
             event.preventDefault();
 
             if($(this.hash).offset()) {
+                // Scroll to target hash top location
+                // Account additional offset for nav-collapse bar
                 $('html, body').animate({
                     scrollTop: $(this.hash).offset().top
+                        - ($(window).width() < 640 ? 43 : 0)
                 }, 500);
             }
         });
