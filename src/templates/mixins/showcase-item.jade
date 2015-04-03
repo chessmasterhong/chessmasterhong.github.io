@@ -5,7 +5,7 @@ mixin showcase-item(project, position)
 
     div.row(class = position === 0 ? "row-even" : "row-odd")
         div.showcase-thumbnail.large-3.medium-4(class = position === 0 ? "large-push-9 medium-push-8 text-right" : "text-left").column
-            img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+            img.lazy(data-original="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
         div.large-9.medium-8(class = position === 0 ? "large-pull-3 medium-pull-4" : undefined).column
             div.showcase-title

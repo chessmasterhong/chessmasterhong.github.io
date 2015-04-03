@@ -9,7 +9,7 @@ mixin portfolio-item(project)
     li.portfolio-item(class = categories)
         div.panel
             div.item-img-wrapper
-                img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+                img.lazy(data-original="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
             div.item-caption
                 h4 #{project.title}

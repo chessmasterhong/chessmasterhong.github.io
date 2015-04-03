@@ -16,6 +16,7 @@ require.config({
     baseUrl: './',
     paths: {
         jquery: 'vendor/jquery/dist/jquery.min',
+        lazyload: 'vendor/jquery.lazyload/jquery.lazyload',
         mixitup: 'vendor/mixitup2/build/jquery.mixitup.min',
 
         modules: 'scripts/modules'
@@ -24,11 +25,13 @@ require.config({
 
 require([
     'jquery',
+    'lazyload',
     'mixitup',
     'modules/top-bar',
     'modules/smooth-scroll',
     'modules/scroll-to-top',
-    'modules/scroll-fade-in',
-    'modules/scroll-drop-in',
+    //'modules/scroll-fade-in',
+    //'modules/scroll-drop-in',
+    'modules/lazyload',
     'modules/mixitup'
 ], function() {});
