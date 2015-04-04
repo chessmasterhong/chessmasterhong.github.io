@@ -2,6 +2,12 @@ require(['jquery'], function($) {
     'use strict';
 
     $(function() {
-        $('img.lazy').lazyload();
+        $('.portfolio-item img.lazy').lazyload({
+            effect: 'fadeIn'
+        });
+
+        $('.showcase-thumbnail img.lazy').lazyload({
+            effect: 'fadeIn'
+        });
     });
 });
