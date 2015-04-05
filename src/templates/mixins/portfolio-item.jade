@@ -10,6 +10,8 @@ mixin portfolio-item(project)
         div.panel
             div.item-img-wrapper
                 img.lazy(data-original="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
+                noscript
+                    img(src="#{project.thumbnail}", alt="Thumbnail for #{project.title}")
 
             div.item-caption
                 h4 #{project.title}
