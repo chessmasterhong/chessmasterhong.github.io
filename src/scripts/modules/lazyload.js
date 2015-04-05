@@ -1,13 +1,11 @@
-require(['jquery'], function($) {
+require([
+    'jquery'
+], function($) {
     'use strict';
 
-    $(function() {
-        $('.showcase-thumbnail img.lazy').show().lazyload({
-            effect: 'fadeIn'
-        });
+    $(document).ready(function() {
+        $('.showcase-thumbnail img.lazy').show().unveil();
 
-        $('.portfolio-item img.lazy').show().lazyload({
-            effect: 'fadeIn'
-        });
+        $('.portfolio-item img.lazy').show().unveil();
     });
 });
