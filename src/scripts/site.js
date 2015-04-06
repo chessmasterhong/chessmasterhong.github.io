@@ -16,7 +16,7 @@ require.config({
     baseUrl: './',
     paths: {
         jquery: 'vendor/jquery/dist/jquery.min',
-        lazyload: 'vendor/jquery.lazyload/jquery.lazyload',
+        unveil: 'vendor/jquery-unveil/jquery.unveil.min',
         mixitup: 'vendor/mixitup2/build/jquery.mixitup.min',
 
         modules: 'scripts/modules'
@@ -25,7 +25,7 @@ require.config({
 
 require([
     'jquery',
-    'lazyload',
+    'unveil',
     'mixitup',
     'modules/top-bar',
     'modules/smooth-scroll',
