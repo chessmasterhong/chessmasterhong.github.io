@@ -136,6 +136,7 @@ gulp.task('build-blog', ['build:html-blog'], function(cb) {
             jekyll,
             [
                 'build',
+                '--quiet',
                 '--source=./blog/',
                 '--destination=./blog/_site/'
             ],

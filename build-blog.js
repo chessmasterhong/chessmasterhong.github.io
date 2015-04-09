@@ -32,10 +32,15 @@ fs.readFile(
     function(err, data) {
         if(err) { throw err; }
 
-        var newData = data.replace(
-            /(<main.*>)(?:.|\n)*(<\/main>)/,
-            '$1' + container + '$2'
-        );
+        var newData = data
+            .replace(
+                /(<main.*>)(?:.|\n)*(<\/main>)/gi,
+                '$1' + container + '$2'
+            )
+            .replace(
+                /.*<style.*>(.|\n)*<\/style>\n/gi,
+                ''
+            );
 
         fs.writeFile(
             path.join(__dirname, 'blog', '_layouts', 'default.html'),
