@@ -35,7 +35,8 @@ html(lang="en-US")
                             i.fa.fa-bars
 
                     span.links
-                        a(href="/blog") Blog
+                        - if(blog.enable === true)
+                            a(href="#{blog.url}") Blog
                         a(href="#about") About
                         a(href="#showcase") Showcase
                         a(href="#portfolio") Portfolio
