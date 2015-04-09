@@ -22,17 +22,20 @@ html(lang="en-US")
             section#logo
                 div.row
                     div.large-12.column
-                        h1 #{about.name}
+                        h1
+                            a(href="/") #{about.name}
 
             //- Header: Navigation
             nav#nav
                 div.row
                     div.large-12.column
-                        span.title #{about.name}
+                        span.title
+                            a(href="/") #{about.name}
                         a.nav-collapse
                             i.fa.fa-bars
 
                     span.links
+                        a(href="/blog") Blog
                         a(href="#about") About
                         a(href="#showcase") Showcase
                         a(href="#portfolio") Portfolio
