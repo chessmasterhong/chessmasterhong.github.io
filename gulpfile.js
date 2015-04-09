@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     combineMediaQueries = require('gulp-combine-media-queries'),
+    childProcess = require('child_process'),
     concatCSS = require('gulp-concat-css'),
     data = require('gulp-data'),
     del = require('del'),
@@ -15,6 +16,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     replace = require('gulp-replace'),
     requirejs = require('requirejs'),
+    shell = require('gulp-shell'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -91,6 +93,8 @@ gulp.task('build:html-main', function() {
         .pipe(gulp.dest('./'));
 });
 
+gulp.task('build:html-blog', shell.task('node build-blog.js'));
+
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
 
@@ -122,6 +126,22 @@ gulp.task('build-main', function(cb) {
         ['build:html-main', 'build:styles'],
         cb
     );
+});
+
+gulp.task('build-blog', ['build:html-blog'], function(cb) {
+    // http://stackoverflow.com/questions/21856861/running-jekyll-as-a-child-process-in-gulp-node#23852347
+    // http://stackoverflow.com/questions/17516772/using-nodejss-spawn-causes-unknown-option-and-error-spawn-enoent-err#17537559
+    var jekyll = (process.platform === 'win32' ? 'jekyll.bat' : 'jekyll');
+    return childProcess.spawn(
+            jekyll,
+            [
+                'build',
+                '--source=./blog/',
+                '--destination=./blog/_site/'
+            ],
+            { stdio: 'inherit' }
+        )
+        .on('close', cb);
 });
 
 
