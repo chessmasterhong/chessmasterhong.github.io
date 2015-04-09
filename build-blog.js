@@ -14,7 +14,7 @@ var charset = 'utf-8';
 var container = '\n\
       <div class="row">\n\
         <div class="large-12 column">\n\
-          <h2 class="section-title">{{ title }}</h2>\n\
+          <h2 class="section-title">{{ page.title }}</h2>\n\
         </div>\n\
       </div>\n\
       <div class="row">\n\
@@ -40,6 +40,10 @@ fs.readFile(
             .replace(
                 /.*<style.*>(.|\n)*<\/style>\n/gi,
                 ''
+            )
+            .replace(
+                /(<a href=")(#[a-z]*?">.*?<\/a>)/gi,
+                '$1/$2'
             );
 
         fs.writeFile(
