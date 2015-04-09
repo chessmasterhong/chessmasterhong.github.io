@@ -75,7 +75,7 @@ gulp.task('build:scripts', ['lint-scripts'], function() {
     });
 });
 
-gulp.task('build:html', function() {
+gulp.task('build:html-main', function() {
     return gulp.src('./src/index.jade')
         .pipe(plumber())
         .pipe(data(function(file) {
@@ -115,11 +115,11 @@ gulp.task('build:styles', function() {
 /**
  * Build
  */
-gulp.task('build', function(cb) {
+gulp.task('build-main', function(cb) {
     runSequence(
         'build:clean',
         ['build:scripts', 'build:copy-vendors'],
-        ['build:html', 'build:styles'],
+        ['build:html-main', 'build:styles'],
         cb
     );
 });
@@ -146,7 +146,7 @@ gulp.task('watch', function() {
         './src/**/*.jade',
         './src/**/*.css',
         './src/data/**/*.json'
-    ], ['build:html']);
+    ], ['build:html-main']);
 
     gulp.watch([
         './src/**/*.less'
@@ -162,5 +162,5 @@ gulp.task('watch', function() {
  * Default
  */
 gulp.task('default', function() {
-    runSequence('build', 'serve', 'watch');
+    runSequence('build-main', 'serve', 'watch');
 });

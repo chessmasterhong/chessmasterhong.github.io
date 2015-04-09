@@ -12,7 +12,7 @@
   },
   "bugs": "https://github.com/chessmasterhong/chessmasterhong.github.io/issues",
   "scripts": {
-    "build": "node node_modules/gulp/bin/gulp.js build",
+    "build-main": "node node_modules/gulp/bin/gulp.js build-main",
     "serve": "node node_modules/gulp/bin/gulp.js serve"
   },
   "dependencies": {},
