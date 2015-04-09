@@ -128,7 +128,7 @@ gulp.task('build', function(cb) {
 /**
  * Webserver
  */
-gulp.task('server', function() {
+gulp.task('serve', function() {
     gulp.src('./')
         .pipe(webserver({
             host: '0.0.0.0',
@@ -162,5 +162,5 @@ gulp.task('watch', function() {
  * Default
  */
 gulp.task('default', function() {
-    runSequence('build', 'server', 'watch');
+    runSequence('build', 'serve', 'watch');
 });
