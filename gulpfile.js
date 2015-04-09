@@ -53,6 +53,11 @@ gulp.task('build:copy-vendors', function() {
         .pipe(gulp.dest('./_vendor/font-awesome/fonts/'));
 });
 
+gulp.task('build:copy-blog-posts', function() {
+    gulp.src('./src/data/blog/**/*.md')
+        .pipe(gulp.dest('./blog/'));
+});
+
 
 /**
  * Compile
@@ -93,7 +98,7 @@ gulp.task('build:html-main', function() {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('build:html-blog', shell.task('node build-blog.js'));
+gulp.task('build:html-blog', shell.task('node ./tasks/build-blog.js'));
 
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
@@ -128,10 +133,17 @@ gulp.task('build-main', function(cb) {
     );
 });
 
-gulp.task('build-blog', ['build:html-blog'], function(cb) {
+gulp.task('build-blog', function() {
+    runSequence(
+        ['build:copy-blog-posts', 'build:html-blog'],
+        'jekyll-build'
+    );
+});
+
+gulp.task('jekyll-build', function(cb) {
     // http://stackoverflow.com/questions/21856861/running-jekyll-as-a-child-process-in-gulp-node#23852347
     // http://stackoverflow.com/questions/17516772/using-nodejss-spawn-causes-unknown-option-and-error-spawn-enoent-err#17537559
-    var jekyll = (process.platform === 'win32' ? 'jekyll.bat' : 'jekyll');
+    var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
     return childProcess.spawn(
             jekyll,
             [

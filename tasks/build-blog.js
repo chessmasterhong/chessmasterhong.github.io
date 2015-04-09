@@ -27,7 +27,7 @@ var container = '\n\
 // jshint multistr: false
 
 fs.readFile(
-    path.join(__dirname, 'index.html'),
+    path.join(__dirname, '..', 'index.html'),
     charset,
     function(err, data) {
         if(err) { throw err; }
@@ -47,7 +47,7 @@ fs.readFile(
             );
 
         fs.writeFile(
-            path.join(__dirname, 'blog', '_layouts', 'default.html'),
+            path.join(__dirname, '..', 'blog', '_layouts', 'default.html'),
             newData,
             charset,
             function(err) {
