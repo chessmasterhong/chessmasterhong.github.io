@@ -39,8 +39,8 @@ gulp.task('build:clean', function() {
     return del.sync([
         './index.html',
         './_scripts/',
-        './_styles/',
-        './_vendor/'
+        './_styles/'
+        //'./_vendor/'
     ]);
 });
 
@@ -48,10 +48,10 @@ gulp.task('build:clean', function() {
 /**
  * Copy
  */
-gulp.task('build:copy-vendors', function() {
-    gulp.src('./src/vendor/font-awesome/fonts/**/*')
-        .pipe(gulp.dest('./_vendor/font-awesome/fonts/'));
-});
+//gulp.task('build:copy-vendors', function() {
+//    gulp.src('./src/vendor/font-awesome/fonts/**/*')
+//        .pipe(gulp.dest('./_vendor/font-awesome/fonts/'));
+//});
 
 gulp.task('build:copy-blog-posts', function() {
     gulp.src('./src/data/blog/**/*.md')
@@ -93,7 +93,7 @@ gulp.task('build:html-main', function() {
             );
         }))
         .pipe(jade({
-            pretty: true
+            pretty: false
         }))
         .pipe(gulp.dest('./'));
 });
@@ -105,7 +105,7 @@ gulp.task('build:styles', function() {
 
     return gulp.src([
             './src/vendor/foundation/css/foundation.css',
-            './src/vendor/font-awesome/css/font-awesome.css',
+            //'./src/vendor/font-awesome/css/font-awesome.css',
             './src/styles/*.less' // only process root styles directory
         ])
         .pipe(less({
@@ -113,10 +113,10 @@ gulp.task('build:styles', function() {
         }))
         .pipe(concatCSS('site.css'))
         .pipe(combineMediaQueries())
-        .pipe(replace(/(\/font-awesome\/)/g, '/_vendor$1'))
+        //.pipe(replace(/(\/font-awesome\/)/gi, '/_vendor$1'))
         .pipe(minifyCSS())
-        .pipe(replace(/(.)(\/\*.*)/g, '$1\n\n$2'))
-        .pipe(replace(/(\*\/)(.)/g, '$1\n$2'))
+        .pipe(replace(/(.)(\/\*.*)/gi, '$1\n\n$2'))
+        .pipe(replace(/(\*\/)(.)/gi, '$1\n$2'))
         .pipe(gulp.dest('./_styles/'));
 });
 
@@ -127,7 +127,7 @@ gulp.task('build:styles', function() {
 gulp.task('build-main', function(cb) {
     runSequence(
         'build:clean',
-        ['build:scripts', 'build:copy-vendors'],
+        ['build:scripts'/*, 'build:copy-vendors'*/],
         ['build:html-main', 'build:styles'],
         cb
     );
