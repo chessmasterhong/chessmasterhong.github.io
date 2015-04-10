@@ -188,6 +188,14 @@ gulp.task('watch', function() {
     gulp.watch([
         './src/**/*.js'
     ], ['build:scripts']);
+
+    gulp.watch([
+        './index.html'
+    ], ['build:html-blog']);
+
+    gulp.watch([
+        './src/data/blog/**/*.md'
+    ], ['build:copy-blog-posts']);
 });
 
 
