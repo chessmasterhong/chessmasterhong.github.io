@@ -26,36 +26,46 @@ var container = '\n\
     ';
 // jshint multistr: false
 
+// Read contents of index.html
 fs.readFile(
     path.join(__dirname, '..', 'index.html'),
     charset,
     function(err, data) {
         if(err) { throw err; }
 
+        // Manipulate contents to make room for blog contents
         var newData = data
+            // Replace main contents with blog container
             .replace(
                 /(<main.*>)(?:.|\n)*(<\/main>)/gi,
                 '$1' + container + '$2'
             )
+            // Remove in-file style blocks
             .replace(
                 /.*<style.*>(.|\n)*<\/style>\n/gi,
                 ''
             )
+            // Update hyperlinks
             .replace(
                 /(<a href=")(#[a-z]*?">.*?<\/a>)/gi,
                 '$1/$2'
             );
 
-        if(!fs.existsSync(path.join(__dirname, '..', 'blog', '_layouts'))){
-            fs.mkdirSync(path.join(__dirname, '..', 'blog', '_layouts'));
+        // Create blog directories if it does not exist
+        var layoutsDir = path.join(__dirname, '..', 'blog', '_layouts');
+        if(!fs.existsSync(layoutsDir)){
+            fs.mkdirSync(layoutsDir);
         }
 
+        // Write modified contents to blog repository
         fs.writeFile(
-            path.join(__dirname, '..', 'blog', '_layouts', 'default.html'),
+            path.join(layoutsDir, 'default.html'),
             newData,
             charset,
             function(err) {
                 if(err) { throw err; }
+
+                // Done!
                 console.log('Blog layout regenerated.');
             }
         );
