@@ -46,6 +46,10 @@ fs.readFile(
                 '$1/$2'
             );
 
+        if(!fs.existsSync(path.join(__dirname, '..', 'blog', '_layouts'))){
+            fs.mkdirSync(path.join(__dirname, '..', 'blog', '_layouts'));
+        }
+
         fs.writeFile(
             path.join(__dirname, '..', 'blog', '_layouts', 'default.html'),
             newData,
