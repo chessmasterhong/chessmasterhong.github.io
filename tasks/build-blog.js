@@ -10,7 +10,7 @@ var fs = require('fs'),
 
 var charset = 'utf-8';
 
-var container = '<div class="row"><div class="large-12 column"><h2 class="section-title">{{ page.title }}</h2></div></div><div class="row"><div class="intro large-12 column">{{ content }}</div></div>';
+var container = '<section><div class="row"><div class="large-12 column"><h2 class="section-title">{{ page.title }}</h2></div></div><div class="row"><div class="intro large-12 column">{{ content }}</div></div></section>';
 
 // Read contents of index.html
 fs.readFile(
