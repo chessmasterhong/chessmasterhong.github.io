@@ -73,7 +73,8 @@ gulp.task('build:scripts', ['lint-scripts'], function() {
         ],
         insertRequire: ['scripts/site.js'],
         wrap: true,
-        optimize: 'uglify2'
+        optimize: 'uglify2',
+        preserveLicenseComments: false
     }, function() {
         return 0;
     }, function(err) {
@@ -114,7 +115,9 @@ gulp.task('build:styles', function() {
         .pipe(concatCSS('site.css'))
         .pipe(combineMediaQueries())
         //.pipe(replace(/(\/font-awesome\/)/gi, '/_vendor$1'))
-        .pipe(minifyCSS())
+        .pipe(minifyCSS({
+            keepSpecialComments: 0
+        }))
         .pipe(replace(/(.)(\/\*.*)/gi, '$1\n\n$2'))
         .pipe(replace(/(\*\/)(.)/gi, '$1\n$2'))
         .pipe(gulp.dest('./_styles/'));
