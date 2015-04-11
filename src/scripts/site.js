@@ -27,6 +27,7 @@ require([
     'jquery',
     'unveil',
     'mixitup',
+    'modules/analytics',
     'modules/top-bar',
     'modules/smooth-scroll',
     'modules/scroll-to-top',
