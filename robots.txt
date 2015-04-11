@@ -1,0 +1,14 @@
+Sitemap: http://chessmasterhong.github.io/sitemap.xml
+
+User-agent: *
+Disallow: ./src/
+Disallow: ./tasks/
+Disallow: ./tests/
+Disallow: ./.bowerrc
+Disallow: ./.gitignore
+Disallow: ./.jshintrc
+Disallow: ./.nojekyll
+Disallow: ./bower.json
+Disallow: ./gulpfile.js
+Disallow: ./package.json
+Disallow: ./README.md
