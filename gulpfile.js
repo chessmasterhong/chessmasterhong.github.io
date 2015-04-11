@@ -200,6 +200,16 @@ gulp.task('watch', function() {
 
 
 /**
+ * Deploy
+ */
+gulp.task('deploy-blog', shell.task([
+    'git add -A',
+    'git commit -m "Blog regenerated on ' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + '"',
+    'git push origin gh-pages'
+], { cwd: './blog/' }));
+
+
+/**
  * Default
  */
 gulp.task('default', function() {
