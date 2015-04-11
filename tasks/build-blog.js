@@ -10,21 +10,7 @@ var fs = require('fs'),
 
 var charset = 'utf-8';
 
-// jshint multistr: true
-var container = '\n\
-      <div class="row">\n\
-        <div class="large-12 column">\n\
-          <h2 class="section-title">{{ page.title }}</h2>\n\
-        </div>\n\
-      </div>\n\
-      <div class="row">\n\
-        <div class="intro large-12 column">\n\
-          {{ content }}\n\
-        </div>\n\
-      </div>\n\
-      </div>\n\
-    ';
-// jshint multistr: false
+var container = '<div class="row"><div class="large-12 column"><h2 class="section-title">{{ page.title }}</h2></div></div><div class="row"><div class="intro large-12 column">{{ content }}</div></div>';
 
 // Read contents of index.html
 fs.readFile(
@@ -37,12 +23,12 @@ fs.readFile(
         var newData = data
             // Replace main contents with blog container
             .replace(
-                /(<main.*>)(?:.|\n)*(<\/main>)/gi,
+                /(<main.*?>)(?:.)*(<\/main>)/gi,
                 '$1' + container + '$2'
             )
             // Remove in-file style blocks
             .replace(
-                /.*<style.*>(.|\n)*<\/style>\n/gi,
+                /<style.*?>.*<\/style>/gi,
                 ''
             )
             // Update hyperlinks
