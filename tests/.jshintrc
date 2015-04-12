@@ -1,9 +1,0 @@
-{
-    // CUSTOM GLOBALS
-    "globals": {
-      "describe": true,
-      "it": true,
-      "expect": true,
-      "require": true
-    }
-}
