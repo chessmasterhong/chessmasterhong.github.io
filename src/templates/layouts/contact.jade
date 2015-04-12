@@ -1,10 +1,10 @@
 - var local = "kevchan1012".split("")
 - for(var l = 0; l < local.length; l++)
     - local[l] = "&#" + local[l].charCodeAt(0) + ";"
-    - var r = Math.floor(Math.random() * 123 - 97) + 97
+    - var r = Math.floor(Math.random() * 123 - 97) + 97 + ";"
     - var s = ["@", "&#64;", ".", "&#46;", " ", "&#32;", "&nbsp;", "<i class='fa fa-at'></i>"]
-    - var t = Math.random() > Math.random() ? r : s;
-    - var u = ["<span style='display:none'>" + t + ";</span>", "<!--&#" + t + ";-->"]
+    - var t = Math.random() > Math.random() ? r : s[Math.floor(Math.random() * s.length)]
+    - var u = ["<span style='display:none'>" + t + "</span>", "<!--" + t + "-->"]
     - if(Math.random() > Math.random())
         - local.splice(l++, 0, u[Math.floor(Math.random() * u.length)])
 - local.reverse()
@@ -14,8 +14,8 @@
     - domain[d] = "&#" + domain[d].charCodeAt(0) + ";"
     - var r = "&#" + (Math.floor(Math.random() * 123 - 97) + 97) + ";"
     - var s = ["@", "&#64;", ".", "&#46;", " ", "&#32;", "&nbsp;", "<i class='fa fa-at'></i>"]
-    - var t = Math.random() > Math.random() ? r : s;
-    - var u = ["<span style='display:none'>" + t + ";</span>", "<!--&#" + t + ";-->"]
+    - var t = Math.random() > Math.random() ? r : s[Math.floor(Math.random() * s.length)]
+    - var u = ["<span style='display:none'>" + t + "</span>", "<!--" + t + "-->"]
     - if(Math.random() < Math.random())
         - domain.splice(d++, 0, u[Math.floor(Math.random() * u.length)])
 - domain.reverse()
