@@ -66,7 +66,7 @@ gulp.task('build:scripts', ['lint-scripts'], function() {
     requirejs.optimize({
         baseUrl: './src/',
         out: './_scripts/site.js',
-        mainConfigFile: './src/scripts/site.js',
+        mainConfigFile: './src/scripts/site.js', // Entry point for scripts
         include: [
             './vendor/requirejs/require.js',
             'scripts/site.js'
@@ -104,11 +104,7 @@ gulp.task('build:html-blog', shell.task('node ./tasks/build-blog.js'));
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
 
-    return gulp.src([
-            './src/vendor/foundation/css/foundation.css',
-            //'./src/vendor/font-awesome/css/font-awesome.css',
-            './src/styles/*.less' // only process root styles directory
-        ])
+    return gulp.src('./src/styles/site.less') // Entry point for styles
         .pipe(less({
             plugins: [autoprefix]
         }))
