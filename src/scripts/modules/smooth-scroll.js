@@ -2,9 +2,7 @@ require(['jquery'], function($) {
     'use strict';
 
     $(document).ready(function() {
-        $('a[href^="#"]').click(function(event) {
-            event.preventDefault();
-
+        $('a[href^="/#"]').click(function() {
             if($(this.hash).offset()) {
                 // Scroll to target hash top location
                 // Account additional offset for nav-collapse bar
