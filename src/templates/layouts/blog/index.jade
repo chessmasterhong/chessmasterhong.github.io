@@ -7,4 +7,17 @@ block main
                 h2.section-title Blog
 
         div.row
-            div.intro.large-12.column
+            div.large-12.column
+                include:markdown ../../../data/blog/index.md
+
+                ul.posts
+                    - each file in files
+                        - var date = file.match(/\d{2,}/g)
+                        - var year = date[0]
+                        - var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(date[1]) - 1]
+                        - var day = date[2]
+                        - var title = file.replace(/^\d{4}-\d{2}-\d{2}-(.*)\.md$/gi, "$1").replace(/(?:^|_)(.)/g, function(m, a) { return " " + a.charAt(0).toUpperCase(); })
+                        li
+                            span.date #{month} #{day} #{year}
+                            | &nbsp;&raquo;
+                            a.title(href="/blog/posts/#{file}") #{title}

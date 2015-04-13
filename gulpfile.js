@@ -90,6 +90,11 @@ gulp.task('build:html', function() {
                 )
             );
         }))
+        .pipe(data(function() {
+            return {
+                files: fs.readdirSync('./src/data/blog/posts/')
+            };
+        }))
         .pipe(jade({
             pretty: false
         }))
@@ -148,7 +153,8 @@ gulp.task('watch', function() {
     gulp.watch([
         './src/**/*.jade',
         './src/**/*.css',
-        './src/data/**/*.json'
+        './src/data/**/*.json',
+        './src/data/**/*.md'
     ], ['build:html']);
 
     gulp.watch([
