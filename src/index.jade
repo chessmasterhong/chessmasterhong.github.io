@@ -49,10 +49,11 @@ html(lang="en-US")
 
         //- Main Content
         main#main
-            include ./templates/layouts/about.jade
-            include ./templates/layouts/showcase.jade
-            include ./templates/layouts/portfolio.jade
-            include ./templates/layouts/contact.jade
+            block main
+                include ./templates/views/about.jade
+                include ./templates/views/showcase.jade
+                include ./templates/views/portfolio.jade
+                include ./templates/views/contact.jade
 
         //- Footer
         footer#footer
