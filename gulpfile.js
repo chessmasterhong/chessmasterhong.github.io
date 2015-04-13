@@ -2,7 +2,6 @@
 
 var gulp = require('gulp'),
     combineMediaQueries = require('gulp-combine-media-queries'),
-    childProcess = require('child_process'),
     concatCSS = require('gulp-concat-css'),
     data = require('gulp-data'),
     del = require('del'),
@@ -16,7 +15,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     replace = require('gulp-replace'),
     requirejs = require('requirejs'),
-    shell = require('gulp-shell'),
+    //shell = require('gulp-shell'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -53,11 +52,6 @@ gulp.task('build:clean', function() {
 //        .pipe(gulp.dest('./_vendor/font-awesome/fonts/'));
 //});
 
-gulp.task('build:copy-blog-posts', function() {
-    gulp.src('./src/data/blog/**/*.md')
-        .pipe(gulp.dest('./blog/'));
-});
-
 
 /**
  * Compile
@@ -83,8 +77,11 @@ gulp.task('build:scripts', ['lint-scripts'], function() {
     });
 });
 
-gulp.task('build:html-main', function() {
-    return gulp.src('./src/index.jade')
+gulp.task('build:html', function() {
+    return gulp.src([
+            './src/index.jade',
+            './src/templates/layouts/**/*.jade'
+        ])
         .pipe(plumber())
         .pipe(data(function(file) {
             return JSON.parse(
@@ -98,8 +95,6 @@ gulp.task('build:html-main', function() {
         }))
         .pipe(gulp.dest('./'));
 });
-
-gulp.task('build:html-blog', shell.task('node ./tasks/build-blog.js'));
 
 gulp.task('build:styles', function() {
     var autoprefix = new lessPluginAutoPrefix();
@@ -123,37 +118,13 @@ gulp.task('build:styles', function() {
 /**
  * Build
  */
-gulp.task('build-main', function(cb) {
+gulp.task('build', function(cb) {
     runSequence(
         'build:clean',
         ['build:scripts'/*, 'build:copy-vendors'*/],
-        ['build:html-main', 'build:styles'],
+        ['build:html', 'build:styles'],
         cb
     );
-});
-
-gulp.task('build-blog', function() {
-    runSequence(
-        ['build:copy-blog-posts', 'build:html-blog'],
-        'jekyll-build'
-    );
-});
-
-gulp.task('jekyll-build', function(cb) {
-    // http://stackoverflow.com/questions/21856861/running-jekyll-as-a-child-process-in-gulp-node#23852347
-    // http://stackoverflow.com/questions/17516772/using-nodejss-spawn-causes-unknown-option-and-error-spawn-enoent-err#17537559
-    var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-    return childProcess.spawn(
-            jekyll,
-            [
-                'build',
-                '--quiet',
-                '--source=./blog/',
-                '--destination=./blog/_site/'
-            ],
-            { stdio: 'inherit' }
-        )
-        .on('close', cb);
 });
 
 
@@ -178,7 +149,7 @@ gulp.task('watch', function() {
         './src/**/*.jade',
         './src/**/*.css',
         './src/data/**/*.json'
-    ], ['build:html-main']);
+    ], ['build:html']);
 
     gulp.watch([
         './src/**/*.less'
@@ -187,30 +158,12 @@ gulp.task('watch', function() {
     gulp.watch([
         './src/**/*.js'
     ], ['build:scripts']);
-
-    gulp.watch([
-        './index.html'
-    ], ['build:html-blog']);
-
-    gulp.watch([
-        './src/data/blog/**/*.md'
-    ], ['build:copy-blog-posts']);
 });
-
-
-/**
- * Deploy
- */
-gulp.task('deploy-blog', shell.task([
-    'git add -A',
-    'git commit -m "Blog regenerated on ' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + '"',
-    'git push origin gh-pages'
-], { cwd: './blog/' }));
 
 
 /**
  * Default
  */
 gulp.task('default', function() {
-    runSequence('build-main', 'serve', 'watch');
+    runSequence('build', 'serve', 'watch');
 });
