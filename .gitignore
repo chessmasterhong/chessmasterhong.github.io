@@ -1,8 +1,7 @@
-/blog/
 /node_modules/
 /src/vendor/
 
-/server*
+/serve*
 
 .DS_Store
 thumbs.db
