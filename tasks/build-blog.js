@@ -6,12 +6,13 @@ var fs = require('fs'),
 
 var charset = 'utf-8';
 
-var postsDir = path.join(__dirname, '..', 'src', 'data', 'blog', 'posts');
+var indexPath = path.join(__dirname, '..', 'blog', 'index.html');
+var postsPath = path.join(__dirname, '..', 'src', 'data', 'blog', 'posts');
 
-var postList = [];
+var postList = '';
 
 fs.readdir(
-    path.join(postsDir),
+    path.join(postsPath),
     function(err, files) {
         if(err) { throw err; }
 
@@ -23,15 +24,14 @@ fs.readdir(
             var f = file.replace(/^\d{4}-\d{2}-\d{2}-(.*)\.md$/gi, '$1');
             var title = f.replace(/(?:^|_)(.)/g, function(m, a) { return ' ' + a.charAt(0).toUpperCase(); });
 
-            postList.push(
+            postList +=
                 '<li><span class="date">' +
                     month + ' ' + day + ' ' + year + ' &raquo; ' +
                     '<a href="/blog/posts/' + f + '">' + title + '</a>' +
-                '</span></li>'
-            );
+                '</span></li>';
 
             fs.readFile(
-                path.join(postsDir, file),
+                path.join(postsPath, file),
                 charset,
                 function(err, contents) {
                     var markdown = marked(contents);
@@ -39,6 +39,13 @@ fs.readdir(
                 }
             );
         });
+
+        var indexContent = fs.readFileSync(indexPath, charset)
+            .replace(/\n?(<ul class="post-list">)(?:.*?)(<\/ul>)/gi, '$1' + postList + '$2');
+
+        fs.writeFileSync(indexPath, indexContent, charset);
+
+        console.log('Blog rebuilt.');
     }
 );
 
