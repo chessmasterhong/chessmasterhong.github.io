@@ -45,7 +45,7 @@ fs.readdir(
             var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(m) - 1];
             var day = date[2];
             var f = file.replace(/^\d{4}-\d{2}-\d{2}-(.*)\.md$/gi, '$1');
-            var title = f.replace(/(?:^|_)(.)/g, function(m, a) { return ' ' + a.charAt(0).toUpperCase(); });
+            var title = f.replace(/^(.)|_(.)/g, function(m, a, b) { return (b ? ' ' : '') + (a || b).charAt(0).toUpperCase(); });
 
             // Construct post list item using extracted data
             // Append list item to blog post listing

@@ -171,5 +171,5 @@ gulp.task('watch', function() {
  * Default
  */
 gulp.task('default', function() {
-    runSequence('build', 'serve', 'watch');
+    runSequence('serve', 'watch');
 });
