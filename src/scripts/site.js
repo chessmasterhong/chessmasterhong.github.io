@@ -31,8 +31,6 @@ require([
     'modules/top-bar',
     'modules/smooth-scroll',
     'modules/scroll-to-top',
-    //'modules/scroll-fade-in',
-    //'modules/scroll-drop-in',
     'modules/lazyload',
     'modules/mixitup'
 ], function() {});
