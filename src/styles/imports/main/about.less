@@ -1,108 +1,120 @@
 @import "../variables.less";
 
 
-#about .specs-main .panel,
-#about .specs-sub .panel {
-    padding-bottom: 4px;
-}
+#about {
+    // ---------- About Me: Introduction ----------
 
-#about .specs-main .panel h4,
-#about .specs-sub .panel h4 {
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-}
+    .intro {
+        margin-bottom: 20px;
+        text-align: justify;
 
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.500rem;
 
-// ---------- About Me: Introduction ----------
+            @media(max-width: @mediaBreak1) {
+                font-size: 0.95rem;
+                line-height: 1.25rem;
+                margin-bottom: 18px;
+            }
 
-#about .intro {
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-#about .intro p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.500rem;
-
-    @media(max-width: @mediaBreak1) {
-        font-size: 0.95rem;
-        line-height: 1.25rem;
-        margin-bottom: 18px;
+            @media(max-width: @mediaBreak0) {
+                font-size: 0.9rem;
+                font-weight: 300;
+                letter-spacing: -0.01rem;
+                line-height: 1rem;
+                margin-bottom: 14px;
+            }
+        }
     }
 
-    @media(max-width: @mediaBreak0) {
-        font-size: 0.9rem;
-        font-weight: 300;
-        letter-spacing: -0.01rem;
-        line-height: 1rem;
-        margin-bottom: 14px;
+
+    // ---------- About Me: Specifications - Common (Main + Sub) ----------
+
+    .specs-main, .specs-sub {
+        .panel {
+            padding-bottom: 4px;
+
+            h4 {
+                font-weight: 700;
+                font-size: 1.25rem;
+                margin-bottom: 20px;
+            }
+        }
     }
-}
 
 
-// ---------- About Me: Specifications - Main ----------
+    // ---------- About Me: Specifications - Main ----------
 
-#about .specs-main .panel .item {
-    overflow: hidden;
-}
+    .specs-main {
+        .panel {
+            .item {
+                overflow: hidden;
 
-#about .specs-main .panel .item .date {
-    color: @mainColor4;
-    float: left;
-    font-size: 0.875rem;
-    font-weight: 400;
-    padding-right: 12px;
-    width: 30%;
+                .date {
+                    color: @mainColor4;
+                    float: left;
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    padding-right: 12px;
+                    width: 30%;
 
-    @media(max-width: @mediaBreak0) {
-        font-size: 0.7rem;
+                    @media(max-width: @mediaBreak0) {
+                        font-size: 0.7rem;
+                    }
+                }
+
+                .details {
+                    color: @mainColor0;
+                    float: left;
+                    width: 70%;
+
+                    .organization {
+                        font-size: 1rem;
+                        font-weight: 700;
+
+                        @media(max-width: @mediaBreak0) {
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .title {
+                        font-size: 1rem;
+
+                        @media(max-width: @mediaBreak0) {
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .desc p {
+                        font-size: 0.8rem;
+
+                        @media(max-width: @mediaBreak0) {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
     }
-}
 
-#about .specs-main .panel .item .details {
-    color: @mainColor0;
-    float: left;
-    width: 70%;
-}
 
-#about .specs-main .panel .item .details .organization {
-    font-size: 1rem;
-    font-weight: 700;
+    // ---------- About Me: Specifications - Sub ----------
 
-    @media(max-width: @mediaBreak0) {
-        font-size: 0.9rem;
+    .specs-sub {
+        .panel {
+             .category {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+
+            .item {
+                font-size: 0.9rem;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+        }
     }
-}
-
-#about .specs-main .panel .item .details .title {
-    font-size: 1rem;
-
-    @media(max-width: @mediaBreak0) {
-        font-size: 0.9rem;
-    }
-}
-
-#about .specs-main .panel .item .details .desc p {
-    font-size: 0.8rem;
-
-    @media(max-width: @mediaBreak0) {
-        font-size: 0.7rem;
-    }
-}
-
-
-// ---------- About Me: Specifications - Sub ----------
-
-#about .specs-sub .panel .category {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-#about .specs-sub .panel .item {
-    font-size: 0.9rem;
-    font-weight: 400;
-    margin-bottom: 20px;
 }

@@ -5,76 +5,84 @@
     background: @auxColor1;
     border-top: 1px solid @auxColor2;
     text-align: center;
-}
 
-#contact h4 {
-    margin: 30px 0 15px;
-    font-variant: small-caps;
-}
-
-
-// ---------- Email ----------
-#contact .hola {
-    padding-bottom: 20px;
-}
-
-#contact .hola i {
-    color: @mainColor4;
-    cursor: default;
-    font-size: 1.05rem;
-    padding-right: 8px;
-}
+    h4 {
+        margin: 30px 0 15px;
+        font-variant: small-caps;
+    }
 
 
-// ---------- Social Links ----------
-#contact ul.social-links {
-    list-style: none;
-    margin: 0 0 10px;
-}
+    // ---------- Email ----------
 
-#contact ul.social-links li {
-    display: inline-block;
-    padding: 4px;
-}
+    .hola {
+        padding-bottom: 20px;
 
-#contact ul.social-links li a {
-    background-color: @mainColor4;
-    border-radius: 100%;
-    border-style: solid;
-    border-color: @mainColor4;
-    color: @mainColor1;
-    display: block;
-    font-size: 2rem;
-    height: 3rem;
-    line-height: 2.5rem;
-    text-align: center;
-    transition: background-color 0.25s linear, border-color 0.25s linear, color 0.25s linear;
-    width: 3rem;
-}
+        i {
+            color: @mainColor4;
+            cursor: default;
+            font-size: 1.05rem;
+            padding-right: 8px;
+        }
+    }
 
-// https://github.com/logos
-#contact ul.social-links li.github a:hover,
-#contact ul.social-links li.github a:focus,
-#contact ul.social-links li.github a:active {
-    background-color: @auxColor1;
-    border-color: #333333;
-    color: #333333;
-}
 
-// https://design.atlassian.com/2.0/product/foundations/colors/
-#contact ul.social-links li.bitbucket a:hover,
-#contact ul.social-links li.bitbucket a:focus,
-#contact ul.social-links li.bitbucket a:active {
-    background-color: @auxColor1;
-    border-color: #205081;
-    color: #205081;
-}
+    // ---------- Social Links ----------
 
-// https://brand.linkedin.com/visual-identity/color-palettes
-#contact ul.social-links li.linkedin a:hover,
-#contact ul.social-links li.linkedin a:focus,
-#contact ul.social-links li.linkedin a:active {
-    background-color: @auxColor1;
-    border-color: #0077B5;
-    color: #0077B5;
+    ul.social-links {
+        list-style: none;
+        margin: 0 0 10px;
+
+        li {
+            display: inline-block;
+            padding: 4px;
+
+            a {
+                background-color: @mainColor4;
+                border-radius: 100%;
+                border-style: solid;
+                border-color: @mainColor4;
+                color: @mainColor1;
+                display: block;
+                font-size: 2rem;
+                height: 3rem;
+                line-height: 2.5rem;
+                text-align: center;
+                transition: background-color 0.25s linear, border-color 0.25s linear, color 0.25s linear;
+                width: 3rem;
+            }
+        }
+
+        // https://github.com/logos
+        li.github {
+            a {
+                &:hover, &:focus, &:active {
+                    background-color: @auxColor1;
+                    border-color: #333333;
+                    color: #333333;
+                }
+            }
+        }
+
+        // https://design.atlassian.com/2.0/product/foundations/colors/
+        li.bitbucket {
+            a {
+                &:hover, &:focus, &:active {
+                    background-color: @auxColor1;
+                    border-color: #205081;
+                    color: #205081;
+                }
+            }
+        }
+
+        // https://brand.linkedin.com/visual-identity/color-palettes
+        li.linkedin {
+            a {
+                &:hover, &:focus, &:active {
+                    background-color: @auxColor1;
+                    border-color: #0077B5;
+                    color: #0077B5;
+                }
+            }
+        }
+    }
 }
