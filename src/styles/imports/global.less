@@ -17,8 +17,10 @@ h2 {
 }
 
 // Clearfix for Foundation block-grids
-ul[class*="block-grid"] > li {
-     clear: none !important;
+ul[class*="block-grid-"] {
+    & > li {
+        clear: none !important;
+    }
 }
 
 // Hide lazy-load image placeholder by default
