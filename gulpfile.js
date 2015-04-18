@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     replace = require('gulp-replace'),
     requirejs = require('requirejs'),
-    //shell = require('gulp-shell'),
+    shell = require('gulp-shell'),
     runSequence = require('run-sequence'),
     webserver = require('gulp-webserver');
 
@@ -38,8 +38,9 @@ gulp.task('build:clean', function() {
     return del.sync([
         './index.html',
         './_scripts/',
-        './_styles/'
-        //'./_vendor/'
+        './_styles/',
+        //'./_vendor/',
+        './blog/'
     ]);
 });
 
@@ -119,15 +120,18 @@ gulp.task('build:styles', function() {
         .pipe(gulp.dest('./_styles/'));
 });
 
+gulp.task('build:generate-blog', shell.task('node ./tasks/build-blog.js'));
+
 
 /**
  * Build
  */
 gulp.task('build', function(cb) {
     runSequence(
-        'build:clean',
+        ['build:clean'],
         ['build:scripts'/*, 'build:copy-vendors'*/],
         ['build:html', 'build:styles'],
+        ['build:generate-blog'],
         cb
     );
 });
@@ -153,8 +157,7 @@ gulp.task('watch', function() {
     gulp.watch([
         './src/**/*.jade',
         './src/**/*.css',
-        './src/data/**/*.json',
-        './src/data/**/*.md'
+        './src/data/**/*.json'
     ], ['build:html']);
 
     gulp.watch([
@@ -164,6 +167,11 @@ gulp.task('watch', function() {
     gulp.watch([
         './src/**/*.js'
     ], ['build:scripts']);
+
+    gulp.watch([
+        './index.html',
+        './src/data/blog/**/*.md'
+    ], ['build-blog']);
 });
 
 
