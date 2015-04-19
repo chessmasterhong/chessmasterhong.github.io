@@ -9,7 +9,7 @@
     Hosting - Website: GitHub Pages
     Hosting - Assets:  CDNJS, GitHub, Google Fonts API, MaxCDN, Placehold.it
     Technologies:      CSS3, ECMAScript 5.1, Git, HTML5, JSON, Markdown
-    Automations:       Bower, Gulp.js, Less, Jade, Jekyll, Node.js
+    Automations:       Bower, Gulp.js, Less, Jade, Node.js
     Analyses/Tests:    JSHint
     Styles:            Font Awesome, Foundation, Normalize.css
     Scripts:           jQuery, jQuery Unveil, MixItUp, RequireJS

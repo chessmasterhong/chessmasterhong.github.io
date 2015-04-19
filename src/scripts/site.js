@@ -1,4 +1,3 @@
-// jshint ignore:start
 /*!
  *  http://chessmasterhong.github.io
  *
@@ -10,7 +9,6 @@
  *
  *  @see       https://github.com/chessmasterhong/chessmasterhong.github.io for additional details
  */
-// jshint ignore:end
 
 require.config({
     baseUrl: './',
