@@ -10,8 +10,6 @@ The **theme** (visual appearance and layout, excluding fonts and icon fonts) is 
 
 The **fonts and font icons** are licensed under the [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
 
-
-
 ## Code License
 
 The **source code** is licensed under the [MIT License](http://opensource.org/licenses/MIT).

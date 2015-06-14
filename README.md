@@ -48,4 +48,8 @@ For those wanting to set up the project on their machine, follow the below instr
 
 ## License
 
-See [LICENSE.md](LICENSE.md).
+You may feel free to re-use any part of the structure, design, and layout of this website. If you do use them, a link back to my website at `http://chessmasterhong.github.io` and/or this repository at `https://github.com/chessmasterhong/chessmasterhong.github.io` would be appreciated, but not required.
+
+See [LICENSE.md](LICENSE.md) for additional licensing information.
+
+See [humans.txt](humans.txt) for technology colophon.

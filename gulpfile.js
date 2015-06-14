@@ -171,7 +171,7 @@ gulp.task('watch', function() {
     gulp.watch([
         './index.html',
         './src/data/blog/**/*.md'
-    ], ['generate-blog']);
+    ], ['build:generate-blog']);
 });
 
 
