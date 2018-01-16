@@ -15,7 +15,7 @@ require.config({
     paths: {
         jquery: 'vendor/jquery/dist/jquery.min',
         unveil: 'vendor/jquery-unveil/jquery.unveil.min',
-        mixitup: 'vendor/mixitup2/build/jquery.mixitup.min',
+        mixitup: 'vendor/mixitup2/dist/mixitup.min',
 
         modules: 'scripts/modules'
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    combineMediaQueries = require('gulp-combine-media-queries'),
+    groupMediaQueries = require('gulp-group-css-media-queries'),
     concatCSS = require('gulp-concat-css'),
     data = require('gulp-data'),
     del = require('del'),
@@ -110,7 +110,7 @@ gulp.task('build:styles', function() {
             plugins: [autoprefix]
         }))
         .pipe(concatCSS('site.css'))
-        .pipe(combineMediaQueries())
+        .pipe(groupMediaQueries())
         //.pipe(replace(/(\/font-awesome\/)/gi, '/_vendor$1'))
         .pipe(minifyCSS({
             keepSpecialComments: 0
