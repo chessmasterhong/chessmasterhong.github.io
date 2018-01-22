@@ -38,7 +38,7 @@
             "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgdGhDT20yRmVWbzQ",
             "detailsUrl": "",
-            "demoUrl": "//chessmasterhong.bitbucket.org/projects/impact-atmosphere/",
+            "demoUrl": "//chessmasterhong.bitbucket.io/projects/impact-atmosphere/",
             "srcUrl": "//github.com/chessmasterhong/impact-atmosphere",
             "caption": "Impact game engine plugin that simulates an atmospheric weather system, day/night cycles and seasonal cycles based on real-world date, time, and geographical coordinates."
         },
@@ -48,7 +48,7 @@
             "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgd1hLaDg2MHNJVVk",
             "detailsUrl": "",
-            "demoUrl": "//chessmasterhong.bitbucket.org/projects/WaterEmblem/",
+            "demoUrl": "//chessmasterhong.bitbucket.io/projects/WaterEmblem/",
             "srcUrl": "//github.com/chessmasterhong/WaterEmblem",
             "caption": "Browser-playable remake of Fire Emblem: Blazing Sword, a turn-based strategy role playing game for the Game Boy Advance, but with a different main character and plot twist."
         },
@@ -69,7 +69,7 @@
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgQ1YyVHhrYU93dkk",
             "detailsUrl": "",
             "demoUrl": "",
-            "srcUrl": "//bitbucket.org/chessmasterhong/smw-koopa-krisis_enemy-editor",
+            "srcUrl": "//bitbucket.io/chessmasterhong/smw-koopa-krisis_enemy-editor",
             "caption": "Tool for Impact developers to easily view and edit enemy files, quickly create new enemies, and to provide consistent code layout throughout files."
         },
         {
@@ -78,8 +78,8 @@
             "categories": ["games"],
             "thumbnail": "//drive.google.com/uc?export=download&id=0BzK_sWmObWZgNWJFNnYtTk1pMjA",
             "detailsUrl": "",
-            "demoUrl": "//drksephy.bitbucket.org",
-            "srcUrl": "//bitbucket.org/DrkSephy/smw-koopa-krisis",
+            "demoUrl": "//drksephy.bitbucket.io",
+            "srcUrl": "//bitbucket.io/DrkSephy/smw-koopa-krisis",
             "caption": "Browser-playable 2D platformer game inspired by the original Super Mario World for the Super Nintendo Entertainment System."
         },
         {
@@ -124,16 +124,22 @@
         "intro": [
             "Hello World! My name is Kevin Chan.",
             "Code is to me as paint is to a painter. I see programming not as a series of computer instructions, but rather a medium to express my ideas and knowledge for others to use and enjoy. At times, my code may be just a small piece of the equation and other times, it may be the foundation that sets the project in motion. Nevertheless, it is still that piece of code that helps to complete the grand picture.",
-            "Having been self taught my first programming language, I am still constantly learning everyday. Many of my open-source projects were either a completely [new learning experience](//github.com/chessmasterhong/sandbox-mean) for me or [something](//github.com/chessmasterhong/phaser-requirejs-boilerplate) I wanted to contribute back to the community to show my appreciation. Since then, I have worked on several projects across the various spectra of project development, including but not limited to: [front-end](//bitbucket.org/chessmasterhong/ccny-acm-webdev-fall2013-website/src), [back-end](//github.com/DrkSephy/git-technetium/pull/85), [testing](//github.com/chessmasterhong/mishmash-of-rpgs-prototype/tree/master/test/spec), [documentation](//github.com/chessmasterhong/impact-atmosphere/tree/master/docs), [algorithmic optimization](//github.com/DrkSephy/Project-Euler/commit/1b9e76ee8c5af84b902399b606df5afbb8d3cb01), and [task automation](//github.com/chessmasterhong/chessmasterhong.github.io-angularjs/blob/master/build-html-fallback.js).",
+            "Having been self taught my first programming language, I am still constantly learning everyday. Many of my open-source projects were either a completely [new learning experience](//github.com/chessmasterhong/sandbox-mean) for me or [something](//github.com/chessmasterhong/phaser-requirejs-boilerplate) I wanted to contribute back to the community to show my appreciation. Since then, I have worked on several projects across the various spectra of project development, including but not limited to: [front-end](//bitbucket.io/chessmasterhong/ccny-acm-webdev-fall2013-website/src), [back-end](//github.com/DrkSephy/git-technetium/pull/85), [testing](//github.com/chessmasterhong/mishmash-of-rpgs-prototype/tree/master/test/spec), [documentation](//github.com/chessmasterhong/impact-atmosphere/tree/master/docs), [algorithmic optimization](//github.com/DrkSephy/Project-Euler/commit/1b9e76ee8c5af84b902399b606df5afbb8d3cb01), and [task automation](//github.com/chessmasterhong/chessmasterhong.github.io-angularjs/blob/master/build-html-fallback.js).",
             "Lately, I have been deeply invested in web technologies. I have dabbled in a number of JavaScript frameworks during that time, like AngularJS, Node.js, Express, RequireJS, three.js, Impact, and Phaser. I have also incorporated other technologies into my development workflow, such as JSHint, Gulp.js, Bower, Foundation, Jade, and Less. This is apparent in many of my recent projects.",
-            "In my spare time, I enjoy coding [side projects](//github.com/chessmasterhong/pascal.js), or experimenting with new [programming languages](//github.com/chessmasterhong/sandbox-go) and [frameworks](//github.com/chessmasterhong/sandbox-beego-angular). Once in a while, I can be found playing video games, but nowadays I would rather [make](//bitbucket.org/DrkSephy/smw-koopa-krisis/commits/all?search=chessmasterhong) [them](//github.com/chessmasterhong/WaterEmblem/commits?author=chessmasterhong). On rare occasions, I would work on some random arts and crafts."
+            "In my spare time, I enjoy coding [side projects](//github.com/chessmasterhong/pascal.js), or experimenting with new [programming languages](//github.com/chessmasterhong/sandbox-go) and [frameworks](//github.com/chessmasterhong/sandbox-beego-angular). Once in a while, I can be found playing video games, but nowadays I would rather [make](//bitbucket.io/DrkSephy/smw-koopa-krisis/commits/all?search=chessmasterhong) [them](//github.com/chessmasterhong/WaterEmblem/commits?author=chessmasterhong). On rare occasions, I would work on some random arts and crafts."
         ],
         "specs": {
             "experience": [
                 {
-                    "organization": "CircleBlack",
+                    "organization": "CircleBlack, Inc.",
+                    "title": "Application Support Manager",
+                    "date": "Nov 2017 - Present",
+                    "desc": ""
+                },
+                {
+                    "organization": "CircleBlack, Inc.",
                     "title": "Software Engineer",
-                    "date": "May 2015 - Present",
+                    "date": "May 2015 - Nov 2017",
                     "desc": ""
                 },
                 {
@@ -186,6 +192,7 @@
             "skills": {
                 "program_languages": [
                     "JavaScript",
+                    "Bash",
                     "PHP",
                     "C++"
                 ],
@@ -197,9 +204,11 @@
                 ],
                 "frameworks_and_libraries": [
                     "Node.js",
+                    "Express.js",
                     "AngularJS",
                     "RequireJS",
                     "jQuery",
+                    "Bootstrap",
                     "Foundation"
                 ],
                 "technologies": [
@@ -212,7 +221,8 @@
                     "Gulp.js"
                 ],
                 "databases": [
-                    "MySQL"
+                    "MySQL",
+                    "SQLite"
                 ],
                 "platforms": [
                     "Windows",
