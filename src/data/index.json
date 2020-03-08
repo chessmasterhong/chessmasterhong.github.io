@@ -131,9 +131,21 @@
         "specs": {
             "experience": [
                 {
+                    "organization": "Oracle Corporation",
+                    "title": "Senior Software Engineer",
+                    "date": "Jan 2020 - Present",
+                    "desc": ""
+                },
+                {
+                    "organization": "CrowdTwist, Inc.",
+                    "title": "Software Engineer",
+                    "date": "Oct 2018 - Dec 2019",
+                    "desc": ""
+                },
+                {
                     "organization": "CircleBlack, Inc.",
                     "title": "Application Support Manager",
-                    "date": "Nov 2017 - Present",
+                    "date": "Nov 2017 - Oct 2018",
                     "desc": ""
                 },
                 {
@@ -194,7 +206,7 @@
                     "JavaScript",
                     "Bash",
                     "PHP",
-                    "C++"
+                    "Java"
                 ],
                 "other_computer_languages": [
                     "HTML",
@@ -222,7 +234,7 @@
                 ],
                 "databases": [
                     "MySQL",
-                    "SQLite"
+                    "Oracle RDBMS"
                 ],
                 "platforms": [
                     "Windows",
@@ -231,9 +243,10 @@
                 ],
                 "other": [
                     "MVC architecture",
-                    "API",
+                    "RESTful API design",
                     "Responsive web design",
-                    "Adaptive web design"
+                    "Adaptive web design",
+                    "Web content accessibility"
                 ]
             },
             "education": [
